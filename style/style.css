@@ -45,7 +45,8 @@
 .image-info{
     position: absolute;
     max-width: 380px;
-    top: 355px;
+    max-height: 200px;
+    top: 294px;
     padding-left: 11px;
     background-color: white;
     opacity: 77%;
