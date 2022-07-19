@@ -14,7 +14,7 @@
    color: #000000;
  }
 
- .menu {
+ .container-navbar ul {
    display: flex;
    margin-left: 10px;
  }
