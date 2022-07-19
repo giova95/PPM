@@ -1,31 +1,13 @@
-
-  /*start GENERAL RULES*/
-
-* {  
+* {
     margin: 0;
     padding: 0;
-}
+  }
+  
+  /* START Header */
 
-/*end GENERAL RULES*/
+  /* END Header */
 
-/*start  NAVBAR RULES*/
-
-.container {
-    width: 90%;
-    margin: 0 auto;
-    height: 50px;
-    position: relative;
-}
-
-#menu li {
-    float: left;
-}
-
-
-/*end NAVBAR Rules*/
-
-
-/* START main-content*/
+  /* START Header */
 
 .item-container{
     max-width: 1599px;
@@ -40,5 +22,4 @@
 
 }
 
-  /* END main-content */
-
+  /* END Header */
