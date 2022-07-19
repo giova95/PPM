@@ -6,8 +6,9 @@
   /* END General Rules*/
 
   /*START Nuvbar Rules*/
-  /*END Nuvbar Rules*/
 
+
+  /*END Nuvbar Rules*/
 
 
   /* START Main-Container*/
@@ -23,6 +24,15 @@
 .item{
     margin-bottom:30px;
 
+}
+
+.image-info{
+    position: absolute;
+    max-width: 380px;
+    top: 355px;
+    padding-left: 11px;
+    background-color: white;
+    opacity: 77%;
 }
 
   /* END Main-Container */
