@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* START Header */
+
+  /* END Header */
+
+  /* START Header */
+
+.item-container{
+    max-width: 1599px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-top: 70px
+}
+
+.item{
+    margin-bottom:30px;
+
+}
+
+  /* END Header */
