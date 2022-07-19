@@ -6,31 +6,7 @@
   /* END General Rules*/
 
   /*START Nuvbar Rules*/
-<<<<<<< HEAD
-=======
-
-   a:link, 
-   a:visited{
-    text-decoration: none;
-    color: #000000;
-  }
-
-  .menu {
-    display: flex;
-    margin-left: 10px;
-  }
-
-  .menu li {
-    list-style: none;
-  }
-
-
-
   
-  /*END Nuvbar Rules*/
->>>>>>> 66e847ee71d8bb785d23ad10ff0bc2792549ea8f
-
-
   /*END Nuvbar Rules*/
 
 
