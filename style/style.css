@@ -1,13 +1,16 @@
+   /*START General Rules*/
 * {
     margin: 0;
     padding: 0;
   }
-  
-  /* START Header */
+  /* END General Rules*/
 
-  /* END Header */
+  /*START Nuvbar Rules*/
+  /*END Nuvbar Rules*/
 
-  /* START Header */
+
+
+  /* START Main-Container*/
 
 .item-container{
     max-width: 1599px;
@@ -22,4 +25,4 @@
 
 }
 
-  /* END Header */
+  /* END Main-Container */
