@@ -6,6 +6,25 @@
   /* END General Rules*/
 
   /*START Nuvbar Rules*/
+
+   a:link, 
+   a:visited{
+    text-decoration: none;
+    color: #000000;
+  }
+
+  .menu {
+    display: flex;
+    margin-left: 10px;
+  }
+
+  .menu li {
+    list-style: none;
+  }
+
+
+
+  
   /*END Nuvbar Rules*/
 
 
