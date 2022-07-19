@@ -6,7 +6,29 @@
   /* END General Rules*/
 
   /*START Nuvbar Rules*/
-  
+
+  item-container{
+    max-width: 1599px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-top: 70px
+}
+
+.item{
+    margin-bottom:30px;
+
+}
+
+.image-info{
+    position: absolute;
+    max-width: 380px;
+    top: 355px;
+    padding-left: 11px;
+    background-color: white;
+    opacity: 77%;
+}
+
   /*END Nuvbar Rules*/
 
 
