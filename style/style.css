@@ -8,20 +8,34 @@
   /*START Nuvbar Rules*/
 
 
-  a:link, 
-  a:visited{
-   text-decoration: none;
-   color: #000000;
- }
 
- .container-navbar ul {
-   display: flex;
-   margin-left: 10px;
- }
+a:link,
+a:visited {
+  text-decoration: none;
+  color: #000000;
+  display: block;
+}
 
- .menu li {
-   list-style: none;
- }
+.container-navbar li {
+  margin: 0 12px 0 12px;
+}
+
+.container-navbar ul {
+  display: flex;
+  margin-left: 10px;
+}
+
+ul li {
+  list-style: none;
+  float: left;
+}
+
+.vocal-search {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
 
 
   /*END Nuvbar Rules*/
