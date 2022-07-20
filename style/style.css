@@ -49,6 +49,16 @@ ul li {
   background-position:  200px 0;
 }
 
+#search-block{
+  
+  height: 50px;
+  width: 50px;
+  border: 1px solid #000000;
+  
+  
+  
+
+}
 
   /*END Nuvbar Rules*/
 
