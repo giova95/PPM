@@ -85,7 +85,27 @@ ul li {
     top: 317px;
     padding-left: 11px;
     background-color: white;
-    opacity: 0.77;
+    opacity: 0;
+}
+
+
+.image-info:hover{
+  animation-name: fadeIn;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
 }
 
   /* END Main-Container */
+
+/* START animazioni*/
+@keyframes fadeIn {
+  from{
+    opacity:0;
+  }
+
+  to{
+    opacity: 0.77;
+  }
+
+}
+/* END animazioni*/
