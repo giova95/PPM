@@ -69,10 +69,10 @@ ul li {
     position: absolute;
     max-width: 380px;
     max-height: 200px;
-    top: 294px;
+    top: 276px;
     padding-left: 11px;
     background-color: white;
-    opacity: 77%;
+    opacity: 0;
 }
 
   /* END Main-Container */
