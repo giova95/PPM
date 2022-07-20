@@ -3,17 +3,22 @@
     margin: 0;
     padding: 0;
   }
-  /* END General Rules*/
-
-  /*START Nuvbar Rules*/
-
-
 
 a:link,
 a:visited {
   text-decoration: none;
   color: #000000;
-  display: block;
+}
+
+body {
+  font-family: 'Rubik', sans-serif;
+}
+  /* END General Rules*/
+
+  /*START Nuvbar Rules*/
+
+.container-navbar{
+  margin: 12px
 }
 
 .container-navbar li {
@@ -33,18 +38,27 @@ ul li {
 .vocal-search {
   position: absolute;
   right: 0;
-  top: 0;
+  top: 12px;
 }
 
 #search{
-  padding-right: 32px;
+  padding-right: 54px;
   background-image: url(../img/mic.png);
   background-repeat: no-repeat;
   background-size: contain;
-  background-position:  180px 0;
-
+  background-position:  200px 0;
 }
 
+#search-block{
+  
+  height: 50px;
+  width: 50px;
+  border: 1px solid #000000;
+  
+  
+  
+
+}
 
   /*END Nuvbar Rules*/
 
@@ -53,7 +67,6 @@ ul li {
 
 .item-container{
     max-width: 1599px;
-    margin-left: 158px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
