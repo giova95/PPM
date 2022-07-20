@@ -36,6 +36,14 @@ ul li {
   top: 0;
 }
 
+#search{
+  padding-right: 32px;
+  background-image: url(../img/mic.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position:  180px 0;
+
+}
 
 
   /*END Nuvbar Rules*/
