@@ -90,9 +90,11 @@ ul li {
 
 
 .image-info:hover{
-  animation-name: fadeIn;
-  animation-duration: 3s;
-  animation-iteration-count: 1;
+  animation: 
+  fadeIn 
+  500ms 
+  ease-out
+  forwards;
 }
 
   /* END Main-Container */
