@@ -99,6 +99,29 @@ ul li {
 
   /* END Main-Container */
 
+
+  /* START footer */
+footer {
+    clear: both;
+    display: block;
+    margin: auto;
+}
+
+.footer-blurb{
+  text-align: center;
+  background-color:#293133;
+  width:100%;
+  min-height:300px;
+}
+
+.logo-footer {
+  float: left;
+  margin-top: 16px;
+  margin-bottom: 12px;
+  width: 100%;
+}
+
+  /* END footer*/
 /* START animazioni*/
 @keyframes fadeIn {
   from{
