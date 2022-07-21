@@ -27,7 +27,6 @@ body {
 
 .container-navbar ul {
   display: flex;
-  margin-left: 10px;
 }
 
 ul li {
@@ -50,10 +49,13 @@ ul li {
 }
 
 #search-block{
-  
   height: 50px;
-  width: 50px;
+  width: 20%;
   border: 1px solid #000000;
+  margin: 0 auto;
+  position: relative;
+  top: -15px;
+  border-radius: 18px;
 
 }
 
@@ -131,6 +133,7 @@ footer {
   to{
     opacity: 0.77;
   }
-
 }
+
+
 /* END animazioni*/
