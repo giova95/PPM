@@ -138,7 +138,7 @@ opacity: 0;
 footer {
     clear: both;
     display: block;
-    margin: auto;
+    margin-top: 130px;
 }
 
 .footer-blurb{
