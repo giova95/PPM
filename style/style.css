@@ -35,18 +35,31 @@ ul li {
 }
 
 .vocal-search {
+  
   position: absolute;
   right: 0;
   top: 12px;
 }
 
+
+
 #search{
   padding-right: 54px;
-  background-image: url(../img/mic.png);
+ /* background-image: url(../img/mic.png);
   background-repeat: no-repeat;
   background-size: contain;
-  background-position:  200px 0;
+  background-position:  200px 0;*/
+
 }
+
+#mic{
+  max-height: 20px;
+  position: relative;
+  left: 3px;
+  top: 5px;
+
+}
+
 
 #search-block{
   height: 50px;
