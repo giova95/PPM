@@ -80,18 +80,50 @@ ul li {
 
 }
 
-.image-info{
+.image-info, .image-info2, .image-info3{
     position: absolute;
     max-width: 380px;
     max-height: 200px;
-    top: 317px;
+    top: 336px;
     padding-left: 11px;
     background-color: white;
     opacity: 0;
 }
 
+.image-info4, .image-info5, .image-info6{
+  position: absolute;
+  max-width: 380px;
+  max-height: 200px;
+  top: 666px;
+  padding-left: 11px;
+  background-color: white;
+  opacity: 0;
+}
 
-.image-info:hover{
+.image-info7, .image-info8, .image-info9{
+position: absolute;
+max-width: 380px;
+max-height: 200px;
+top: 996px;
+padding-left: 11px;
+background-color: white;
+opacity: 0;
+}
+
+.image-info10, .image-info11, .image-info12{
+  position: absolute;
+  max-width: 380px;
+  max-height: 200px;
+  top: 1326px;
+  padding-left: 11px;
+  background-color: white;
+  opacity: 0;
+  }
+
+.image-info:hover, .image-info2:hover, .image-info3:hover,
+.image-info4:hover, .image-info5:hover, .image-info6:hover,
+.image-info7:hover, .image-info8:hover, .image-info9:hover,
+.image-info10:hover, .image-info11:hover, .image-info12:hover{
   animation: 
   fadeIn 
   500ms 
