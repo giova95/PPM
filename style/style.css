@@ -98,7 +98,7 @@ input [tipo = checkbox] :checked ~ #searchblock ul{
     position: absolute;
     max-width: 380px;
     max-height: 200px;
-    top: 336px;
+    top: 297px;
     padding-left: 11px;
     background-color: white;
     opacity: 0;
@@ -108,7 +108,7 @@ input [tipo = checkbox] :checked ~ #searchblock ul{
   position: absolute;
   max-width: 380px;
   max-height: 200px;
-  top: 666px;
+  top: 627px;
   padding-left: 11px;
   background-color: white;
   opacity: 0;
@@ -118,7 +118,7 @@ input [tipo = checkbox] :checked ~ #searchblock ul{
 position: absolute;
 max-width: 380px;
 max-height: 200px;
-top: 996px;
+top: 957px;
 padding-left: 11px;
 background-color: white;
 opacity: 0;
