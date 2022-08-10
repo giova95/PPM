@@ -1,0 +1,189 @@
+   /*START General Rules*/
+* {
+    margin: 0;
+    padding: 0;
+  }
+
+a:link,
+a:visited {
+  text-decoration: none;
+  color: #000000;
+}
+
+body {
+  font-family: 'Rubik', sans-serif;
+}
+  /* END General Rules*/
+
+  /*START Nuvbar Rules*/
+
+.container-navbar{
+  margin: 12px
+}
+
+.container-navbar li {
+  margin: 0 12px 0 12px;
+}
+
+.container-navbar ul {
+  display: flex;
+}
+
+ul li {
+  list-style: none;
+  float: left;
+}
+
+.vocal-search {
+  
+  position: absolute;
+  right: 0;
+  top: 12px;
+}
+
+
+
+#search{
+  padding-right: 54px;
+
+}
+
+#mic{
+  max-height: 20px;
+  position: relative;
+  right: 50px;
+  top: 5px;
+
+}
+
+
+#search-block{
+  display: none;
+  height: 50px;
+  width: 20%;
+  border: 1px solid #000000;
+  margin: 0 auto;
+  position: relative;
+  top: -15px;
+  border-radius: 18px;
+}
+
+input [tipo = checkbox] :checked ~ #searchblock ul{
+  right: 1000px;
+}
+
+
+  /*END Nuvbar Rules*/
+
+
+  /* START Main-Container*/
+
+.main-container{
+  margin-top: 70px;
+}
+.item-container{
+    max-width: 1599px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: auto;
+}
+
+.item{
+    margin-bottom:30px;
+
+}
+
+.image-info, .image-info2, .image-info3{
+    position: absolute;
+    max-width: 380px;
+    max-height: 200px;
+    top: 336px;
+    padding-left: 11px;
+    background-color: white;
+    opacity: 0;
+}
+
+.image-info4, .image-info5, .image-info6{
+  position: absolute;
+  max-width: 380px;
+  max-height: 200px;
+  top: 666px;
+  padding-left: 11px;
+  background-color: white;
+  opacity: 0;
+}
+
+.image-info7, .image-info8, .image-info9{
+position: absolute;
+max-width: 380px;
+max-height: 200px;
+top: 996px;
+padding-left: 11px;
+background-color: white;
+opacity: 0;
+}
+
+.image-info10, .image-info11, .image-info12{
+  position: absolute;
+  max-width: 380px;
+  max-height: 200px;
+  top: 1326px;
+  padding-left: 11px;
+  background-color: white;
+  opacity: 0;
+  }
+
+.image-info:hover, .image-info2:hover, .image-info3:hover,
+.image-info4:hover, .image-info5:hover, .image-info6:hover,
+.image-info7:hover, .image-info8:hover, .image-info9:hover,
+.image-info10:hover, .image-info11:hover, .image-info12:hover{
+  animation: 
+  fadeIn 
+  500ms 
+  ease-out
+  forwards;
+}
+
+  /* END Main-Container */
+
+
+  /* START footer */
+footer {
+    clear: both;
+    display: block;
+    margin-top: 130px;
+}
+
+.footer-blurb{
+  text-align: center;
+  background-color:#293133;
+  width:100%;
+  min-height:300px;
+}
+
+.logo-footer {
+  float: left;
+  margin-top: 16px;
+  margin-bottom: 12px;
+  width: 100%;
+}
+
+  /* END footer*/
+
+/* START animazioni*/
+
+
+
+@keyframes fadeIn {
+  from{
+    opacity:0;
+  }
+
+  to{
+    opacity: 0.77;
+  }
+}
+
+
+/* END animazioni*/
