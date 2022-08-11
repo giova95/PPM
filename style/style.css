@@ -81,6 +81,7 @@ input [tipo = checkbox] :checked ~ #searchblock ul{
 .main-container{
   margin-top: 70px;
 }
+
 .item-container{
     max-width: 1599px;
     display: flex;
@@ -89,10 +90,12 @@ input [tipo = checkbox] :checked ~ #searchblock ul{
     margin: auto;
 }
 
-.item1, .item2 , .item3, .item4, .item5 , .item6, .item7, .item8 , .item9{
-    margin-bottom:30px;
-
+.item1, .item2, .item3, 
+.item4, .item5, .item6,
+.item7, .item8, .item9{
+  margin-bottom: 30px;
 }
+
 
 .image-info, .image-info2, .image-info3{
     position: absolute;
