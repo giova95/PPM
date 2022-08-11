@@ -58,7 +58,7 @@ ul li {
 
 
 #search-block{
-  /*display: none;*/
+  display: none;
   height: 50px;
   width: 20%;
   border: 1px solid #000000;
