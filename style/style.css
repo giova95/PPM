@@ -58,14 +58,17 @@ ul li {
 
 
 #search-block{
-  display: none;
+  /*display: none;*/
   height: 50px;
   width: 20%;
   border: 1px solid #000000;
-  margin: 0 auto;
   position: relative;
   top: -15px;
   border-radius: 18px;
+  left: 753px;
+  text-align:center;
+  font-family: 'Rubik', sans-serif;
+  font-size: large;
 }
 
 input [tipo = checkbox] :checked ~ #searchblock ul{
