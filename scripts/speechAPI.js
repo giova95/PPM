@@ -20,6 +20,7 @@ document.addEventListener(
 
             const recognition = new SpeechRecognition();
             recognition.interimResults = true;
+            recognition.continuos = true;
             recognition.lang = "it-IT"
             micBtn.addEventListener("click", micBtnClick);
             function micBtnClick() {
