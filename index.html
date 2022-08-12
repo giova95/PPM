@@ -7,6 +7,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
     </style>
     <script type="text/javascript" src="scripts/speechAPI.js"></script>
+    <script src="scripts/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
@@ -18,15 +19,18 @@
                     <li><a href="#" class="label">Label</a></li>
                     <li><a href="#" class="label">Label</a></li>
                 </ul>
-                
-                
-                <input type="search" id="search-block"/>
-                <!-- <input type="checkbox"> --> 
-                    <ul class="vocal-search">
-                        <li><a href="#" id="search">Inizia nuova ricerca vocale</a><a href="#"><img id="mic" src="img/mic.png"></a></li>
-                    </ul> 
-            
+                <div id="search-box">
+                    <form action="#" method="get" id="search-form">
+                        <input name="q" type="text" placeholder="Cerca il tuo quadro..." autocomplete="off" autofocus>
+                        <button type="button"><img class="mic1" src="img/mic.png"></button>
+                        <!-- <input type="checkbox"> --> 
+                    </form>
                 </div>
+                <ul class="vocal-search">
+                    <li><a href="#" id="search">Inizia nuova ricerca vocale</a><a href="#"><img id="mic2" src="img/mic.png"></a></li>
+                </ul> 
+            
+            </div>
 
         </nav>
     </header>

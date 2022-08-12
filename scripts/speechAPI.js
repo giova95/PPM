@@ -1,40 +1,61 @@
-try {    
-    var SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;    
-    var recognition = new SpeechRecognition();  
-    }  
-    catch(e) {    
-    console.error(e);    
-    $('.no-browser-support').show();   
-     $('.app').hide();  
-}
 
-recognition.onstart = function( ) {     
-    instructions.text('Voice recognition activated. Try speaking into the microphone.');  }    
-    recognition.onspeechend = function( ) {    
-    instructions.text('You were quiet for a while so voice recognition turned itself off.');  
-    }    
-    recognition.onerror = function(event) {    
-    if(event.error == 'no-speech') {      
-    instructions.text('No speech was detected. Try again.');      
-    };  
+
+
+document.addEventListener(
+    'DOMContentLoaded',
+    function () {
+        console.log(" DOM caricato");
+
+        const searchForm = document.querySelector("#search-form");
+        const formInput = document.querySelector("#search-form input");
+        const micBtn = document.querySelector("#search-form button");
+        const micIcon = document.querySelector("#mic1");
+
+        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+        var rec = false;
+
+        if (SpeechRecognition) {
+            console.log("Il tuo Browser supporta il riconoscimento vocale");
+
+            const recognition = new SpeechRecognition();
+            recognition.interimResults = true;
+            recognition.lang = "it-IT"
+            micBtn.addEventListener("click", micBtnClick);
+            function micBtnClick() {
+                if (!rec) {
+                    recognition.start();
+                }
+                else {
+                    recognition.stop();
+                }
+                console.log(rec);
+            }
+
+            recognition.addEventListener("start", startSpeechRecognition);
+            function startSpeechRecognition() {
+                $('.mic1').attr('src', 'img/mic-red.png');
+                rec = true;
+                formInput.focus();
+                console.log("Riconoscimento vocale attivato");
+            }
+
+            recognition.addEventListener("end", endSpeechRecognition);
+            function endSpeechRecognition() {
+                $('.mic1').attr('src', 'img/mic.png');
+                rec = false;
+                formInput.focus();
+                console.log("Riconoscimento vocale disattivato");
+            }
+
+            recognition.addEventListener("result", resultSpeechRecognition);
+            function resultSpeechRecognition(event) {
+                const transcript = event.results[0][0].transcript;
+                formInput.value = transcript;
+            }
+        }
+        else {
+            console.log("Il tuo Browser non supporta il riconoscimento vocale")
+        }
     }
-
-    recognition.onresult = function(event) {      
-        // event is a SpeechRecognitionEvent object.    
-        // It holds all the lines we have captured so far.     
-        // We only need the current one.    
-        var current = event.resultIndex;      
-        // Get a transcript of what was said.    
-        var transcript = event.results[current][0].transcript;      
-        // Add the current transcript to the contents of our Note.    
-        noteContent += transcript;    
-        noteTextarea.val(noteContent);  
-}
-
-$('#search').on('click', function(e) {
-    recognition.start();
-  })
-
-$('#search-block').on('click', function(e) {    
-    recognition.stop();  
-});
+)

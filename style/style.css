@@ -34,31 +34,11 @@ ul li {
   float: left;
 }
 
-.vocal-search {
-  
-  position: absolute;
-  right: 0;
-  top: 12px;
+#search-box{
+  opacity: 1; 
 }
 
-
-
-#search{
-  padding-right: 54px;
-
-}
-
-#mic{
-  max-height: 20px;
-  position: relative;
-  right: 50px;
-  top: 5px;
-
-}
-
-
-#search-block{
-  display: none;
+#search-form input{
   height: 50px;
   width: 20%;
   border: 1px solid #000000;
@@ -69,6 +49,42 @@ ul li {
   text-align:center;
   font-family: 'Rubik', sans-serif;
   font-size: large;
+}
+
+#search-form button{
+  height: 25px;
+  width: 25px;
+  position: relative;
+  top: -7px;
+  left: 716px;
+  background-color:transparent;
+  outline: none;
+  border: none;
+  text-align: center;
+  cursor: pointer;
+}
+
+.mic1{
+  max-height: 25px;
+}
+
+.vocal-search {
+  position: absolute;
+  right: 0;
+  top: 12px;
+}
+
+#search{
+  padding-right: 54px;
+
+}
+
+#mic2{
+  max-height: 20px;
+  position: relative;
+  right: 50px;
+  top: 5px;
+
 }
 
 input [tipo = checkbox] :checked ~ #searchblock ul{
