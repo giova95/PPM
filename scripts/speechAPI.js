@@ -1,9 +1,7 @@
-
-
-
 document.addEventListener(
     'DOMContentLoaded',
     function () {
+        
         console.log(" DOM caricato");
 
         const searchForm = document.querySelector("#search-form");
