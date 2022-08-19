@@ -8,6 +8,7 @@ document.addEventListener(
         const formInput = document.querySelector("#search-form input");
         const micBtn = document.querySelector("#search-form button");
         const micIcon = document.querySelector("#mic1");
+        const item1 = document.querySelector("#item1");
 
         const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
@@ -51,6 +52,15 @@ document.addEventListener(
             function resultSpeechRecognition(event) {
                 const transcript = event.results[0][0].transcript;
                 formInput.value = transcript;
+            }
+
+            item1.addEventListener("click", item1Click);
+            function item1Click(){
+                $('#image-full').css({  
+                    'z-index': '0', 
+                    'opacity' : '1'
+                });
+                $('#item-container').css('opacity', '0.2');
             }
         }
         else {
