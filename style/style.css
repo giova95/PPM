@@ -39,6 +39,7 @@ ul li {
   height: 50px;
   width: 375px;
   margin: 0 auto;
+  display: none;
 }
 
 #search-form{
