@@ -122,9 +122,9 @@ input [tipo = checkbox] :checked ~ #searchblock ul{
     margin: auto;
 }
 
-#item1, .item2, .item3, 
-.item4, .item5, .item6,
-.item7, .item8, .item9{
+#item1, #item2, #item3, 
+#item4, #item5, #item6,
+#item7, #item8, #item9{
   margin-bottom: 30px;
   cursor: pointer;
 }
@@ -180,6 +180,13 @@ border-radius: 0px 15px 0px 0px;
   height: 1400px;
   max-width: 1080px;
   display: none;
+}
+
+#x-full{
+  position: relative;
+  top: 80px;
+  left: 1010px;
+  cursor: pointer;
 }
   /* END Main-Container */
 
