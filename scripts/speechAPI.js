@@ -10,7 +10,7 @@ document.addEventListener(
         const micIcon = document.querySelector("#mic1");
         const item1 = document.querySelector("#item1");
         const search = document.querySelector(".vocal-search");
-        const button = document.querySelector("#button");
+        const esc = document.querySelector("#x-icon");
 
         const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
@@ -47,6 +47,21 @@ document.addEventListener(
 
                 $('#search-box').css({
                     'display': 'block'
+                });
+            }
+
+            esc.addEventListener("click", escClick);
+            function escClick() {
+                $('.menu').css({
+                    'display': 'flex'
+                });
+
+                $('.vocal-search').css({
+                    'display' : 'block'
+                });
+
+                $('#search-box').css({
+                    'display': 'none'
                 });
             }
      
