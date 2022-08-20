@@ -39,6 +39,7 @@ ul li {
   height: 50px;
   width: 375px;
   margin: 0 auto;
+  display: none;
 }
 
 #search-form{
@@ -92,6 +93,15 @@ ul li {
 
 input [tipo = checkbox] :checked ~ #searchblock ul{
   right: 1000px;
+}
+
+#x-icon{
+  max-height: 24px;
+  position: relative;
+  top: 37px;
+  left: 10px;
+
+
 }
 
 

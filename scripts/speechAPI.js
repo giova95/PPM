@@ -9,6 +9,8 @@ document.addEventListener(
         const micBtn = document.querySelector("#search-form button");
         const micIcon = document.querySelector("#mic1");
         const item1 = document.querySelector("#item1");
+        const search = document.querySelector(".vocal-search");
+        const esc = document.querySelector("#x-icon");
 
         const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
@@ -25,6 +27,7 @@ document.addEventListener(
             function micBtnClick() {
                 if (!rec) {
                     recognition.start();
+                   
                 }
                 else {
                     recognition.stop();
@@ -32,12 +35,45 @@ document.addEventListener(
                 console.log(rec);
             }
 
+            search.addEventListener("click", searchClick);
+            function searchClick() {
+                $('.menu').css({
+                    'display': 'none'
+                });
+
+                $('.vocal-search').css({
+                    'display' : 'none'
+                });
+
+                $('#search-box').css({
+                    'display': 'block'
+                });
+            }
+
+            esc.addEventListener("click", escClick);
+            function escClick() {
+                $('.menu').css({
+                    'display': 'flex'
+                });
+
+                $('.vocal-search').css({
+                    'display' : 'block'
+                });
+
+                $('#search-box').css({
+                    'display': 'none'
+                });
+            }
+     
+
             recognition.addEventListener("start", startSpeechRecognition);
             function startSpeechRecognition() {
+                
                 $('.mic1').attr('src', 'img/mic-red.png');
                 rec = true;
                 formInput.focus();
                 console.log("Riconoscimento vocale attivato");
+                
             }
 
             recognition.addEventListener("end", endSpeechRecognition);
@@ -46,6 +82,7 @@ document.addEventListener(
                 rec = false;
                 formInput.focus();
                 console.log("Riconoscimento vocale disattivato");
+                
             }
 
             recognition.addEventListener("result", resultSpeechRecognition);
