@@ -1,8 +1,18 @@
-document.addEventListener(
-    'DOMContentLoaded',
-    function () {
+let requestURL = './gallery.json';
+let request = new XMLHttpRequest();
+request.open('GET', requestURL);
+request.responseType = 'json';
+request.send();
 
-        console.log(" DOM caricato");
+request.onload = function () {
+    const picture = request.response;
+    console.log(picture);
+
+    document.addEventListener(
+        'DOMContentLoaded',
+        function () {
+
+            console.log(" DOM caricato");
 
         const searchForm = document.querySelector("#search-form");
         const formInput = document.querySelector("#search-form input");
@@ -160,14 +170,6 @@ document.addEventListener(
                 $('#full').attr('src', 'gallery/viandante.jpg');
                 $('#image-full').fadeIn("slow");// decidere se fadeIn, show o slideDown
                 $('#item-container').fadeTo("slow", 0.2);
-                $('.navbar').fadeTo("slow", 0.2);
-            }
-            
-            escfull.addEventListener("click", escfullClick);
-            function escfullClick() {
-                $('#image-full').fadeOut("slow");// decidere se fadeIn, show o slideDown
-                $('#item-container').fadeTo("slow", 1);
-                $('.navbar').fadeTo("slow", 1);
             }
         }
         else {
