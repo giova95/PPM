@@ -56,11 +56,9 @@ document.addEventListener(
 
             item1.addEventListener("click", item1Click);
             function item1Click(){
-                $('#image-full').css({  
-                    'z-index': '0', 
-                    'opacity' : '1'
-                });
-                $('#item-container').css('opacity', '0.2');
+                //TODO: x sul blocco per chiudere immagine con relativo jquery
+                $('#image-full').fadeIn("slow");// decidere se fadeIn, show o slideDown
+                $('#item-container').fadeTo("slow", 0.2);
             }
         }
         else {
