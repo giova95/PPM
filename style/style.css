@@ -100,13 +100,9 @@ input [tipo = checkbox] :checked ~ #searchblock ul{
   position: relative;
   top: 37px;
   left: 10px;
-
-
 }
 
-
   /*END Nuvbar Rules*/
-
 
   /* START Main-Container*/
 
@@ -133,7 +129,7 @@ input [tipo = checkbox] :checked ~ #searchblock ul{
 .image-info, .image-info2, .image-info3{
     position: absolute;
     max-width: 380px;
-    max-height: 200px;
+    max-height: 117px;
     top: 334px;
     padding-left: 11px;
     background-color: white;
@@ -177,7 +173,7 @@ border-radius: 0px 15px 0px 0px;
   position: relative;
   top: -990px;
   margin: 0 auto;
-  height: 1400px;
+  height: 1000px;
   max-width: 1080px;
   display: none;
 }
