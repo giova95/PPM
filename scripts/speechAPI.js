@@ -35,6 +35,12 @@ request.onload = function () {
 
             var rec = false;
 
+            var N = pictures.length;
+
+            console.log(pictures[3].src);
+
+
+
             if (SpeechRecognition) {
                 console.log("Il tuo Browser supporta il riconoscimento vocale");
 
@@ -110,7 +116,7 @@ request.onload = function () {
                     formInput.value = transcript;
                 }
 
-                item1.addEventListener("click", item1Click);
+               item1.addEventListener("click", item1Click);
                 function item1Click() {
                     $('#full').attr('src', 'gallery/canipoker.jpg');
                     $('#image-full').fadeIn("slow");// decidere se fadeIn, show o slideDown
@@ -182,16 +188,11 @@ request.onload = function () {
                 }
 
                 var N = pictures.length;
-
-                
-
-                
-
                 
                 
                 for(var i = 1; i<=N; i++) {
                     document.getElementById("image-title"+i).innerHTML = pictures[i-1].title;
-                    
+                    document.getElementById("image-tag"+i).innerHTML = pictures[i-1].description;
                 }
 
                 
