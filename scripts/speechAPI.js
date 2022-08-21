@@ -57,30 +57,30 @@ request.onload = function () {
                 search.addEventListener("click", searchClick);
                 function searchClick() {
                     $('.menu').css({
-                        'display': 'none'
+                        'visibility': 'hidden'
                     });
 
                     $('.vocal-search').css({
-                        'display': 'none'
+                        'visibility': 'hidden'
                     });
 
                     $('#search-box').css({
-                        'display': 'block'
+                        'visibility': 'visible'
                     });
                 }
 
                 esc.addEventListener("click", escClick);
                 function escClick() {
                     $('.menu').css({
-                        'display': 'flex'
+                        'visibility': 'visible'
                     });
 
                     $('.vocal-search').css({
-                        'display': 'block'
+                        'visibility': 'visible'
                     });
 
                     $('#search-box').css({
-                        'display': 'none'
+                        'visibility': 'hidden'
                     });
                 }
 

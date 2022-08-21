@@ -39,7 +39,7 @@ ul li {
   height: 50px;
   width: 375px;
   margin: 0 auto;
-  display: none;
+  visibility: hidden;
 }
 
 #search-form{
@@ -227,6 +227,7 @@ footer {
     opacity: 1;
   }
 }
+
 
 
 /* END animazioni*/
