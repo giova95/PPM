@@ -5,8 +5,8 @@ request.responseType = 'json';
 request.send();
 
 request.onload = function () {
-    const picture = request.response;
-    console.log(picture);
+    const pictures = request.response;
+    console.log(pictures);
 
     document.addEventListener(
         'DOMContentLoaded',
@@ -42,6 +42,7 @@ request.onload = function () {
                 recognition.interimResults = true;
                 recognition.continuos = true;
                 recognition.lang = "it-IT"
+
                 micBtn.addEventListener("click", micBtnClick);
                 function micBtnClick() {
                     if (!rec) {
@@ -54,7 +55,7 @@ request.onload = function () {
                     console.log(rec);
                 }
 
-                search.addEventListener("click", searchClick);
+                search.addEventListener("click", searchClick);  //TODO fare l'animazione
                 function searchClick() {
                     $('.menu').css({
                         'visibility': 'hidden'
@@ -179,6 +180,21 @@ request.onload = function () {
                     $('#item-container').fadeTo("slow", 1);
                     $('.navbar').fadeTo("slow", 1);
                 }
+
+                var N = pictures.length;
+
+                
+
+                
+
+                
+                
+                for(var i = 1; i<=N; i++) {
+                    document.getElementById("image-title"+i).innerHTML = pictures[i-1].title;
+                    
+                }
+
+                
             }
             else {
                 console.log("Il tuo Browser non supporta il riconoscimento vocale")
