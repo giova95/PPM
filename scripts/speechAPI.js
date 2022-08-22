@@ -27,6 +27,7 @@ request.onload = function () {
             const item7 = document.querySelector("#item7");
             const item8 = document.querySelector("#item8");
             const item9 = document.querySelector("#item9");
+            var N = pictures.length;
             const search = document.querySelector(".vocal-search");
             const esc = document.querySelector("#x-icon");
             const escfull = document.querySelector("#x-full");
@@ -34,10 +35,6 @@ request.onload = function () {
             const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
             var rec = false;
-
-            var N = pictures.length;
-
-            console.log(pictures[3].src);
 
 
 
@@ -60,6 +57,11 @@ request.onload = function () {
                     }
                     console.log(rec);
                 }
+
+                
+
+            
+
 
                 search.addEventListener("click", searchClick);  //TODO fare l'animazione
                 function searchClick() {
@@ -116,17 +118,40 @@ request.onload = function () {
                     formInput.value = transcript;
                 }
 
+       
+                for (var i = 1; i <= N; i++) {
+                    $('#item'+i).on('click', function () {
+                        console.log(i);
+                        document.getElementById("full-title").innerHTML = pictures[0].title;
+                        document.getElementById("author").innerHTML = 'Di ' + pictures[0].author + ' completato nel ' + pictures[0].date;
+                        document.getElementById("full-description").innerHTML = pictures[0].description;                    
+                        $('#full').attr('src', pictures[0].src);
+                        $('#image-full').fadeIn("slow");// decidere se fadeIn, show o slideDown
+                        $('#item-container').fadeTo("slow", 0.2);
+                        $('.navbar').fadeTo("slow", 0.2);
+
+                    })
+
+                }
+                
+
+
+  
+
+
+
+/* 
                item1.addEventListener("click", item1Click);
                 function item1Click() {
                     document.getElementById("full-title").innerHTML = pictures[0].title;
                     document.getElementById("author").innerHTML = 'Di ' + pictures[0].author + ' completato nel ' + pictures[0].date;
                     document.getElementById("full-description").innerHTML = pictures[0].description;                    
-                    $('#full').attr('src', 'gallery/primavera-di-botticelli.jpg');
+                    $('#full').attr('src', pictures[0].src);
                     $('#image-full').fadeIn("slow");// decidere se fadeIn, show o slideDown
                     $('#item-container').fadeTo("slow", 0.2);
                     $('.navbar').fadeTo("slow", 0.2);
-                }
-                item2.addEventListener("click", item2Click);
+               }
+               item2.addEventListener("click", item2Click);
                 function item2Click() {
                     document.getElementById("full-title").innerHTML = pictures[1].title;
                     document.getElementById("author").innerHTML = 'Di ' + pictures[1].author + ' completato nel ' + pictures[1].date;
@@ -216,7 +241,7 @@ request.onload = function () {
                 function outXnormal(){
                     $("#x-full").attr('src', 'img/icons8-x-96.png');
                 }
-
+*/
                 escfull.addEventListener("click", escfullClick);
                 function escfullClick() {
                     $('#image-full').fadeOut("slow");// decidere se fadeIn, show o slideDown
@@ -224,7 +249,7 @@ request.onload = function () {
                     $('.navbar').fadeTo("slow", 1);
                 }
 
-                var N = pictures.length;
+                
                 
                 for(var i = 1; i<=N; i++) {
                     document.getElementById("image-title"+i).innerHTML = pictures[i-1].title;
