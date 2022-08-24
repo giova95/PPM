@@ -1,11 +1,11 @@
-let requestURL = './gallery.json';
-let request = new XMLHttpRequest();
-request.open('GET', requestURL);
-request.responseType = 'json';
-request.send();
+let urlApi = 'http://localhost:3307';
+let req = new XMLHttpRequest();
+req.open('GET', urlApi);
+req.responseType = 'json';
+req.send();
 
-request.onload = function () {
-    const pictures = request.response;
+req.onload = function () {
+    const pictures = req.response;
     console.log(pictures);
 
     document.addEventListener(
@@ -102,21 +102,22 @@ request.onload = function () {
                     formInput.value = transcript;
                 }
 
-
                 for (let i = 1; i <= N; i++) {
                     item = document.querySelector("#item" + i);
-                    item.addEventListener("click", itemClick);
-                    function itemClick() {
-                        document.getElementById("full-title").innerHTML = pictures[i-1].title;
-                        document.getElementById("author").innerHTML = 'Di ' + pictures[i-1].author + ' completato nel ' + pictures[i-1].date;
-                        document.getElementById("full-description").innerHTML = pictures[i-1].description;
-                        $('#full').attr('src', pictures[i-1].src);
-                        $('#image-full').fadeIn("slow");// decidere se fadeIn, show o slideDown
-                        $('#item-container').fadeTo("slow", 0.2);
-                        $('.navbar').fadeTo("slow", 0.2);
+                    if (item) {
+                        item.addEventListener("click", itemClick);
+                        function itemClick() {
+                            document.getElementById("full-title").innerHTML = pictures[i - 1].title;
+                            document.getElementById("author").innerHTML = 'Di ' + pictures[i - 1].author + ' completato nel ' + pictures[i - 1].date;
+                            document.getElementById("full-description").innerHTML = pictures[i - 1].description;
+                            $('#full').attr('src', pictures[i - 1].src);
+                            $('#image-full').fadeIn("slow");// decidere se fadeIn, show o slideDown
+                            $('#item-container').fadeTo("slow", 0.2);
+                            $('.navbar').fadeTo("slow", 0.2);
+                        }
+                    }
                 }
-            }
-            
+
                 escfull.addEventListener("mouseover", overXred);
                 function overXred() {
                     $("#x-full").attr('src', 'img/x-red.png');
@@ -132,11 +133,10 @@ request.onload = function () {
                     $('.navbar').fadeTo("slow", 1);
                 }
 
-                for (var i = 1; i <= N; i++) {
+                for (let i = 1; i <= N; i++) {
                     document.getElementById("image-title" + i).innerHTML = pictures[i - 1].title;
                     /*let desc = pictures[i-1].description;
                     let limit = desc.substring(0, 190);*/
-                    
                     document.getElementById("image-author" + i).innerHTML = pictures[i - 1].author;
                     document.getElementById("image-date" + i).innerHTML = pictures[i - 1].date;
                 }
