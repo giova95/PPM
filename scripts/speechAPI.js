@@ -136,9 +136,7 @@ request.onload = function () {
                     document.getElementById("image-title" + i).innerHTML = pictures[i - 1].title;
                     /*let desc = pictures[i-1].description;
                     let limit = desc.substring(0, 190);*/
-                    document.getElementById("image-description" + i).innerHTML = pictures[i - 1].description;
-                    document.getElementById("image-author" + i).innerHTML = pictures[i - 1].author;
-                    document.getElementById("image-year" + i).innerHTML = pictures[i - 1].date;
+                    document.getElementById("image-tag" + i).innerHTML = pictures[i - 1].description;
                 }
             }
             else {
