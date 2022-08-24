@@ -114,9 +114,9 @@ request.onload = function () {
                         $('#image-full').fadeIn("slow");// decidere se fadeIn, show o slideDown
                         $('#item-container').fadeTo("slow", 0.2);
                         $('.navbar').fadeTo("slow", 0.2);
-                    }
                 }
-
+            }
+            
                 escfull.addEventListener("mouseover", overXred);
                 function overXred() {
                     $("#x-full").attr('src', 'img/x-red.png');
