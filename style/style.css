@@ -126,47 +126,28 @@ input [tipo = checkbox] :checked ~ #searchblock ul{
 }
 
 
-.image-info, .image-info2, .image-info3{
-    position: absolute;
+.image-info{
+    position:relative;
     max-width: 380px;
-    max-height: 117px;
-    top: 334px;
+    max-height: 200px;
+    bottom: 56px;
     padding-left: 11px;
     background-color: white;
     opacity: 0;
     border-radius: 0px 15px 0px 0px;
 }
 
-.image-info4, .image-info5, .image-info6{
-  position: absolute;
-  max-width: 380px;
-  max-height: 200px;
-  top: 664px;
-  padding-left: 11px;
-  background-color: white;
-  opacity: 0;
-  border-radius: 0px 15px 0px 0px;
-}
 
-.image-info7, .image-info8, .image-info9{
-position: absolute;
-max-width: 380px;
-max-height: 200px;
-top: 994px;
-padding-left: 11px;
-background-color: white;
-opacity: 0;
-border-radius: 0px 15px 0px 0px;
-}
-
-.image-info:hover, .image-info2:hover, .image-info3:hover,
-.image-info4:hover, .image-info5:hover, .image-info6:hover,
-.image-info7:hover, .image-info8:hover, .image-info9:hover{
+.image-info:hover {
   animation: 
   fadeIn 
   500ms 
   ease-out
   forwards;
+}
+
+.image-description{
+  display: none;
 }
 
 #image-full{
