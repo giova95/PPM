@@ -107,13 +107,18 @@ req.onload = function () {
                     if (item) {
                         item.addEventListener("click", itemClick);
                         function itemClick() {
-                            document.getElementById("full-title").innerHTML = pictures[i - 1].title;
-                            document.getElementById("author").innerHTML = 'Di ' + pictures[i - 1].author + ' completato nel ' + pictures[i - 1].date;
-                            document.getElementById("full-description").innerHTML = pictures[i - 1].description;
-                            $('#full').attr('src', pictures[i - 1].src);
-                            $('#image-full').fadeIn("slow");// decidere se fadeIn, show o slideDown
-                            $('#item-container').fadeTo("slow", 0.2);
-                            $('.navbar').fadeTo("slow", 0.2);
+                            title = document.getElementById("full-title");
+                            author = document.getElementById("author");
+                            desc = document.getElementById("full-description");
+                            if(title && author && desc){
+                                title.innerHTML = pictures[i - 1].title;
+                                author.innerHTML = 'Di ' + pictures[i - 1].author + ' completato nel ' + pictures[i - 1].date;
+                                desc.innerHTML = pictures[i - 1].description;
+                                $('#full').attr('src', pictures[i - 1].src);
+                                $('#image-full').fadeIn("slow");// decidere se fadeIn, show o slideDown
+                                $('#item-container').fadeTo("slow", 0.2);
+                                $('.navbar').fadeTo("slow", 0.2);
+                            }
                         }
                     }
                 }
@@ -134,11 +139,14 @@ req.onload = function () {
                 }
 
                 for (let i = 1; i <= N; i++) {
-                    document.getElementById("image-title" + i).innerHTML = pictures[i - 1].title;
-                    /*let desc = pictures[i-1].description;
-                    let limit = desc.substring(0, 190);*/
-                    document.getElementById("image-author" + i).innerHTML = pictures[i - 1].author;
-                    document.getElementById("image-date" + i).innerHTML = pictures[i - 1].date;
+                    title = document.getElementById("image-title"+i);
+                    author = document.getElementById("image-author"+i);
+                    date = document.getElementById("image-date" + i);
+                    if(title && author && date){
+                        title.innerHTML = pictures[i - 1].title;
+                        author.innerHTML = pictures[i - 1].author;
+                        date.innerHTML = pictures[i - 1].date;
+                    }
                 }
             }
             else {
