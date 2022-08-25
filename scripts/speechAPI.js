@@ -14,6 +14,12 @@ req.onload = function () {
 
             console.log(" DOM caricato");
 
+            $(document).ready(function() {
+                for (let i = 1; i <= N; i++){
+                    $("#image-main"+i).attr('src', pictures[i - 1].src);
+                }
+              });
+
             const searchForm = document.querySelector("#search-form");
             const formInput = document.querySelector("#search-form input");
             const micBtn = document.querySelector("#search-form button");
