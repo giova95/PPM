@@ -1,0 +1,54 @@
+<html>
+
+<head>
+    <title>MyAPP - Ricerca Vocale con tag</title>
+    <link rel="stylesheet" href="style/style.css" type="text/css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+    </style>
+    <script type="text/javascript" src="scripts/speechAPI.js"></script>
+    <script src="scripts/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container-navbar">
+                <ul class=menu>
+                    <li><a href="index.html" id="logo">appLogo</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="main-container">
+        <h2 class="text-center">Inserisci i dati del Quadro</h2>
+        <form action="http://localhost:3307/new-picture" method="POST">
+            <div class="form-group">
+                <label>TITOLO: </label>
+                <input type="text" class="form-control" id="form-title" placeholder="Inserire titolo" name="title">
+            </div>
+            <div class="form-group">
+                <label>AUTORE: </label>
+                <input type="text" class="form-control" id="form-author" placeholder="Inserire autore" name="author">
+            </div>
+            <div class="form-group">
+                <label>DESCRIZIONE: </label>
+                <input type="text" class="form-control" id="form-desc" placeholder="Inserire descrizione" name="desc">
+            </div>
+            <div class="form-group">
+                <label>ANNO: </label>
+                <input type="text" class="form-control" id="form-date" placeholder="Inserire anno" name="date">
+            </div>
+            <div class="form-group">
+                <label>FOTO: </label>
+                <input type="text" class="form-control" id="form-image" placeholder="Inserire foto" name="image">
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+
+    </div>
+</body>
+</html>

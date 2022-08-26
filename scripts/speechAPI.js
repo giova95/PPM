@@ -23,7 +23,6 @@ req.onload = function () {
             const searchForm = document.querySelector("#search-form");
             const formInput = document.querySelector("#search-form input");
             const micBtn = document.querySelector("#search-form button");
-            const micIcon = document.querySelector("#mic1");
             var N = pictures.length;
             const search = document.querySelector(".vocal-search");
             const esc = document.querySelector("#x-icon");
@@ -106,6 +105,9 @@ req.onload = function () {
                 function resultSpeechRecognition(event) {
                     const transcript = event.results[0][0].transcript;
                     formInput.value = transcript;
+                    setTimeout(() => {
+                        searchForm.submit();
+                    }, 750);
                 }
 
                 for (let i = 1; i <= N; i++) {
