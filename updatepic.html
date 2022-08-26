@@ -16,11 +16,46 @@
             <div class="container-navbar">
                 <ul class=menu>
                     <li><a href="index.html" id="logo">appLogo</a></li>
+                    <li><a href="newpic.html" class="label">Inserisci un Quadro</a></li>
+                    <li><a href="updatepic.html" class="label">Modifica un Quadro</a></li>
                 </ul>
             </div>
-
         </nav>
     </header>
+    <div class="form-container">
+        <h2 class="text-center">Inserisci i dati del Quadro da modificare</h2>
+        <form action="http://localhost:3307/update-picture" method="POST">
+            <div class="form-group">
+                <label>ID: </label>
+                <input type="text" class="form-control" id="form-id" placeholder="Inserire titolo" name="id">
+            </div>
+            <div class="form-group">
+                <label>TITOLO: </label>
+                <input type="text" class="form-control" id="form-title" placeholder="Inserire titolo" name="title">
+            </div>
+            <div class="form-group">
+                <label>AUTORE: </label>
+                <input type="text" class="form-control" id="form-author" placeholder="Inserire autore" name="author">
+            </div>
+            <div class="form-group">
+                <label>DESCRIZIONE: </label>
+                <input type="text" class="form-control" id="form-desc" placeholder="Inserire descrizione" name="description">
+            </div>
+            <div class="form-group">
+                <label>ANNO: </label>
+                <input type="text" class="form-control" id="form-date" placeholder="Inserire anno" name="date">
+            </div>
+            <div class="form-group">
+                <label>FOTO: </label>
+                <input type="text" class="form-control" id="form-image" placeholder="Inserire foto" name="src">
+            </div>
+            <div class="form-button">
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <!-- TODO: REDIRECT A PAGINA INIZIALE-->
+                <!-- TODO: AGGIUNGERE SUGGERIMENTI SULL'INSERIMENTO FORM-->
+            </div>
+        </form>
+    </div>
     <footer> <!--TODO Da ristemare per quando si zoomma--->
         <div class="footer-blurb">
             <div class="logo-footer">

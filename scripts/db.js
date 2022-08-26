@@ -42,6 +42,7 @@ app.post('/new-picture', (req, res)=>{
                 res.send('Nuova Opera aggiunta');
             }
             else{
+                res.send('errore nel caricamento del Quadro');
                 console.log(err);
             }
         })
@@ -63,7 +64,7 @@ app.delete('/:id', (req,res)=>{
     })
 })
 
-app.put('/update-picture', (req,res)=>{
+app.post('/update-picture', (req,res)=>{
     pool.getConnection((err, connection)=>{
         if(err) throw err
         console.log(`connesso con id ${connection.threadId}`);
@@ -73,9 +74,10 @@ app.put('/update-picture', (req,res)=>{
             connection.release();
 
             if(!err){
-                res.send(`L'Opera ${req.body.name} e' stata aggiunta`);
+                res.send(`L'opera ${[req.body.title]} e' stata aggiornata`);
             }
             else{
+                res.send(`Errore nell' aggiornamento dell'opera`);
                 console.log(err);
             } 
         })

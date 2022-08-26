@@ -16,12 +16,14 @@
             <div class="container-navbar">
                 <ul class=menu>
                     <li><a href="index.html" id="logo">appLogo</a></li>
+                    <li><a href="newpic.html" class="label">Inserisci un Quadro</a></li>
+                    <li><a href="updatepic.html" class="label">Modifica un Quadro</a></li>
                 </ul>
             </div>
         </nav>
     </header>
 
-    <div class="main-container">
+    <div class="form-container">
         <h2 class="text-center">Inserisci i dati del Quadro</h2>
         <form action="http://localhost:3307/new-picture" method="POST">
             <div class="form-group">
@@ -34,7 +36,7 @@
             </div>
             <div class="form-group">
                 <label>DESCRIZIONE: </label>
-                <input type="text" class="form-control" id="form-desc" placeholder="Inserire descrizione" name="desc">
+                <input type="text" class="form-control" id="form-desc" placeholder="Inserire descrizione" name="description">
             </div>
             <div class="form-group">
                 <label>ANNO: </label>
@@ -42,13 +44,24 @@
             </div>
             <div class="form-group">
                 <label>FOTO: </label>
-                <input type="text" class="form-control" id="form-image" placeholder="Inserire foto" name="image">
+                <input type="text" class="form-control" id="form-image" placeholder="Inserire foto" name="src">
             </div>
-            <div class="form-group">
+            <div class="form-button">
                 <button type="submit" class="btn btn-primary">Submit</button>
+                <!-- TODO: REDIRECT A PAGINA INIZIALE-->
+                <!-- TODO: AGGIUNGERE SUGGERIMENTI SULL'INSERIMENTO FORM-->
             </div>
         </form>
 
     </div>
+    <footer> <!--TODO Da ristemare per quando si zoomma--->
+        <div class="footer-blurb">
+            <div class="logo-footer">
+                <a href="#">
+                    <img src="https://via.placeholder.com/100">
+                </a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

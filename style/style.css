@@ -1,3 +1,4 @@
+/* START index.html*/ 
  /*START General Rules*/
  * {
   margin: 0;
@@ -205,3 +206,38 @@ to{
 
 
 /* END animazioni*/
+
+/* END index.html*/ 
+
+/* START newpic.html */
+.form-container{
+  max-width: 1080px;
+  margin: 117 auto;
+  border: 1px solid #000;
+  border-radius: 20px;
+  background-color: #f5f5f5;
+}
+
+.text-center{
+  text-align: center;
+  padding-top: 10px;
+}
+
+.form-group {
+  display: grid;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.form-button {
+  padding-top: 25px;
+  max-width: 1080px;
+  margin: 0 auto 25;
+  display: table;
+}
+
+.btn.btn-primary {
+  height: 23px;
+  width: 80px;
+}
