@@ -8,6 +8,13 @@
     </style>
     <script type="text/javascript" src="scripts/speechAPI.js"></script>
     <script src="scripts/jquery-3.6.0.min.js"></script>
+    <!-- Load TensorFlow.js. This is required to use coco-ssd model. -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"> </script>
+    <!-- Load the coco-ssd model. -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"> </script>
+    
+    
+
 </head>
 
 <body>
@@ -140,4 +147,6 @@
         </div>
     </footer>
 </body>
+
+<script type="text/javascript" src="scripts/AI.js"></script>
 </html>
