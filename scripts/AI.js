@@ -1,16 +1,19 @@
 
-    // Notice there is no 'import' statement. 'cocoSsd' and 'tf' is
-    // available on the index-page because of the script tag above.
+const pictures = req.response;
 
-    const img = document.getElementById('image-main7');
+let n = pictures.length;
+for (let i = 1; i <= n; i++) {
+    let img = document.getElementById('image-main' + i);
 
     // Load the model.
     cocoSsd.load().then(model => {
         // detect objects in the image.
         model.detect(img).then(predictions => {
-            console.log(predictions.length);
-            for(let i = 1; i<=predictions.lenght; i++){
-                console.log(predictions[0].class);
+            let k = predictions.length;
+
+            for (s = 0; s < k; s++) {
+                console.log(predictions[s].class);
             }
         });
     });
+}
