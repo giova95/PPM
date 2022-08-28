@@ -5,24 +5,24 @@ const bodyParser = require('body-parser');
 const app = express();
 const port = process.env.PORT || 3307;
 
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-const pool  = mysql.createPool({
-    connectionLimit : 10,
-    host            : 'localhost',
-    user            : 'root',
-    password        : '',
-    database        : 'myApp'
+const pool = mysql.createPool({
+    connectionLimit: 10,
+    host: 'localhost',
+    user: 'root',
+    password: '',
+    database: 'myApp'
 })
 
-app.get('',(req,res) => {
+app.get('', (req, res) => {
     pool.getConnection((err, connection) => {
-        if(err) throw err
+        if (err) throw err
         console.log('connessione a ID ' + connection.threadId)
-        connection.query('SELECT * from picture', (err, rows)=>{
+        connection.query('SELECT * from picture', (err, rows) => {
             connection.release();
-            if(!err){
+            if (!err) {
                 res.send(rows);
             } else {
                 console.log(err);
@@ -32,16 +32,15 @@ app.get('',(req,res) => {
     })
 })
 
-app.post('/new-picture', (req, res)=>{
-    pool.getConnection((err, connection)=>{
-        if(err) throw err  
+app.post('/new-picture', redirect, (req, res) => {
+    pool.getConnection((err, connection) => {
         const params = req.body;
-        connection.query('INSERT INTO picture SET ?', params,(err, rows)=>{
+        connection.query('INSERT INTO picture SET ?', params, (err, rows) => {
             connection.release();
-            if(!err){
+            if (!err) {
                 res.send('Nuova Opera aggiunta');
             }
-            else{
+            else {
                 res.send('errore nel caricamento del Quadro');
                 console.log(err);
             }
@@ -49,39 +48,52 @@ app.post('/new-picture', (req, res)=>{
     })
 });
 
-app.delete('/:id', (req,res)=>{
-    pool.getConnection((err, connection)=>{
-        if(err) throw err
-        connection.query('DELETE FROM picture WHERE id = ?', [req.params.id], (err,rows)=>{
+function redirect(req, res) {
+    res.writeHead(302, {
+        'Location': 'http://localhost:8080/PPM-main/newpic.html'
+    });
+    res.end();
+}
+
+app.delete('/:id', (req, res) => {
+    pool.getConnection((err, connection) => {
+        if (err) throw err
+        connection.query('DELETE FROM picture WHERE id = ?', [req.params.id], (err, rows) => {
             connection.release();
-            if(!err){
+            if (!err) {
                 res.send(`l'opera con id ${[req.params.id]} e' stata rimossa`);
             }
-            else{
+            else {
                 console.log(err);
             }
         })
     })
 })
 
-app.post('/update-picture', (req,res)=>{
-    pool.getConnection((err, connection)=>{
-        if(err) throw err
+app.post('/update-picture', redirect2, (req, res) => {
+    pool.getConnection((err, connection) => {
+        if (err) throw err
         console.log(`connesso con id ${connection.threadId}`);
-        const {id, title, author, description, date, tags, src} = req.body;
-        
-        connection.query('UPDATE picture SET title = ?, author = ?, description = ?, date = ?, tags = ?, src = ? WHERE id = ?', [title, author, description, date, tags, src, id], (err,rows)=>{
+        const { id, title, author, description, date, tags, src } = req.body;
+
+        connection.query('UPDATE picture SET title = ?, author = ?, description = ?, date = ?, tags = ?, src = ? WHERE id = ?', [title, author, description, date, tags, src, id], (err, rows) => {
             connection.release();
 
-            if(!err){
+            if (!err) {
                 res.send(`L'opera ${[req.body.title]} e' stata aggiornata`);
             }
-            else{
+            else {
                 res.send(`Errore nell' aggiornamento dell'opera`);
                 console.log(err);
-            } 
+            }
         })
     })
-})
+});
+function redirect2(req, res) {
+    res.writeHead(302, {
+        'Location': 'http://localhost:8080/PPM-main/updatepic.html'
+    });
+    res.end();
+}
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
