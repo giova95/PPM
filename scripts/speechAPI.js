@@ -4,6 +4,7 @@ req.open('GET', urlApi);
 req.responseType = 'json';
 req.send();
 
+
 req.onload = function () {
     const pictures = req.response;
     console.log(pictures);

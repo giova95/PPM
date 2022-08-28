@@ -1,7 +1,8 @@
 
-const pictures = req.response;
+const pictures1 = req.response;
 
-let n = pictures.length;
+let n = pictures1.length;
+
 for (let i = 1; i <= n; i++) {
     let img = document.getElementById('image-main' + i);
 
@@ -10,10 +11,14 @@ for (let i = 1; i <= n; i++) {
         // detect objects in the image.
         model.detect(img).then(predictions => {
             let k = predictions.length;
-
+            
+            
             for (s = 0; s < k; s++) {
                 console.log(predictions[s].class);
+                pictures1[i-1].tags= predictions[s].class;
             }
         });
     });
 }
+
+console.log(pictures1);
