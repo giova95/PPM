@@ -1,10 +1,12 @@
 
-const pictures1 = req.response;
+const pictures = req.response;
 
-let n = pictures1.length;
+let n = pictures.length;
 
-for (let i = 1; i <= n; i++) {
-    let img = document.getElementById('image-main' + i);
+window.onload = function () {
+
+    for (let i = 1; i <= n; i++) {
+        let img = document.getElementById('image-main' + i);
 
     // Load the model.
     cocoSsd.load().then(model => {
@@ -17,8 +19,9 @@ for (let i = 1; i <= n; i++) {
                 console.log(predictions[s].class);
                 pictures1[i-1].tags= predictions[s].class;
             }
-        })
-    })
-};
+        });
+    });
+}
 
-console.log(pictures1);
+    console.log(pictures);
+};
