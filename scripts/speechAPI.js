@@ -15,11 +15,11 @@ req.onload = function () {
 
             console.log(" DOM caricato");
 
-            $(document).ready(function() {
-                for (let i = 1; i <= N; i++){
-                    $("#image-main"+i).attr('src', pictures[i - 1].src);
+            $(document).ready(function () {
+                for (let i = 1; i <= N; i++) {
+                    $("#image-main" + i).attr('src', pictures[i - 1].src);
                 }
-              });
+            });
 
             const searchForm = document.querySelector("#search-form");
             const formInput = document.querySelector("#search-form input");
@@ -99,17 +99,22 @@ req.onload = function () {
                     rec = false;
                     formInput.focus();
                     console.log("Riconoscimento vocale disattivato");
-
+                    var tagsrc = document.searchForm.q.value;
+                    console.log(tagsrc);
+                    console.log("ziocnae");
+                    for (let i = 1; i <= N; i++) {
+                        if (tagsrc != pictures1[i - 1].tags) {
+                            $('#item' + i).css('visibility', 'hidden');
+                        }
+                    }
                 }
+
 
                 recognition.addEventListener("result", resultSpeechRecognition);
                 function resultSpeechRecognition(event) {
                     const transcript = event.results[0][0].transcript;
                     formInput.value = transcript;
-                    setTimeout(() => {
-                        searchForm.submit();
-                    }, 750);
-                }
+                };
 
                 for (let i = 1; i <= N; i++) {
                     item = document.querySelector("#item" + i);
@@ -119,7 +124,7 @@ req.onload = function () {
                             title = document.getElementById("full-title");
                             author = document.getElementById("author");
                             desc = document.getElementById("full-description");
-                            if(title && author && desc){
+                            if (title && author && desc) {
                                 title.innerHTML = pictures[i - 1].title;
                                 author.innerHTML = 'Di ' + pictures[i - 1].author + ' completato nel ' + pictures[i - 1].date;
                                 desc.innerHTML = pictures[i - 1].description;
@@ -148,10 +153,10 @@ req.onload = function () {
                 }
 
                 for (let i = 1; i <= N; i++) {
-                    title = document.getElementById("image-title"+i);
-                    author = document.getElementById("image-author"+i);
+                    title = document.getElementById("image-title" + i);
+                    author = document.getElementById("image-author" + i);
                     date = document.getElementById("image-date" + i);
-                    if(title && author && date){
+                    if (title && author && date) {
                         title.innerHTML = pictures[i - 1].title;
                         author.innerHTML = pictures[i - 1].author;
                         date.innerHTML = pictures[i - 1].date;

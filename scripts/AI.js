@@ -17,8 +17,8 @@ for (let i = 1; i <= n; i++) {
                 console.log(predictions[s].class);
                 pictures1[i-1].tags= predictions[s].class;
             }
-        });
-    });
-}
+        })
+    })
+};
 
 console.log(pictures1);
