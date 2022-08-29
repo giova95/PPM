@@ -105,7 +105,7 @@ req.onload = function () {
                     console.log("ziocnae");
                     for (let i = 1; i <= N; i++) {
                         if (tagsrc != pictures1[i - 1].tags) {
-                            $('#item' + i).css('visibility', 'hidden');
+                            $('#item' + i).css('display', 'none');
                         }
                     }
                 }

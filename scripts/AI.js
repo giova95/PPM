@@ -1,7 +1,7 @@
 
-const pictures = req.response;
+const pictures1 = req.response;
 
-let n = pictures.length;
+let n = pictures1.length;
 
 window.onload = function () {
 
