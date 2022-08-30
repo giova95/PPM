@@ -46,9 +46,9 @@ req.onload = function () {
 
 
 
-                for (let l = 1; l <= N; l++) {
+                for (let i = 1; i <= N; i++) {
                     var div = document.createElement("div");
-                    div.id = "item" + l;
+                    div.id = "item" + i;
                     document.getElementById("item-container").appendChild(div);
 
                     var a = document.createElement("a");
@@ -56,7 +56,7 @@ req.onload = function () {
                     div.appendChild(a);
 
                     var img = document.createElement("img");
-                    img.id = "image-main" + l;
+                    img.id = "image-main" + i;
                     img.src = " ";
                     img.height = "300";
                     img.width = "400";
@@ -68,19 +68,19 @@ req.onload = function () {
 
                     var h3 = document.createElement("h3");
                     h3.className = "image-title";
-                    h3.id = "image-title" + l;
+                    h3.id = "image-title" + i;
                     h3.innerHTML = "IMAGE TITLE";
                     info.appendChild(h3);
 
                     var h4 = document.createElement("h4");
                     h4.className = "image-author";
-                    h4.id = "image-author" + l;
+                    h4.id = "image-author" + i;
                     h4.innerHTML = "AUTHOR";
                     info.appendChild(h4);
 
                     var h6 = document.createElement("h6");
                     h6.className = "image-date";
-                    h6.id = "image-date" + l;
+                    h6.id = "image-date" + i;
                     h6.innerHTML = "DATE";
                     info.appendChild(h6);
                 }
@@ -107,7 +107,7 @@ req.onload = function () {
                 }
 
 
-                search.addEventListener("click", searchClick);  //TODO fare l'animazione
+                search.addEventListener("click", searchClick);  //TODO fare i'animazione
                 function searchClick() {
                     $('.menu').css({
                         'visibility': 'hidden'
