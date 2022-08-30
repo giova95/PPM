@@ -42,6 +42,58 @@ req.onload = function () {
                 recognition.continuos = true;
                 recognition.lang = "it-IT"
 
+
+
+
+
+                for (let l = 1; l <= N; l++) {
+                    var div = document.createElement("div");
+                    div.id = "item" + l;
+                    document.getElementById("item-container").appendChild(div);
+
+                    var a = document.createElement("a");
+                    a.href = "#";
+                    div.appendChild(a);
+
+                    var img = document.createElement("img");
+                    img.id = "image-main" + l;
+                    img.src = " ";
+                    img.height = "300";
+                    img.width = "400";
+                    a.appendChild(img);
+
+                    var info = document.createElement("div");
+                    info.className = "image-info";
+                    div.appendChild(info);
+
+                    var h3 = document.createElement("h3");
+                    h3.className = "image-title";
+                    h3.id = "image-title" + l;
+                    h3.innerHTML = "IMAGE TITLE";
+                    info.appendChild(h3);
+
+                    var h4 = document.createElement("h4");
+                    h4.className = "image-author";
+                    h4.id = "image-author" + l;
+                    h4.innerHTML = "AUTHOR";
+                    info.appendChild(h4);
+
+                    var h6 = document.createElement("h6");
+                    h6.className = "image-date";
+                    h6.id = "image-date" + l;
+                    h6.innerHTML = "DATE";
+                    info.appendChild(h6);
+                }
+
+
+
+
+
+
+
+
+
+
                 micBtn.addEventListener("click", micBtnClick);
                 function micBtnClick() {
                     if (!rec) {
@@ -53,6 +105,7 @@ req.onload = function () {
                     }
                     console.log(rec);
                 }
+
 
                 search.addEventListener("click", searchClick);  //TODO fare l'animazione
                 function searchClick() {
