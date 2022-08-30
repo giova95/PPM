@@ -79,6 +79,12 @@ req.onload = function () {
                     h6.id = "image-date" + i;
                     h6.innerHTML = "DATE";
                     info.appendChild(h6);
+
+                    var h7 = document.createElement("h7");
+                    h7.className = "image-tags";
+                    h7.id = "image-tags" + i;
+                    h7.innerHTML = "TAGS";
+                    info.appendChild(h7);
                 }
 
                 micBtn.addEventListener("click", micBtnClick);
@@ -218,6 +224,9 @@ req.onload = function () {
                     
                     } 
                 }
+
+                m = document.getElementById("image-tags1");
+                m.innerHTML("porcodio")
                 
             }
             else {
