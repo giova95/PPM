@@ -26,6 +26,11 @@ window.onload = function () {
             
 
             for (let i = 1; i <= n; i++) {
+                t = document.getElementById("image-tags" + i);
+                
+                if(t) {
+                    t.innerHTML = "Tag: " + pictures[i-1].tags;
+                }
                 item = document.querySelector("#item" + i);
                 if (item) {
                     item.addEventListener("click", itemClick);
