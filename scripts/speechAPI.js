@@ -42,10 +42,6 @@ req.onload = function () {
                 recognition.continuos = true;
                 recognition.lang = "it-IT"
 
-
-
-
-
                 for (let i = 1; i <= N; i++) {
                     var div = document.createElement("div");
                     div.id = "item" + i;
@@ -84,15 +80,6 @@ req.onload = function () {
                     h6.innerHTML = "DATE";
                     info.appendChild(h6);
                 }
-
-
-
-
-
-
-
-
-
 
                 micBtn.addEventListener("click", micBtnClick);
                 function micBtnClick() {
@@ -216,8 +203,9 @@ req.onload = function () {
                         date.innerHTML = pictures[i - 1].date;
                     }
                 }
-                
-                searchForm.addEventListener("keypress", function (e) {
+
+                searchForm.addEventListener("keypress", enterSearch(e));
+                function enterSearch(e) {
                     if (e.key === 'Enter') {
                         var tagsrc = document.searchForm.q.value;
                         console.log(tagsrc);
@@ -227,8 +215,10 @@ req.onload = function () {
                                 $('#item' + i).css('display', 'none');
                             }
                         }
-                    }
-                });
+                    
+                    } 
+                }
+                
             }
             else {
                 console.log("Il tuo Browser non supporta il riconoscimento vocale")
