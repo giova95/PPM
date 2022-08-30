@@ -104,7 +104,7 @@ req.onload = function () {
                     console.log(tagsrc);
                     console.log("ziocnae");
                     for (let i = 1; i <= N; i++) {
-                        if (tagsrc != pictures1[i - 1].tags) {
+                        if (tagsrc != pictures[i - 1].tags) {
                             $('#item' + i).css('display', 'none');
                         }
                     }
@@ -163,6 +163,19 @@ req.onload = function () {
                         date.innerHTML = pictures[i - 1].date;
                     }
                 }
+                
+                searchForm.addEventListener("keypress", function (e) {
+                    if (e.key === 'Enter') {
+                        var tagsrc = document.searchForm.q.value;
+                        console.log(tagsrc);
+                        console.log("ziocnae");
+                        for (let i = 1; i <= N; i++) {
+                            if (tagsrc != pictures[i - 1].tags) {
+                                $('#item' + i).css('display', 'none');
+                            }
+                        }
+                    }
+                });
             }
             else {
                 console.log("Il tuo Browser non supporta il riconoscimento vocale")
