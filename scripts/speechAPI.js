@@ -48,15 +48,15 @@ req.onload = function () {
                     div.id = "item" + i;
                     document.getElementById("item-container").appendChild(div);
 
+  
                     var a = document.createElement("a");
                     a.href = "#";
                     div.appendChild(a);
 
                     var img = document.createElement("img");
+                    img.className = "image-main";
                     img.id = "image-main" + i;
                     img.src = " ";
-                    img.height = "300";
-                    img.width = "400";
                     a.appendChild(img);
 
                     var info = document.createElement("div");
@@ -87,6 +87,11 @@ req.onload = function () {
                     h7.innerHTML = "TAGS";
                     info.appendChild(h7);
                     */
+
+                    var infoIcon = document.createElement("img");
+                    infoIcon.className = "infoIcon";
+                    img.src = "img/info.png";
+                    a.appendChild(infoIcon);
                 }
 
                 micBtn.addEventListener("click", micBtnClick);

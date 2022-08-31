@@ -103,6 +103,11 @@ top: 37px;
 left: 10px;
 }
 
+.image-main{
+  height: 300px;
+  width: 400px;
+}
+
 /*END Nuvbar Rules*/
 
 /* START Main-Container*/
@@ -176,6 +181,15 @@ left: 1010px;
 cursor: pointer;
 }
 
+.infoIcon {
+  z-index: -1;
+  height: 20px;
+  width: 20px;
+
+  
+  top: 0;
+  left: 0;
+}
 
 /* END Main-Container */
 
@@ -259,7 +273,20 @@ to{
 
 /*START media query*/
 
+@media screen and (max-width: 818px){
+  .image-main {
+    width: 100%;
+    height: 100%;
+  }
+
+
+}
+
 @media screen and (max-width: 768px){
+  .image-info:hover{
+    animation: none;
+  }
+
   .menu li {
     display: none;
   }
@@ -275,12 +302,17 @@ to{
     max-height: 40px;
   }
   
-  #item-container {
-    display: block;
-    max-width: none;
-    flex-wrap: unset;
-    justify-content: center;
-  }
+
+  #item-container img:hover{
+    -webkit-transform:scale(1); /*Webkit: Scale up image to 1.2x original size*/
+    -moz-transform:scale(1); /*Mozilla scale version*/
+    -o-transform:scale(1); /*Opera scale version*/
+    box-shadow:0px 0px; /*CSS3 shadow: 30px blurred shadow all around image*/
+    -webkit-box-shadow:0px 0px; /*Safari shadow version*/
+    -moz-box-shadow:0px 0px ; /*Mozilla shadow version*/
+    }
+
+
   
 
 }
