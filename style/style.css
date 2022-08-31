@@ -134,9 +134,7 @@ margin-top: 70px;
   -moz-box-shadow:0px 0px 50px gray; /*Mozilla shadow version*/
   }
 
-#item1, #item2, #item3, 
-#item4, #item5, #item6,
-#item7, #item8, #item9{
+.item{
 margin-bottom: 30px;
 cursor: pointer;
 }
@@ -146,7 +144,7 @@ cursor: pointer;
   position:relative;
   max-width: 380px;
   max-height: 200px;
-  bottom: 71px;
+  bottom: 53px;
   padding-left: 11px;
   background-color: white;
   opacity: 0;
@@ -256,3 +254,35 @@ to{
   height: 23px;
   width: 80px;
 }
+/* END newpic.html */
+
+
+/*START media query*/
+
+@media screen and (max-width: 768px){
+  .menu li {
+    display: none;
+  }
+  .menu #logo {
+    display: block;
+  }
+
+  #search {
+    display: none;
+  }
+
+  #mic2 {
+    max-height: 40px;
+  }
+  
+  #item-container {
+    display: block;
+    max-width: none;
+    flex-wrap: unset;
+    justify-content: center;
+  }
+  
+
+}
+
+/*END media query*/

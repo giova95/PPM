@@ -44,6 +44,7 @@ req.onload = function () {
 
                 for (let i = 1; i <= N; i++) {
                     var div = document.createElement("div");
+                    div.className = "item";
                     div.id = "item" + i;
                     document.getElementById("item-container").appendChild(div);
 
@@ -80,11 +81,12 @@ req.onload = function () {
                     h6.innerHTML = "DATE";
                     info.appendChild(h6);
 
-                    var h7 = document.createElement("h7");
+               /*     var h7 = document.createElement("h7");
                     h7.className = "image-tags";
                     h7.id = "image-tags" + i;
                     h7.innerHTML = "TAGS";
                     info.appendChild(h7);
+                    */
                 }
 
                 micBtn.addEventListener("click", micBtnClick);

@@ -22,32 +22,27 @@ window.onload = function () {
 
                 }
             });
-            
-            
 
-            for (let i = 1; i <= n; i++) {
-                t = document.getElementById("image-tags" + i);
-                if(t){
-                    if(pictures[i - 1].tags)
-                        t.innerHTML = "Tag: " + pictures[i-1].tags;
-                    else
-                        t.innerHTML = "Tag: ";
-                }
-
-                item = document.querySelector("#item" + i);
-                if (item) {
-                    item.addEventListener("click", itemClick);
-                    function itemClick() {
-                        tags = document.getElementById("tags");
-                        if(tags){
-                            if(pictures[i - 1].tags)
-                                tags.innerHTML ="Tag: " + pictures[i-1].tags;
-                            else
-                                tags.innerHTML ="Tag: ";
-                        }
+            item = document.querySelector("#item" + i);
+            if (item) {
+                item.addEventListener("click", itemClick);
+                function itemClick() {
+                    tags = document.getElementById("tags");
+                    if (tags) {
+                        if (pictures[i - 1].tags)
+                            tags.innerHTML = "Tag: " + pictures[i - 1].tags;
+                        else
+                            tags.innerHTML = "Tag: ";
                     }
                 }
             }
+
+         /*   let t = document.getElementById("image-tags" + i);
+            if(t) {
+                t.innerHTML = "Tag: " + pictures[i - 1].tags;
+            }
+            */
+
         });
     }
 
