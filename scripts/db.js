@@ -38,12 +38,14 @@ app.post('/new-picture', redirect, (req, res) => {
         connection.query('INSERT INTO picture SET ?', params, (err, rows) => {
             connection.release();
             if (!err) {
+                console.log('hvbhbh');
                 res.send('Nuova Opera aggiunta');
             }
             else {
                 res.send('errore nel caricamento del Quadro');
                 console.log(err);
             }
+            res.end();
         })
     })
 });
@@ -52,7 +54,6 @@ function redirect(req, res) {
     res.writeHead(302, {
         'Location': 'http://localhost:8080/PPM-main/newpic.html'
     });
-    res.end();
 }
 
 app.delete('/:id', (req, res) => {
