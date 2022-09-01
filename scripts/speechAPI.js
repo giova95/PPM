@@ -48,10 +48,14 @@ req.onload = function () {
                     div.id = "item" + i;
                     document.getElementById("item-container").appendChild(div);
 
+                    var divImg = document.createElement("div");
+                    divImg.className = "img-container";
+                    div.appendChild(divImg);
+
   
                     var a = document.createElement("a");
                     a.href = "#";
-                    div.appendChild(a);
+                    divImg.appendChild(a);
 
                     var img = document.createElement("img");
                     img.className = "image-main";
@@ -90,8 +94,20 @@ req.onload = function () {
 
                     var infoIcon = document.createElement("img");
                     infoIcon.className = "infoIcon";
-                    img.src = "img/info.png";
-                    a.appendChild(infoIcon);
+                    infoIcon.id = "infoIcon" + i;
+                    infoIcon.src = "img/info.png";
+                    divImg.appendChild(infoIcon);
+                }
+
+                infoIcon.addEventListener("click", clickInfo);
+                function clickInfo() {
+                    $('.image-info').css({
+                        'animation': 'normal'
+                    });
+
+                    $('.infoIcon').css({
+                        'display': 'none'
+                    });
                 }
 
                 micBtn.addEventListener("click", micBtnClick);
