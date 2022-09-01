@@ -13,6 +13,11 @@ color: #000000;
 
 body {
 font-family: 'Rubik', sans-serif;
+--screen : "large";
+}
+
+p::before{
+  content: var(--screen);
 }
 /* END General Rules*/
 
@@ -284,6 +289,10 @@ to{
 
 
 @media screen and (max-width: 1000px){ 
+  body{
+    --screen: "small";
+  }
+
    .image-main {
     width: 100%;
     height: 100%;
