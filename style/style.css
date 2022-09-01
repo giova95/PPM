@@ -12,9 +12,8 @@ a:visited {
 }
 
 body {
-  font-family: 'Rubik', sans-serif;
+font-family: 'Rubik', sans-serif;
 }
-
 /* END General Rules*/
 
 /*START Nuvbar Rules*/
@@ -105,6 +104,7 @@ input [tipo=checkbox] :checked~#searchblock ul {
   left: 10px;
 }
 
+
 /*END Nuvbar Rules*/
 
 /* START Main-Container*/
@@ -170,6 +170,26 @@ input [tipo=checkbox] :checked~#searchblock ul {
   top: 80px;
   left: 1010px;
   cursor: pointer;
+}
+
+.infoIcon {
+  position: relative;
+  z-index: 1;
+  height: 30px;
+  width: 30px;
+  display: none;
+  bottom: 44px;
+  left: 15px;
+}
+
+.img-container{
+  max-width: max-content;
+  max-height: max-content;
+}
+
+.image-main{
+  height: 300px;
+  width: 400px;
 }
 
 
@@ -256,7 +276,7 @@ footer {
 
 /*START media query*/
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px){
   .menu li {
     display: none;
   }
@@ -272,14 +292,11 @@ footer {
   #mic2 {
     max-height: 40px;
   }
-
+  
   #item-container {
     display: block;
-    max-width: none;
-    flex-wrap: unset;
-    justify-content: center;
   }
-
+  
 
 }
 

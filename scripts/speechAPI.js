@@ -29,6 +29,7 @@ req.onload = function () {
             const search = document.querySelector(".vocal-search");
             const esc = document.querySelector("#x-icon");
             const escfull = document.querySelector("#x-full");
+            
 
             const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
@@ -48,19 +49,24 @@ req.onload = function () {
                     div.id = "item" + i;
                     document.getElementById("item-container").appendChild(div);
 
+                    var divImg = document.createElement("div");
+                    divImg.className = "img-container";
+                    div.appendChild(divImg);
+
+  
                     var a = document.createElement("a");
                     a.href = "#";
-                    div.appendChild(a);
+                    divImg.appendChild(a);
 
                     var img = document.createElement("img");
+                    img.className = "image-main";
                     img.id = "image-main" + i;
                     img.src = " ";
-                    img.height = "300";
-                    img.width = "400";
                     a.appendChild(img);
 
                     var info = document.createElement("div");
                     info.className = "image-info";
+                    info.id = "image-info" + i;
                     div.appendChild(info);
 
                     var h3 = document.createElement("h3");
@@ -87,7 +93,15 @@ req.onload = function () {
                     h7.innerHTML = "TAGS";
                     info.appendChild(h7);
                     */
+
+                    var infoIcon = document.createElement("img");
+                    infoIcon.className = "infoIcon";
+                    infoIcon.id = "infoIcon" + i;
+                    infoIcon.src = "img/info.png";
+                    divImg.appendChild(infoIcon);
                 }
+
+
 
                 micBtn.addEventListener("click", micBtnClick);
                 function micBtnClick() {
@@ -166,7 +180,7 @@ req.onload = function () {
                 };
 
                 for (let i = 1; i <= N; i++) {
-                    item = document.querySelector("#item" + i);
+                    item = document.querySelector("#image-main" + i);
                     if (item) {
                         item.addEventListener("click", itemClick);
                         function itemClick() {
@@ -184,6 +198,25 @@ req.onload = function () {
                             }
                         }
                     }
+
+                    iconInf = document.querySelector("#infoIcon" + i);
+                    if (iconInf) {
+                        iconInf.addEventListener("click", iconClick);
+                        function iconClick() {
+                            
+                            $('#image-info' + i).css({
+                                'animation':'fadeIn 500ms ease-out forwards'
+                            });
+
+                            $('#infoIcon'+i).css({
+                                'display': 'none'
+                            });
+                        }
+                    }
+                    
+                    
+
+
                 }
 
                 escfull.addEventListener("mouseover", overXred);
