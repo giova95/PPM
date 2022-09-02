@@ -118,32 +118,29 @@ req.onload = function () {
 
                 search.addEventListener("click", searchClick);  //TODO fare i'animazione
                 function searchClick() {
-                    $('.menu').css({
-                        'visibility': 'hidden'
-                    });
+                    $('.menu').fadeOut('fast');
 
-                    $('.vocal-search').css({
-                        'visibility': 'hidden'
-                    });
+                    $('.vocal-search').fadeOut('fast');
 
                     $('#search-box').css({
                         'visibility': 'visible'
                     });
+
+                    $("#search-box").animate({left: '754'});
                 }
 
                 esc.addEventListener("click", escClick);
                 function escClick() {
-                    $('.menu').css({
-                        'visibility': 'visible'
-                    });
+                    $('.menu').fadeIn('fast');
 
-                    $('.vocal-search').css({
-                        'visibility': 'visible'
-                    });
+                    $('.vocal-search').fadeIn('fast');
 
-                    $('#search-box').css({
+                    $("#search-box").animate({left: '1468px'});
+
+                    setTimeout( unfadebox , 200);
+                    function unfadebox() {$('#search-box').css({
                         'visibility': 'hidden'
-                    });
+                    });}
 
                     for (let i = 1; i <= N; i++){
                         $('#item'+i).css('display', 'block');
