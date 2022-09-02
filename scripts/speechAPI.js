@@ -151,6 +151,7 @@ req.onload = function () {
                 function startSpeechRecognition() {
 
                     $('.mic1').attr('src', 'img/mic-red.png');
+                    $('#mic1-mobile').attr('src', 'img/mic-red-mobile.png');
                     rec = true;
                     formInput.focus();
                     console.log("Riconoscimento vocale attivato");
@@ -162,6 +163,7 @@ req.onload = function () {
                 recognition.addEventListener("end", endSpeechRecognition);
                 function endSpeechRecognition() {
                     $('.mic1').attr('src', 'img/mic.png');
+                    $('#mic1-mobile').attr('src', 'img/mic-mobile.png');
                     rec = false;
                     formInput.focus();
                     console.log("Riconoscimento vocale disattivato");
