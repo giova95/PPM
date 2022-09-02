@@ -1,7 +1,7 @@
 
-const pictures = req.response;
+const picture = req.response;
 
-let n = pictures.length;
+let n = picture.length;
 
 window.onload = function () {
 
@@ -15,10 +15,10 @@ window.onload = function () {
                 let k = predictions.length;
                 for (s = 0; s < k; s++) {
                     console.log(predictions[s].class);
-                    if (pictures[i - 1].tags)
-                        pictures[i - 1].tags = pictures[i - 1].tags + " " + predictions[s].class;
+                    if (picture[i - 1].tags)
+                        picture[i - 1].tags = picture[i - 1].tags + " " + predictions[s].class;
                     else
-                        pictures[i - 1].tags = predictions[s].class;
+                        picture[i - 1].tags = predictions[s].class;
 
                 }
             });
@@ -29,8 +29,8 @@ window.onload = function () {
                 function itemClick() {
                     tags = document.getElementById("tags");
                     if (tags) {
-                        if (pictures[i - 1].tags)
-                            tags.innerHTML = "Tag: " + pictures[i - 1].tags;
+                        if (picture[i - 1].tags)
+                            tags.innerHTML = "Tag: " + picture[i - 1].tags;
                         else
                             tags.innerHTML = "Tag: ";
                     }
@@ -39,12 +39,12 @@ window.onload = function () {
 
          /*   let t = document.getElementById("image-tags" + i);
             if(t) {
-                t.innerHTML = "Tag: " + pictures[i - 1].tags;
+                t.innerHTML = "Tag: " + picture[i - 1].tags;
             }
             */
 
         });
     }
 
-    console.log(pictures);
+    console.log(picture);
 };

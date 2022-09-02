@@ -29,7 +29,7 @@ req.onload = function () {
             const search = document.querySelector(".vocal-search");
             const esc = document.querySelector("#x-icon");
             const escfull = document.querySelector("#x-full");
-            
+
 
             const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
@@ -53,7 +53,7 @@ req.onload = function () {
                     divImg.className = "img-container";
                     div.appendChild(divImg);
 
-  
+
                     var a = document.createElement("a");
                     a.href = "#";
                     divImg.appendChild(a);
@@ -87,12 +87,12 @@ req.onload = function () {
                     h6.innerHTML = "DATE";
                     info.appendChild(h6);
 
-               /*     var h7 = document.createElement("h7");
-                    h7.className = "image-tags";
-                    h7.id = "image-tags" + i;
-                    h7.innerHTML = "TAGS";
-                    info.appendChild(h7);
-                    */
+                    /*     var h7 = document.createElement("h7");
+                         h7.className = "image-tags";
+                         h7.id = "image-tags" + i;
+                         h7.innerHTML = "TAGS";
+                         info.appendChild(h7);
+                         */
 
                     var infoIcon = document.createElement("img");
                     infoIcon.className = "infoIcon";
@@ -144,6 +144,10 @@ req.onload = function () {
                     $('#search-box').css({
                         'visibility': 'hidden'
                     });
+
+                    for (let i = 1; i <= N; i++){
+                        $('#item'+i).css('display', 'block');
+                    }
                 }
 
                 recognition.addEventListener("start", startSpeechRecognition);
@@ -153,7 +157,9 @@ req.onload = function () {
                     rec = true;
                     formInput.focus();
                     console.log("Riconoscimento vocale attivato");
-
+                    for (let i = 1; i <= N; i++){
+                        $('#item'+i).css('display', 'block');
+                    }
                 }
 
                 recognition.addEventListener("end", endSpeechRecognition);
@@ -162,16 +168,15 @@ req.onload = function () {
                     rec = false;
                     formInput.focus();
                     console.log("Riconoscimento vocale disattivato");
-                    var tagsrc = document.searchForm.q.value;
-                    console.log(tagsrc);
-                    console.log("ziocnae");
+                    var tagsrc = document.searchForm.q.value.toLowerCase();
                     for (let i = 1; i <= N; i++) {
-                        if (tagsrc != pictures[i - 1].tags) {
+                        var tagsearch = picture[i - 1].tags.search(tagsrc);
+                        if (tagsearch == "-1") {
+                            console.log("togli immagine" + picture[i - 1].id);
                             $('#item' + i).css('display', 'none');
                         }
                     }
                 }
-
 
                 recognition.addEventListener("result", resultSpeechRecognition);
                 function resultSpeechRecognition(event) {
@@ -203,20 +208,16 @@ req.onload = function () {
                     if (iconInf) {
                         iconInf.addEventListener("click", iconClick);
                         function iconClick() {
-                            
+
                             $('#image-info' + i).css({
-                                'animation':'fadeIn 500ms ease-out forwards'
+                                'animation': 'fadeIn 500ms ease-out forwards'
                             });
 
-                            $('#infoIcon'+i).css({
+                            $('#infoIcon' + i).css({
                                 'display': 'none'
                             });
                         }
                     }
-                    
-                    
-
-
                 }
 
                 escfull.addEventListener("mouseover", overXred);
@@ -244,25 +245,6 @@ req.onload = function () {
                         date.innerHTML = pictures[i - 1].date;
                     }
                 }
-
-                searchForm.addEventListener("keypress", enterSearch(e));
-                function enterSearch(e) {
-                    if (e.key === 'Enter') {
-                        var tagsrc = document.searchForm.q.value;
-                        console.log(tagsrc);
-                        console.log("ziocnae");
-                        for (let i = 1; i <= N; i++) {
-                            if (tagsrc != pictures[i - 1].tags) {
-                                $('#item' + i).css('display', 'none');
-                            }
-                        }
-                    
-                    } 
-                }
-
-                m = document.getElementById("image-tags1");
-                m.innerHTML("porcodio")
-                
             }
             else {
                 console.log("Il tuo Browser non supporta il riconoscimento vocale")

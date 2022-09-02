@@ -32,29 +32,21 @@ app.get('', (req, res) => {
     })
 })
 
-app.post('/new-picture', redirect, (req, res) => {
+app.post('/new-picture', (req, res) => {
     pool.getConnection((err, connection) => {
         const params = req.body;
         connection.query('INSERT INTO picture SET ?', params, (err, rows) => {
             connection.release();
             if (!err) {
-                console.log('hvbhbh');
-                res.send('Nuova Opera aggiunta');
+                res.redirect('http://localhost:8080/PPM-main/newpic.html');
             }
             else {
                 res.send('errore nel caricamento del Quadro');
                 console.log(err);
             }
-            res.end();
         })
     })
 });
-
-function redirect(req, res) {
-    res.writeHead(302, {
-        'Location': 'http://localhost:8080/PPM-main/newpic.html'
-    });
-}
 
 app.delete('/:id', (req, res) => {
     pool.getConnection((err, connection) => {
@@ -71,7 +63,7 @@ app.delete('/:id', (req, res) => {
     })
 })
 
-app.post('/update-picture', redirect2, (req, res) => {
+app.post('/update-picture', (req, res) => {
     pool.getConnection((err, connection) => {
         if (err) throw err
         console.log(`connesso con id ${connection.threadId}`);
@@ -81,7 +73,7 @@ app.post('/update-picture', redirect2, (req, res) => {
             connection.release();
 
             if (!err) {
-                res.send(`L'opera ${[req.body.title]} e' stata aggiornata`);
+                res.redirect('http://localhost:8080/PPM-main/updatepic.html');
             }
             else {
                 res.send(`Errore nell' aggiornamento dell'opera`);
@@ -90,11 +82,5 @@ app.post('/update-picture', redirect2, (req, res) => {
         })
     })
 });
-function redirect2(req, res) {
-    res.writeHead(302, {
-        'Location': 'http://localhost:8080/PPM-main/updatepic.html'
-    });
-    res.end();
-}
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
