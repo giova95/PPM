@@ -358,7 +358,6 @@ to{
 
   #search-form input {
     border: none;
-    
   }
 
   .container-navbar #search-box{
@@ -378,10 +377,9 @@ to{
     border: none;
   }
 
-
-
-  
-
+  #search-form {
+    border: none;
+  }
 
 
 }

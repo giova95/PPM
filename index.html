@@ -15,7 +15,7 @@
         <nav class="navbar">
             <div class="container-navbar">
                 <ul class=menu>
-                    <li id="logo"><a href="index.html" >appLogo</a></li>
+                    <li id="logo"><a href="index.html">appLogo</a></li>
                     <li><a href="newpic.html" class="label">Inserisci un Quadro</a></li>
                     <li><a href="updatepic.html" class="label">Modifica un Quadro</a></li>
                 </ul>
@@ -23,35 +23,40 @@
                     <form action="javascript:void(0);" method="get" id="search-form" name="searchForm">
                         <a href="#" id="x-button"><img id="x-icon" src="img/x.png"> </a>
                         <input name="q" type="text" placeholder="Cerca il tuo quadro..." autocomplete="off" autofocus>
-                        <button type="button" id="button"><img class="mic1" src="img/mic.png"><img id="mic1-mobile" src="img/mic-mobile.png"></button>
+                        <button type="button" id="button"><img class="mic1" src="img/mic.png"><img id="mic1-mobile"
+                                src="img/mic-mobile.png"></button>
                     </form>
                 </div>
                 <ul class="vocal-search">
-                    <li><a href="#" id="search">Inizia nuova ricerca vocale</a><a id="a-mic" href="#"><img id="mic2" src="img/mic.png"></a></li>
-                </ul> 
-            
+                    <li><a href="#" id="search">Inizia nuova ricerca vocale</a><a id="a-mic" href="#"><img id="mic2"
+                                src="img/mic.png"></a></li>
+                </ul>
+
             </div>
 
         </nav>
     </header>
 
     <div class="main-container">
-        <div id="item-container"></div>
-        
-        <div id="image-full"> 
-            <img src="img/icons8-x-96.png" id="x-full" height="60px">
-            <img id="full" width="1080" height="720">
-            <h1 id="full-title"></h1>
-            <h2 id="author"></h2>
-            <br>
-            <br>
-            <h4 id="full-description"></h4>
-            <br>
-            <h5 id="tags"></h5>
+        <div id="item-container">
+            <div id="image-full">
+                <img src="img/icons8-x-96.png" id="x-full" height="60px">
+                <img id="full" width="1080" height="720">
+                <h1 id="full-title"></h1>
+                <h2 id="author"></h2>
+                <br>
+                <br>
+                <h4 id="full-description"></h4>
+                <br>
+                <h5 id="tags"></h5>
+            </div>
         </div>
+
+
     </div>
 
-    <footer> <!--TODO Da ristemare per quando si zoomma--->
+    <footer>
+        <!--TODO Da ristemare per quando si zoomma--->
         <div class="footer-blurb">
             <div class="logo-footer">
                 <a href="#">
@@ -67,4 +72,5 @@
 <!-- Load the coco-ssd model. -->
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"> </script>
 <script type="text/javascript" src="scripts/AI.js"></script>
+
 </html>
