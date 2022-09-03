@@ -289,6 +289,10 @@ to{
 
 /*START media query*/
 
+input {
+  border: none;
+}
+
 
 
 
@@ -362,6 +366,7 @@ to{
 
   .container-navbar #search-box{
     visibility: visible;
+    display: block;
   }
 
   #x-icon{
@@ -377,7 +382,7 @@ to{
     border: none;
   }
 
-  #search-form {
+  #input-search {
     border: none;
   }
 
