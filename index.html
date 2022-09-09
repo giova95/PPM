@@ -3,6 +3,7 @@
 <head>
     <title>MyAPP - Ricerca Vocale con tag</title>
     <link rel="stylesheet" href="style/style.css" type="text/css">
+    <link rel="shortcut icon" href="img/favicon.ico" />
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
     </style>
@@ -12,12 +13,10 @@
 
 <body>
     <header>
-        <nav class="navbar">
+        <nav id="navbar">
             <div class="container-navbar">
                 <ul class=menu>
-                    <li id="logo"><a href="index.html">appLogo</a></li>
-                    <li><a href="newpic.html" class="label">Inserisci un Quadro</a></li>
-                    <li><a href="updatepic.html" class="label">Modifica un Quadro</a></li>
+                    <li id="logo"><a href="index.html"><img src ="img/app-log.png" width="56" height="56"></img></a></li>
                 </ul>
                 <div id="search-box">
                     <form action="javascript:void(0);" method="get" id="search-form" name="searchForm">
@@ -38,21 +37,19 @@
     </header>
 
     <div class="main-container">
-        <div id="item-container">
-            <div id="image-full">
-                <img src="img/icons8-x-96.png" id="x-full" height="60px">
-                <img id="full" width="1080" height="720">
-                <h1 id="full-title"></h1>
-                <h2 id="author"></h2>
-                <br>
-                <br>
-                <h4 id="full-description"></h4>
-                <br>
-                <h5 id="tags"></h5>
-            </div>
+        <div id="image-full">
+            <img src="img/icons8-x-96.png" id="x-full" height="60px">
+            <img id="full" width="1080" height="720">
+            <h1 id="full-title"></h1>
+            <h2 id="author"></h2>
+            <br>
+            <br>
+            <h4 id="full-description"></h4>
+            <br>
+            <h5 id="tags"></h5>
         </div>
-
-
+        <div id="item-container">
+        </div>
     </div>
 
     <footer>
@@ -60,7 +57,7 @@
         <div class="footer-blurb">
             <div class="logo-footer">
                 <a href="#">
-                    <img src="https://via.placeholder.com/100">
+                    <img src="img/app-logfoot.png" height="200">
                 </a>
             </div>
         </div>

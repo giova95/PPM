@@ -29,8 +29,7 @@ req.onload = function () {
             const search = document.querySelector(".vocal-search");
             const esc = document.querySelector("#x-icon");
             const escfull = document.querySelector("#x-full");
-
-
+            const itemcontainer = document.querySelector("#item-container");
             const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
             var rec = false;
@@ -47,22 +46,22 @@ req.onload = function () {
                     var div = document.createElement("div");
                     div.className = "item";
                     div.id = "item" + i;
-                    document.getElementById("item-container").appendChild(div);
+                    itemcontainer.appendChild(div);
 
                     var divImg = document.createElement("div");
                     divImg.className = "img-container";
                     div.appendChild(divImg);
 
-
-                    var a = document.createElement("a");
-                    a.href = "#";
-                    divImg.appendChild(a);
+                    var frame = document.createElement("img");
+                    frame.id = "frame";
+                    frame.src = "img/frame.png";
+                    divImg.appendChild(frame);
 
                     var img = document.createElement("img");
                     img.className = "image-main";
                     img.id = "image-main" + i;
                     img.src = " ";
-                    a.appendChild(img);
+                    divImg.appendChild(img);
 
                     var info = document.createElement("div");
                     info.className = "image-info";
@@ -87,21 +86,75 @@ req.onload = function () {
                     h6.innerHTML = "DATE";
                     info.appendChild(h6);
 
-                    /*     var h7 = document.createElement("h7");
-                         h7.className = "image-tags";
-                         h7.id = "image-tags" + i;
-                         h7.innerHTML = "TAGS";
-                         info.appendChild(h7);
-                         */
-
                     var infoIcon = document.createElement("img");
                     infoIcon.className = "infoIcon";
                     infoIcon.id = "infoIcon" + i;
                     infoIcon.src = "img/info.png";
                     divImg.appendChild(infoIcon);
+
+
+                    if (i == N) {
+                        var div = document.createElement("div");
+                        div.className = "item-addedit";
+                        div.id = "add-edit";
+                        itemcontainer.appendChild(div);
+
+
+                        var divImg = document.createElement("div");
+                        divImg.className = "img-container";
+                        div.appendChild(divImg);
+
+                        var frame = document.createElement("img");
+                        frame.id = "frame";
+                        frame.src = "img/frame.png";
+                        divImg.appendChild(frame);
+
+                        var img = document.createElement("img");
+                        img.className = "add-box";
+                        img.src = "img/sfondo-bianco.jpg";
+                        divImg.appendChild(img);
+
+                        var a = document.createElement("a");
+                        a.href = "newpic.html";
+                        a.title = "Add picture";
+                        divImg.appendChild(a);
+
+                        var divadd = document.createElement("div");
+                        divadd.id = "div-add";
+                        a.appendChild(divadd);
+
+                        var add = document.createElement("img");
+                        add.id = "add";
+                        add.src = "img/add.png";
+                        divadd.appendChild(add);
+
+                        var a = document.createElement("a");
+                        a.href = "updatepic.html";
+                        a.title = "Edit picture";
+                        divImg.appendChild(a);
+
+                        var divedit = document.createElement("div");
+                        divedit.id = "div-edit";
+                        a.appendChild(divedit);
+
+                        var edit = document.createElement("img");
+                        edit.id = "edit";
+                        edit.alt = "Edit picture";
+                        edit.src = "img/edit.png";
+                        divedit.appendChild(edit);
+                    }
                 }
 
-
+                window.onscroll = function(){ navSticky() };
+                var navbar = document.querySelector("#navbar");
+                var sticky = navbar.offsetTop;
+                function navSticky(){
+                    if(window.pageYOffset > sticky){
+                        navbar.classList.add("sticky");
+                    }else{
+                        navbar.classList.remove("sticky");
+                    }
+                }
 
                 micBtn.addEventListener("click", micBtnClick);
                 function micBtnClick() {
@@ -115,6 +168,19 @@ req.onload = function () {
                     console.log(rec);
                 }
 
+                micBtn.addEventListener("mouseover", micBtnOver);
+                function micBtnOver() {
+                    $('.mic1').attr('src', 'img/mic-gray.png');
+                }
+
+                micBtn.addEventListener("mouseout", micBtnOut);
+                function micBtnOut() {
+                    if (!rec) {
+                        $('.mic1').attr('src', 'img/mic.png');
+                    } else {
+                        $('.mic1').attr('src', 'img/mic-red.png');
+                    }
+                }
 
                 search.addEventListener("click", searchClick);  //TODO fare i'animazione
                 function searchClick() {
@@ -122,11 +188,21 @@ req.onload = function () {
 
                     $('.vocal-search').fadeOut('fast');
 
-                    $('#search-box').css({
-                        'visibility': 'visible'
-                    });
+                    $('#search-box').fadeIn('fast');
 
-                    $("#search-box").animate({left: '754'});
+                    $("#navbar").css('border', 'none');
+                }
+
+                search.addEventListener("mouseover", searchselect);
+                function searchselect() {
+                    $('#search').css('color', '#949494');
+                    $('#mic2').attr('src', 'img/mic-gray.png');
+                }
+
+                search.addEventListener("mouseout", searchunselect);
+                function searchunselect() {
+                    $('#search').css('color', '#000000');
+                    $('#mic2').attr('src', 'img/mic.png');
                 }
 
                 esc.addEventListener("click", escClick);
@@ -135,16 +211,27 @@ req.onload = function () {
 
                     $('.vocal-search').fadeIn('fast');
 
-                    $("#search-box").animate({left: '1468px'});
+                    $('#search-box').fadeOut('fast');
 
-                    setTimeout( unfadebox , 200);
-                    function unfadebox() {$('#search-box').css({
-                        'visibility': 'hidden'
-                    });}
+                    $("#navbar").css('border-bottom', '1px solid lightgray');
 
-                    for (let i = 1; i <= N; i++){
-                        $('#item'+i).css('display', 'block');
+                    /*setTimeout(unfadebox, 200);
+                    function unfadebox() {
+                        
+                    }*/
+
+                    for (let i = 1; i <= N; i++) {
+                        $('#item' + i).css('display', 'block');
                     }
+                }
+
+                esc.addEventListener("mouseover", escselect);
+                function escselect() {
+                    $('#x-icon').attr('src', 'img/x-gray.png');
+                }
+                esc.addEventListener("mouseout", escunselect);
+                function escunselect() {
+                    $('#x-icon').attr('src', 'img/x.png');
                 }
 
                 recognition.addEventListener("start", startSpeechRecognition);
@@ -155,8 +242,8 @@ req.onload = function () {
                     rec = true;
                     formInput.focus();
                     console.log("Riconoscimento vocale attivato");
-                    for (let i = 1; i <= N; i++){
-                        $('#item'+i).css('display', 'block');
+                    for (let i = 1; i <= N; i++) {
+                        $('#item' + i).css('display', 'block');
                     }
                 }
 
@@ -167,13 +254,16 @@ req.onload = function () {
                     rec = false;
                     formInput.focus();
                     console.log("Riconoscimento vocale disattivato");
+                    let remove = 0;
                     var tagsrc = document.searchForm.q.value.toLowerCase();
                     for (let i = 1; i <= N; i++) {
                         var tagsearch = picture[i - 1].tags.search(tagsrc);
                         if (tagsearch == "-1") {
                             console.log("togli immagine" + picture[i - 1].id);
                             $('#item' + i).css('display', 'none');
+                            remove++;
                         }
+
                     }
                 }
 
@@ -196,8 +286,8 @@ req.onload = function () {
                                 author.innerHTML = 'Di ' + pictures[i - 1].author + ' completato nel ' + pictures[i - 1].date;
                                 desc.innerHTML = pictures[i - 1].description;
                                 $('#full').attr('src', pictures[i - 1].src);
-                                $('#image-full').fadeIn("slow");// decidere se fadeIn, show o slideDown
-                                $('#item-container').fadeTo("slow", 0.2);
+                                $('#image-full').slideDown();
+                                $('#item-container').css("display", "none");
                                 $('.navbar').fadeTo("slow", 0.2);
                             }
                         }
@@ -219,19 +309,21 @@ req.onload = function () {
                     }
                 }
 
-                escfull.addEventListener("mouseover", overXred);
-                function overXred() {
-                    $("#x-full").attr('src', 'img/x-red.png');
-                }
-                escfull.addEventListener("mouseout", outXnormal);
-                function outXnormal() {
-                    $("#x-full").attr('src', 'img/icons8-x-96.png');
-                }
-                escfull.addEventListener("click", escfullClick);
-                function escfullClick() {
-                    $('#image-full').fadeOut("slow");// decidere se fadeIn, show o slideDown
-                    $('#item-container').fadeTo("slow", 1);
-                    $('.navbar').fadeTo("slow", 1);
+                if (escfull) {
+                    escfull.addEventListener("mouseover", overXred);
+                    function overXred() {
+                        $("#x-full").attr('src', 'img/x-red.png');
+                    }
+                    escfull.addEventListener("mouseout", outXnormal);
+                    function outXnormal() {
+                        $("#x-full").attr('src', 'img/icons8-x-96.png');
+                    }
+                    escfull.addEventListener("click", escfullClick);
+                    function escfullClick() {
+                        $('#image-full').slideUp();
+                        $('#item-container').fadeTo("slow", 1);
+                        $('.navbar').fadeTo("slow", 1);
+                    }
                 }
 
                 for (let i = 1; i <= N; i++) {
