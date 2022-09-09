@@ -347,6 +347,10 @@ footer {
 
 /*START media query*/
 
+input {
+  border: none;
+}
+
 
 
 
@@ -434,6 +438,7 @@ footer {
 
   .container-navbar #search-box {
     visibility: visible;
+    display: block;
   }
 
   #x-icon {
@@ -450,7 +455,7 @@ footer {
     border: none;
   }
 
-  #search-form {
+  #input-search {
     border: none;
   }
 

@@ -240,7 +240,7 @@ req.onload = function () {
                     $('.mic1').attr('src', 'img/mic-red.png');
                     $('#mic1-mobile').attr('src', 'img/mic-red-mobile.png');
                     rec = true;
-                    formInput.focus();
+                    //formInput.focus();
                     console.log("Riconoscimento vocale attivato");
                     for (let i = 1; i <= N; i++) {
                         $('#item' + i).css('display', 'block');
@@ -252,7 +252,7 @@ req.onload = function () {
                     $('.mic1').attr('src', 'img/mic.png');
                     $('#mic1-mobile').attr('src', 'img/mic-mobile.png');
                     rec = false;
-                    formInput.focus();
+                    //formInput.focus();
                     console.log("Riconoscimento vocale disattivato");
                     let remove = 0;
                     var tagsrc = document.searchForm.q.value.toLowerCase();
@@ -294,19 +294,32 @@ req.onload = function () {
                     }
 
                     iconInf = document.querySelector("#infoIcon" + i);
-                    if (iconInf) {
-                        iconInf.addEventListener("click", iconClick);
-                        function iconClick() {
 
-                            $('#image-info' + i).css({
-                                'animation': 'fadeIn 500ms ease-out forwards'
-                            });
+                    iconInf.addEventListener("click", iconClick);
+                    function iconClick() {
 
-                            $('#infoIcon' + i).css({
-                                'display': 'none'
-                            });
-                        }
+                        $('#image-info' + i).css({
+                            'animation': 'fadeIn 500ms ease-out forwards'
+                        });
+
+                        $('#infoIcon' + i).css({
+                            'display': 'none'
+                        });
                     }
+
+                    infoImg = document.querySelector("#image-info" + i);
+
+                    infoImg.addEventListener("click", function(){
+                        $('#image-info' + i).css({
+                            'animation': 'fadeIn 500ms ease-out backwards'
+                        });
+                        
+                        $('#infoIcon' + i).css({
+                            'display': 'block'
+                        });
+                    })
+
+                    
                 }
 
                 if (escfull) {
