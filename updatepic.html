@@ -3,6 +3,7 @@
 <head>
     <title>MyAPP - Ricerca Vocale con tag</title>
     <link rel="stylesheet" href="style/style.css" type="text/css">
+    <link rel="shortcut icon" href="img/favicon.ico" />
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
     </style>
@@ -12,43 +13,43 @@
 
 <body>
     <header>
-        <nav class="navbar">
+        <nav id="navbar">
             <div class="container-navbar">
                 <ul class=menu>
-                    <li><a href="index.html" id="logo">appLogo</a></li>
+                    <li id="logo"><a href="index.html"><img title="Homepage"src ="img/app-log.png" width="56" height="56"></img></a></li>
                 </ul>
             </div>
         </nav>
     </header>
     <div class="form-container">
-        <h2 class="text-center">Inserisci i dati del Quadro da modificare</h2>
+        <h3 class="text-center">Modifica Quadro</h3>
         <form action="http://localhost:3307/update-picture" method="POST">
             <div class="form-group">
-                <label>ID: </label>
-                <input type="text" class="form-control" id="form-id" placeholder="Inserire titolo" name="id">
+                <input type="text" class="form-control" name="id">
+                <label class = "control-label">Id </label>
             </div>
             <div class="form-group">
-                <label>TITOLO: </label>
-                <input type="text" class="form-control" id="form-title" placeholder="Inserire titolo" name="title">
+                <input type="text" class="form-control" name="title">
+                <label class = "control-label">Titolo </label>
             </div>
             <div class="form-group">
-                <label>AUTORE: </label>
-                <input type="text" class="form-control" id="form-author" placeholder="Inserire autore" name="author">
+                <input type="text" class="form-control" name="author">
+                <label class = "control-label">Autore </label>
             </div>
             <div class="form-group">
-                <label>DESCRIZIONE: </label>
-                <input type="text" class="form-control" id="form-desc" placeholder="Inserire descrizione" name="description">
+                <input type="text" class="form-control" name="description">
+                <label class = "control-label">Descrizione </label>
             </div>
             <div class="form-group">
-                <label>ANNO: </label>
-                <input type="text" class="form-control" id="form-date" placeholder="Inserire anno" name="date">
+                <input type="text" class="form-control" name="date">
+                <label class = "control-label">Anno </label>
             </div>
             <div class="form-group">
-                <label>FOTO: </label>
-                <input type="text" class="form-control" id="form-image" placeholder="Inserire foto" name="src">
+                <input type="text" class="form-control" name="src">
+                <label class = "control-label">Foto </label>
             </div>
             <div class="form-button">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn-primary">Submit</button>
                 <!-- TODO: REDIRECT A PAGINA INIZIALE-->
                 <!-- TODO: AGGIUNGERE SUGGERIMENTI SULL'INSERIMENTO FORM-->
             </div>
@@ -58,7 +59,7 @@
         <div class="footer-blurb">
             <div class="logo-footer">
                 <a href="#">
-                    <img src="https://via.placeholder.com/100">
+                    <img src="img/app-logfoot.png" height="200">
                 </a>
             </div>
         </div>

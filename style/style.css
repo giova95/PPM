@@ -313,33 +313,64 @@ footer {
 .form-container {
   max-width: 1080px;
   margin: 117 auto;
-  border: 1px solid #000;
-  border-radius: 20px;
+  border: 1px solid white;
+  border-radius: 10px;
   background-color: #f5f5f5;
 }
 
 .text-center {
   text-align: center;
-  padding-top: 10px;
-}
-
-.form-group {
-  display: grid;
-  max-width: 1080px;
-  margin: 0 auto;
   padding: 10px;
 }
 
+.form-group {
+  position: relative;
+  padding: 10px;
+}
+
+.form-control{
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #000000;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #000000;
+  outline: none;
+  background: transparent;
+}
+
+.control-label{
+  position: absolute;
+  top:0;
+  left: 0;
+  padding: 10px;
+  font-size: 16px;
+  color: #000000;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.form-control:focus ~ label,
+.login-control:valid ~ label{
+  top: -20px;
+  left: 0;
+  color: #949494;
+  font-size: 12px;
+}
 .form-button {
-  padding-top: 25px;
-  max-width: 1080px;
-  margin: 0 auto 25;
+  margin: 0 auto 30;
   display: table;
 }
 
-.btn.btn-primary {
+.btn-primary {
   height: 23px;
   width: 80px;
+  transition: 0.5s;
+}
+
+.btn-primary:hover{
+  color:#949494;
 }
 
 /* END newpic.html */
@@ -350,9 +381,6 @@ footer {
 input {
   border: none;
 }
-
-
-
 
 @media screen and (max-width: 1000px) {
   body {

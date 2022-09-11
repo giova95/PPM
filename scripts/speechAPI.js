@@ -286,8 +286,8 @@ req.onload = function () {
                                 author.innerHTML = 'Di ' + pictures[i - 1].author + ' completato nel ' + pictures[i - 1].date;
                                 desc.innerHTML = pictures[i - 1].description;
                                 $('#full').attr('src', pictures[i - 1].src);
-                                $('#image-full').slideDown();
-                                $('#item-container').css("display", "none");
+                                $('#image-full').slideDown("slow");
+                                $('#item-container').fadeOut("slow");
                                 $('.navbar').fadeTo("slow", 0.2);
                             }
                         }
