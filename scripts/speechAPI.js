@@ -101,7 +101,7 @@ req.onload = function () {
 
 
                         var divImg = document.createElement("div");
-                        divImg.className = "img-container";
+                        divImg.className = "img-containeraddedit";
                         div.appendChild(divImg);
 
                         var frame = document.createElement("img");
@@ -184,13 +184,13 @@ req.onload = function () {
 
                 search.addEventListener("click", searchClick);  //TODO fare i'animazione
                 function searchClick() {
-                    $('.menu').fadeOut('fast');
+                    $('.menu').fadeTo("fast", 0);
 
-                    $('.vocal-search').fadeOut('fast');
+                    $('.vocal-search').fadeTo("fast", 0);
 
                     $('#search-box').fadeIn('fast');
 
-                    $("#navbar").css('border', 'none');
+                    $("#navbar").css({'border':'none',  'background': 'transparent'});
                 }
 
                 search.addEventListener("mouseover", searchselect);
@@ -207,13 +207,13 @@ req.onload = function () {
 
                 esc.addEventListener("click", escClick);
                 function escClick() {
-                    $('.menu').fadeIn('fast');
+                    $('.menu').fadeTo("fast", 1);
 
-                    $('.vocal-search').fadeIn('fast');
+                    $('.vocal-search').fadeTo("fast", 1);
 
                     $('#search-box').fadeOut('fast');
 
-                    $("#navbar").css('border-bottom', '1px solid lightgray');
+                    $("#navbar").css({'border-bottom':'1px solid lightgray', 'background': 'white'});
 
                     /*setTimeout(unfadebox, 200);
                     function unfadebox() {

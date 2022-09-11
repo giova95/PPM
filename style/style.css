@@ -58,8 +58,14 @@ ul li {
   display:none;
   height: 50px;
   width: 375px;
+  margin: 0 40%;
+}
+
+#search-form{
+  height: 50px;
+  width: 375px;
   position: relative;
-  left: 725px;
+  bottom: 77px;
 }
 
 #search-form input {
@@ -175,7 +181,7 @@ input [tipo=checkbox] :checked~#searchblock ul {
 }
 
 .item-addedit {
-  margin-bottom: 30px;
+  margin: 0 45px 30px 0;
   cursor: pointer;
 }
 
@@ -204,10 +210,6 @@ input [tipo=checkbox] :checked~#searchblock ul {
     fadeIn 500ms ease-out forwards;
 }
 
-#add-edit {
-  max-width: 400px;
-}
-
 #div-add {
   width: 100px;
   position: relative;
@@ -228,7 +230,6 @@ input [tipo=checkbox] :checked~#searchblock ul {
   position: relative;
   top: 26px;
   left: 26px;
-  z-index: -1;
 }
 
 #image-full {
@@ -260,6 +261,11 @@ input [tipo=checkbox] :checked~#searchblock ul {
   max-width: max-content;
   max-height: max-content;
   
+}
+
+.img-containeraddedit{
+  max-width: max-content;
+  max-height: max-content;
 }
 
 .image-main {
@@ -358,13 +364,14 @@ footer {
   transition: 0.5s;
 }
 
-.form-control:focus ~ label,
-.login-control:valid ~ label{
+.form-control:focus ~ .control-label,
+.form-control:valid ~ .control-label{
   top: -20px;
   left: 0;
   color: #949494;
   font-size: 12px;
 }
+
 .form-button {
   margin: 0 auto 30;
   display: table;
