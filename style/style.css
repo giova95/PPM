@@ -122,6 +122,11 @@ input [tipo=checkbox] :checked~#searchblock ul {
   display: none;
 }
 
+#logo img {
+  position: relative;
+  right: 38px;
+  margin: 6px 0 6px 0;
+}
 
 /*END Nuvbar Rules*/
 
@@ -136,7 +141,7 @@ input [tipo=checkbox] :checked~#searchblock ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  margin: auto 124px;
+  margin: auto;
 }
 
 .item .img-container {
@@ -173,7 +178,7 @@ input [tipo=checkbox] :checked~#searchblock ul {
   cursor: pointer;
 }
 
-#frame {
+.frame {
   position: absolute;
   width: 450px;
   height: 350px;
@@ -253,6 +258,7 @@ input [tipo=checkbox] :checked~#searchblock ul {
 .img-container {
   max-width: max-content;
   max-height: max-content;
+  margin: 0 30px 0 30px;
 }
 
 .image-main {
@@ -391,7 +397,7 @@ input {
     border: none;
   }
 
-  #frame{
+  .frame{
     width: 100%;
     height: 100%;
   }
@@ -435,7 +441,7 @@ input {
 
   }
 
-  #item-container img:hover {
+  .item img:hover {
     -webkit-transform: scale(1);
     /*Webkit: Scale up image to 1.2x original size*/
     -moz-transform: scale(1);

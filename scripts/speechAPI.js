@@ -53,7 +53,7 @@ req.onload = function () {
                     div.appendChild(divImg);
 
                     var frame = document.createElement("img");
-                    frame.id = "frame";
+                    frame.className = "frame";
                     frame.src = "img/frame.png";
                     divImg.appendChild(frame);
 
@@ -105,7 +105,7 @@ req.onload = function () {
                         div.appendChild(divImg);
 
                         var frame = document.createElement("img");
-                        frame.id = "frame";
+                        frame.className = "frame";
                         frame.src = "img/frame.png";
                         divImg.appendChild(frame);
 
