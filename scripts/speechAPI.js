@@ -330,8 +330,25 @@ req.onload = function () {
                         }
                     })
 
-
                 }
+                
+                window.addEventListener("resize", function mediaquery() {
+                    var mq = window.matchMedia("(min-width: 1000px)");                        
+                    if (mq.matches) {
+                        
+                        $('.image-info').css({
+                            'animation': 'fadeIn 500ms ease-out backwards'
+                        });
+
+                        $('.infoIcon').css({
+                            'display': 'none'
+                        });
+
+                    }
+                });
+            
+
+
 
                 if (escfull) {
                     escfull.addEventListener("mouseover", overXred);
