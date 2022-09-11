@@ -153,12 +153,12 @@ input [tipo=checkbox] :checked~#searchblock ul {
   /*Opera duration version*/
 }
 
-.item .img-container:hover {
-  -webkit-transform: scale(1.2);
+.img-container:hover {
+  -webkit-transform: scale(1.1);
   /*Webkit: Scale up image to 1.2x original size*/
-  -moz-transform: scale(1.2);
+  -moz-transform: scale(1.1);
   /*Mozilla scale version*/
-  -o-transform: scale(1.2);
+  -o-transform: scale(1.1);
   /*Opera scale version*/
   box-shadow: 0px 0px 40px gray;
   /*CSS3 shadow: 30px blurred shadow all around image*/
@@ -169,8 +169,9 @@ input [tipo=checkbox] :checked~#searchblock ul {
 }
 
 .item {
-  margin-bottom: 30px;
+  margin: 0 45px 30px 0;
   cursor: pointer;
+
 }
 
 .item-addedit {
@@ -258,7 +259,7 @@ input [tipo=checkbox] :checked~#searchblock ul {
 .img-container {
   max-width: max-content;
   max-height: max-content;
-  margin: 0 30px 0 30px;
+  
 }
 
 .image-main {
@@ -389,9 +390,6 @@ input {
 }
 
 @media screen and (max-width: 1000px) {
-  body {
-    --screen: "small";
-  }
 
   #navbar{
     border: none;
@@ -441,7 +439,7 @@ input {
 
   }
 
-  .item img:hover {
+  .img-container:hover {
     -webkit-transform: scale(1);
     /*Webkit: Scale up image to 1.2x original size*/
     -moz-transform: scale(1);

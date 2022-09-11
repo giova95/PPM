@@ -145,13 +145,13 @@ req.onload = function () {
                     }
                 }
 
-                window.onscroll = function(){ navSticky() };
+                window.onscroll = function () { navSticky() };
                 var navbar = document.querySelector("#navbar");
                 var sticky = navbar.offsetTop;
-                function navSticky(){
-                    if(window.pageYOffset > sticky){
+                function navSticky() {
+                    if (window.pageYOffset > sticky) {
                         navbar.classList.add("sticky");
-                    }else{
+                    } else {
                         navbar.classList.remove("sticky");
                     }
                 }
@@ -293,33 +293,44 @@ req.onload = function () {
                         }
                     }
 
+
+
+
+
+
                     iconInf = document.querySelector("#infoIcon" + i);
 
                     iconInf.addEventListener("click", iconClick);
                     function iconClick() {
+                        var mq = window.matchMedia("(max-width: 1000px)");
 
-                        $('#image-info' + i).css({
-                            'animation': 'fadeIn 500ms ease-out forwards'
-                        });
+                        if (mq.matches) {
+                            $('#image-info' + i).css({
+                                'animation': 'fadeIn 500ms ease-out forwards'
+                            });
 
-                        $('#infoIcon' + i).css({
-                            'display': 'none'
-                        });
+                            $('#infoIcon' + i).css({
+                                'display': 'none'
+                            });
+                        }
                     }
 
                     infoImg = document.querySelector("#image-info" + i);
 
-                    infoImg.addEventListener("click", function(){
-                        $('#image-info' + i).css({
-                            'animation': 'fadeIn 500ms ease-out backwards'
-                        });
-                        
-                        $('#infoIcon' + i).css({
-                            'display': 'block'
-                        });
+                    infoImg.addEventListener("click", function () {
+                        var mq = window.matchMedia("(max-width: 1000px)");
+                        if (mq.matches) {
+                            $('#image-info' + i).css({
+                                'animation': 'fadeIn 500ms ease-out backwards'
+                            });
+
+                            $('#infoIcon' + i).css({
+                                'display': 'block'
+                            });
+                        }
                     })
 
-                    
+
                 }
 
                 if (escfull) {
