@@ -50,6 +50,7 @@ req.onload = function () {
 
                     var divImg = document.createElement("div");
                     divImg.className = "img-container";
+                    divImg.id = "img-container" + i;
                     div.appendChild(divImg);
 
                     var frame = document.createElement("img");
@@ -143,6 +144,9 @@ req.onload = function () {
                         edit.src = "img/edit.png";
                         divedit.appendChild(edit);
                     }
+
+
+
                 }
 
                 window.onscroll = function () { navSticky() };
@@ -160,7 +164,6 @@ req.onload = function () {
                 function micBtnClick() {
                     if (!rec) {
                         recognition.start();
-
                     }
                     else {
                         recognition.stop();
@@ -190,7 +193,7 @@ req.onload = function () {
 
                     $('#search-box').fadeIn('fast');
 
-                    $("#navbar").css({'border':'none',  'background': 'transparent'});
+                    $("#navbar").css({ 'border': 'none', 'background': 'transparent' });
                 }
 
                 search.addEventListener("mouseover", searchselect);
@@ -213,11 +216,10 @@ req.onload = function () {
 
                     $('#search-box').fadeOut('fast');
 
-                    $("#navbar").css({'border-bottom':'1px solid lightgray', 'background': 'white'});
+                    $("#navbar").css({ 'border-bottom': '1px solid lightgray', 'background': 'white' });
 
                     /*setTimeout(unfadebox, 200);
-                    function unfadebox() {
-                        
+                    function unfadebox() {  
                     }*/
 
                     for (let i = 1; i <= N; i++) {
@@ -236,7 +238,6 @@ req.onload = function () {
 
                 recognition.addEventListener("start", startSpeechRecognition);
                 function startSpeechRecognition() {
-
                     $('.mic1').attr('src', 'img/mic-red.png');
                     $('#mic1-mobile').attr('src', 'img/mic-red-mobile.png');
                     rec = true;
@@ -316,38 +317,141 @@ req.onload = function () {
                     }
 
                     infoImg = document.querySelector("#image-info" + i);
+                    if (infoImg) {
+                      /*  infoImg.addEventListener("mouseover", imgOver);
 
-                    infoImg.addEventListener("click", function () {
-                        var mq = window.matchMedia("(max-width: 1000px)");
-                        if (mq.matches) {
-                            $('#image-info' + i).css({
-                                'animation': 'fadeIn 500ms ease-out backwards'
-                            });
+                        infoImg.addEventListener("mouseout", imgOut);*/
 
-                            $('#infoIcon' + i).css({
-                                'display': 'block'
-                            });
-                        }
-                    })
+                        infoImg.addEventListener("click", function () {
+                            var mq = window.matchMedia("(max-width: 1000px)");
+                            if (mq.matches) {
+                                $('#image-info' + i).css({
+                                    'animation': 'fadeIn 500ms ease-out backwards'
+                                });
 
+                                $('#infoIcon' + i).css({
+                                    'display': 'block'
+                                });
+                            }
+                        })
+                    }
                 }
                 
-                window.addEventListener("resize", function mediaquery() {
-                    var mq = window.matchMedia("(min-width: 1000px)");                        
-                    if (mq.matches) {
-                        
-                        $('.image-info').css({
-                            'animation': 'fadeIn 500ms ease-out backwards'
-                        });
+                const mediaQuery1 = window.matchMedia('(min-width: 1000px)');
+                const mediaQuery2 = window.matchMedia('(max-width: 1000px)');
 
-                        $('.infoIcon').css({
-                            'display': 'none'
-                        });
+                function media1(e) {
+                    for (let i = 1; i <= N; i++) {
+                        img = document.querySelector('#img-container' + i);
+                        if (e.matches) {
+                            if (img) {
+                                img.addEventListener("mouseover", imgOver);
+                                function imgOver() {
+                                    $('#img-container' + i).css({
+                                        '-webkit-transform': 'scale(1.1)',
+                                        /*Webkit: Scale up image to 1.2x original size*/
+                                        '-moz-transform': 'scale(1.1)',
+                                        /*Mozilla scale version*/
+                                        '-o-transform': 'scale(1.1)',
+                                        /*Opera scale version*/
+                                        'box-shadow': '0px 0px 40px gray',
+                                        /*CSS3 shadow: 30px blurred shadow all around image*/
+                                        '-webkit-box-shadow': '0px 0px 40px gray',
+                                        /*Safari shadow version*/
+                                        '-moz-box-shadow': '0px 0px 40px gray'
+                                        /*Mozilla shadow version*/
+                                    })
 
+                                    $('#image-info' + i).css({
+                                        'animation': 'fadeIn 500ms ease-out forwards',
+                                        '-webkit-transform': 'scale(1.1)',
+                                        /*Webkit: Scale up image to 1.2x original size*/
+                                        '-moz-transform': 'scale(1.1)',
+                                        /*Mozilla scale version*/
+                                        '-o-transform': 'scale(1.1)'
+                                        /*Opera scale version*/
+                                    });
+
+
+                                }
+                                img.addEventListener("mouseout", imgOut);
+                                function imgOut() {
+                                    $('#img-container' + i).css({
+                                        '-webkit-transform': 'scale(1)',
+                                        /*Webkit: Scale up image to 1.2x original size*/
+                                        '-moz-transform': 'scale(1)',
+                                        /*Mozilla scale version*/
+                                        '-o-transform': 'scale(1)',
+                                        /*Opera scale version*/
+                                        'box-shadow': '0px 0px 0px gray',
+                                        /*CSS3 shadow: 30px blurred shadow all around image*/
+                                        '-webkit-box-shadow': '0px 0px 0px gray',
+                                        /*Safari shadow version*/
+                                        '-moz-box-shadow': '0px 0px 0px gray'
+                                        /*Mozilla shadow version*/
+                                    })
+                                    $('#image-info' + i).css({
+                                        'animation': 'fadeIn 500ms ease-out backwards',
+                                        '-webkit-transform': 'scale(1)',
+                                        /*Webkit: Scale up image to 1.2x original size*/
+                                        '-moz-transform': 'scale(1)',
+                                        /*Mozilla scale version*/
+                                        '-o-transform': 'scale(1)'
+                                        /*Opera scale version*/
+                                    });
+                                }
+
+                            }
+                        }else{
+                            img.removeEventListener("mouseover", imgOver);
+                            img.removeEventListener("mouseout", imgOut);
+                        }
                     }
-                });
-            
 
+
+                }
+
+                function media2(e){
+                    for(let i =1; i <= N; i++) {
+                        img = document.querySelector('#img-container' + i);
+                        if(e.marches) {
+                            if(img) {
+                                img.removeEventListener("mouseover" , imgOver);
+                                img.removeEventListener("mouseOut", imgOut);
+                            }
+                        }
+                    }
+                }
+
+                mediaQuery1.addListener(media1);
+                
+                media1(mediaQuery1);
+
+                mediaQuery2.addListener(media2);
+
+                media2(mediaQuery2);
+
+
+
+                /*             window.addEventListener("resize", function mediaquery() {
+                                 var mq = window.matchMedia("(min-width: 1000px)");                        
+                                 if (mq.matches) {
+                                     $('.image-info').css({
+                                         'animation': 'fadeIn 500ms ease-out backwards'
+                                     });
+             
+                                     $('.infoIcon').css({
+                                         'display': 'none'
+                                     });
+                                 }
+                                 else {
+                                     $('infoIcon').css({
+                                         'display' : 'block'
+                                     });
+                                 }
+                             });
+                         
+             */
 
 
                 if (escfull) {
