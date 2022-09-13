@@ -318,9 +318,9 @@ req.onload = function () {
 
                     infoImg = document.querySelector("#image-info" + i);
                     if (infoImg) {
-                      /*  infoImg.addEventListener("mouseover", imgOver);
-
-                        infoImg.addEventListener("mouseout", imgOut);*/
+                        /*  infoImg.addEventListener("mouseover", imgOver);
+  
+                          infoImg.addEventListener("mouseout", imgOut);*/
 
                         infoImg.addEventListener("click", function () {
                             var mq = window.matchMedia("(max-width: 1000px)");
@@ -336,100 +336,126 @@ req.onload = function () {
                         })
                     }
                 }
-                
-                const mediaQuery1 = window.matchMedia('(min-width: 1000px)');
-                const mediaQuery2 = window.matchMedia('(max-width: 1000px)');
 
-                function media1(e) {
+                const mediaQuery = window.matchMedia('(min-width: 1000px)');
+
+
+                function media(e) {
                     for (let i = 1; i <= N; i++) {
                         img = document.querySelector('#img-container' + i);
+                        infoImg = document.querySelector('#image-info' + i);
+
                         if (e.matches) {
-                            if (img) {
-                                img.addEventListener("mouseover", imgOver);
-                                function imgOver() {
-                                    $('#img-container' + i).css({
-                                        '-webkit-transform': 'scale(1.1)',
-                                        /*Webkit: Scale up image to 1.2x original size*/
-                                        '-moz-transform': 'scale(1.1)',
-                                        /*Mozilla scale version*/
-                                        '-o-transform': 'scale(1.1)',
-                                        /*Opera scale version*/
-                                        'box-shadow': '0px 0px 40px gray',
-                                        /*CSS3 shadow: 30px blurred shadow all around image*/
-                                        '-webkit-box-shadow': '0px 0px 40px gray',
-                                        /*Safari shadow version*/
-                                        '-moz-box-shadow': '0px 0px 40px gray'
-                                        /*Mozilla shadow version*/
-                                    })
 
-                                    $('#image-info' + i).css({
-                                        'animation': 'fadeIn 500ms ease-out forwards',
-                                        '-webkit-transform': 'scale(1.1)',
-                                        /*Webkit: Scale up image to 1.2x original size*/
-                                        '-moz-transform': 'scale(1.1)',
-                                        /*Mozilla scale version*/
-                                        '-o-transform': 'scale(1.1)'
-                                        /*Opera scale version*/
-                                    });
+                            function imgOut() {
+                                $('#img-container' + i).css({
+                                    '-webkit-transform': 'scale(1)',
+                                    /*Webkit: Scale up image to 1.2x original size*/
+                                    '-moz-transform': 'scale(1)',
+                                    /*Mozilla scale version*/
+                                    '-o-transform': 'scale(1)',
+                                    /*Opera scale version*/
+                                    'box-shadow': '0px 0px 0px gray',
+                                    /*CSS3 shadow: 30px blurred shadow all around image*/
+                                    '-webkit-box-shadow': '0px 0px 0px gray',
+                                    /*Safari shadow version*/
+                                    '-moz-box-shadow': '0px 0px 0px gray'
+                                    /*Mozilla shadow version*/
+                                })
+                                $('#image-info' + i).css({
+                                    'animation': 'fadeIn 500ms ease-out backwards',
+                                    '-webkit-transform': 'scale(1)',
+                                    /*Webkit: Scale up image to 1.2x original size*/
+                                    '-moz-transform': 'scale(1)',
+                                    /*Mozilla scale version*/
+                                    '-o-transform': 'scale(1)'
+                                    /*Opera scale version*/
+                                });
+                            }
 
+                            function imgOver() {
+                                $('#img-container' + i).css({
+                                    '-webkit-transform': 'scale(1.1)',
+                                    /*Webkit: Scale up image to 1.2x original size*/
+                                    '-moz-transform': 'scale(1.1)',
+                                    /*Mozilla scale version*/
+                                    '-o-transform': 'scale(1.1)',
+                                    /*Opera scale version*/
+                                    'box-shadow': '0px 0px 40px gray',
+                                    /*CSS3 shadow: 30px blurred shadow all around image*/
+                                    '-webkit-box-shadow': '0px 0px 40px gray',
+                                    /*Safari shadow version*/
+                                    '-moz-box-shadow': '0px 0px 40px gray'
+                                    /*Mozilla shadow version*/
+                                })
 
-                                }
-                                img.addEventListener("mouseout", imgOut);
-                                function imgOut() {
-                                    $('#img-container' + i).css({
-                                        '-webkit-transform': 'scale(1)',
-                                        /*Webkit: Scale up image to 1.2x original size*/
-                                        '-moz-transform': 'scale(1)',
-                                        /*Mozilla scale version*/
-                                        '-o-transform': 'scale(1)',
-                                        /*Opera scale version*/
-                                        'box-shadow': '0px 0px 0px gray',
-                                        /*CSS3 shadow: 30px blurred shadow all around image*/
-                                        '-webkit-box-shadow': '0px 0px 0px gray',
-                                        /*Safari shadow version*/
-                                        '-moz-box-shadow': '0px 0px 0px gray'
-                                        /*Mozilla shadow version*/
-                                    })
-                                    $('#image-info' + i).css({
-                                        'animation': 'fadeIn 500ms ease-out backwards',
-                                        '-webkit-transform': 'scale(1)',
-                                        /*Webkit: Scale up image to 1.2x original size*/
-                                        '-moz-transform': 'scale(1)',
-                                        /*Mozilla scale version*/
-                                        '-o-transform': 'scale(1)'
-                                        /*Opera scale version*/
-                                    });
-                                }
+                                $('#image-info' + i).css({
+                                    'animation': 'fadeIn 500ms ease-out forwards',
+                                    '-webkit-transform': 'scale(1.1)',
+                                    /*Webkit: Scale up image to 1.2x original size*/
+                                    '-moz-transform': 'scale(1.1)',
+                                    /*Mozilla scale version*/
+                                    '-o-transform': 'scale(1.1)'
+                                    /*Opera scale version*/
+                                });
+
 
                             }
-                        }else{
-                            img.removeEventListener("mouseover", imgOver);
-                            img.removeEventListener("mouseout", imgOut);
+
+                            img.addEventListener("mouseover", imgOver);
+
+                            img.addEventListener("mouseout", imgOut);
+
+                            infoImg.addEventListener("mouseover", imgOver);
+
+                            infoImg.addEventListener("mouseout", imgOut);
+
+
+                        } else {
+
+                            function _imgOver() {
+                                $('#img-container' + i).css({
+                                    '-webkit-transform': 'scale(1)',
+                                    /*Webkit: Scale up image to 1.2x original size*/
+                                    '-moz-transform': 'scale(1)',
+                                    /*Mozilla scale version*/
+                                    '-o-transform': 'scale(1)',
+                                    /*Opera scale version*/
+                                    'box-shadow': '0px 0px 0px gray',
+                                    /*CSS3 shadow: 30px blurred shadow all around image*/
+                                    '-webkit-box-shadow': '0px 0px 0px gray',
+                                    /*Safari shadow version*/
+                                    '-moz-box-shadow': '0px 0px 0px gray'
+                                    /*Mozilla shadow version*/
+                                })
+
+                                $('#image-info' + i).css({
+                                    'animation': 'fadeIn 500ms ease-out backwards',
+                                    '-webkit-transform': 'scale(1)',
+                                    /*Webkit: Scale up image to 1.2x original size*/
+                                    '-moz-transform': 'scale(1)',
+                                    /*Mozilla scale version*/
+                                    '-o-transform': 'scale(1)'
+                                    /*Opera scale version*/
+                                });
+
+
+                            }
+
+                            img.addEventListener("mouseover", _imgOver);
+
+                            infoImg.addEventListener("mouseover", _imgOver);
+
                         }
                     }
 
-
                 }
 
-                function media2(e){
-                    for(let i =1; i <= N; i++) {
-                        img = document.querySelector('#img-container' + i);
-                        if(e.marches) {
-                            if(img) {
-                                img.removeEventListener("mouseover" , imgOver);
-                                img.removeEventListener("mouseOut", imgOut);
-                            }
-                        }
-                    }
-                }
 
-                mediaQuery1.addListener(media1);
-                
-                media1(mediaQuery1);
 
-                mediaQuery2.addListener(media2);
+                mediaQuery.addListener(media);
 
-                media2(mediaQuery2);
+                media(mediaQuery);
 
 
 
