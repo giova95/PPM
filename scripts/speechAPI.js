@@ -293,48 +293,6 @@ req.onload = function () {
                             }
                         }
                     }
-
-
-
-
-
-
-                    iconInf = document.querySelector("#infoIcon" + i);
-
-                    iconInf.addEventListener("click", iconClick);
-                    function iconClick() {
-                        var mq = window.matchMedia("(max-width: 1000px)");
-
-                        if (mq.matches) {
-                            $('#image-info' + i).css({
-                                'animation': 'fadeIn 500ms ease-out forwards'
-                            });
-
-                            $('#infoIcon' + i).css({
-                                'display': 'none'
-                            });
-                        }
-                    }
-
-                    infoImg = document.querySelector("#image-info" + i);
-                    if (infoImg) {
-                        /*  infoImg.addEventListener("mouseover", imgOver);
-  
-                          infoImg.addEventListener("mouseout", imgOut);*/
-
-                        infoImg.addEventListener("click", function () {
-                            var mq = window.matchMedia("(max-width: 1000px)");
-                            if (mq.matches) {
-                                $('#image-info' + i).css({
-                                    'animation': 'fadeIn 500ms ease-out backwards'
-                                });
-
-                                $('#infoIcon' + i).css({
-                                    'display': 'block'
-                                });
-                            }
-                        })
-                    }
                 }
 
                 const mediaQuery = window.matchMedia('(min-width: 1000px)');
@@ -344,6 +302,7 @@ req.onload = function () {
                     for (let i = 1; i <= N; i++) {
                         img = document.querySelector('#img-container' + i);
                         infoImg = document.querySelector('#image-info' + i);
+                        iconInf = document.querySelector("#infoIcon" + i);
 
                         if (e.matches) {
 
@@ -430,21 +389,51 @@ req.onload = function () {
                                 })
 
                                 $('#image-info' + i).css({
-                                    'animation': 'fadeIn 500ms ease-out backwards',
+                                    
                                     '-webkit-transform': 'scale(1)',
                                     /*Webkit: Scale up image to 1.2x original size*/
                                     '-moz-transform': 'scale(1)',
                                     /*Mozilla scale version*/
-                                    '-o-transform': 'scale(1)'
+                                    '-o-transform': 'scale(1)',
                                     /*Opera scale version*/
+                                    'display' : 'none'
                                 });
 
+
+                            }
+
+                            function clickInfo() {
+                                $('#image-info' + i).css({
+                                    'display' : 'block',
+                                    'animation': 'fadeIn 500ms ease-out backwards'
+                                });
+
+                                $('#infoIcon' + i).css({
+                                    'display': 'block'
+                                });
+
+                            }
+
+                            function iconClick() {
+
+                                $('#image-info' + i).css({
+                                    'animation': 'fadeIn 500ms ease-out forwards'
+                                });
+
+                                $('#infoIcon' + i).css({
+                                    'display': 'none'
+                                });
 
                             }
 
                             img.addEventListener("mouseover", _imgOver);
 
                             infoImg.addEventListener("mouseover", _imgOver);
+
+                            infoImg.addEventListener("click", clickInfo);
+
+                            iconInf.addEventListener("click", iconClick);
+
 
                         }
                     }
@@ -458,26 +447,6 @@ req.onload = function () {
                 media(mediaQuery);
 
 
-
-                /*             window.addEventListener("resize", function mediaquery() {
-                                 var mq = window.matchMedia("(min-width: 1000px)");                        
-                                 if (mq.matches) {
-                                     $('.image-info').css({
-                                         'animation': 'fadeIn 500ms ease-out backwards'
-                                     });
-             
-                                     $('.infoIcon').css({
-                                         'display': 'none'
-                                     });
-                                 }
-                                 else {
-                                     $('infoIcon').css({
-                                         'display' : 'block'
-                                     });
-                                 }
-                             });
-                         
-             */
 
 
                 if (escfull) {
