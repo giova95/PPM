@@ -307,7 +307,7 @@ req.onload = function () {
                         if (e.matches) {
 
                             $("#infoIcon" +i).css({
-                                'display' : 'none'
+                                'visibility' : 'hidden'
                             })
 
                             $("#image-info" + i).css({
@@ -352,7 +352,7 @@ req.onload = function () {
                         } else {
                             
                             $("#infoIcon" +i).css({
-                                'display' : 'block'
+                                'visibility' : 'visible'
                             })
 
 
@@ -363,7 +363,7 @@ req.onload = function () {
                                 })
 
                                 $('#image-info' + i).css({
-                                    'animation': 'fadeIn 500ms ease-out backwards',
+                                    'animation': 'fadeIn 0ms ease-out backwards',
                                     '-webkit-transform': 'scale(1)',
                                 });
 
@@ -377,7 +377,7 @@ req.onload = function () {
                                 });
 
                                 $('#infoIcon' + i).css({
-                                    'display': 'block'
+                                    'visibility': 'visible'
                                 });
 
                             }
@@ -390,7 +390,7 @@ req.onload = function () {
                                 });
 
                                 $('#infoIcon' + i).css({
-                                    'display': 'none'
+                                    'visibility': 'hidden'
                                 });
 
                             }

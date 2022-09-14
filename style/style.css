@@ -270,6 +270,10 @@ input [tipo=checkbox] :checked~#searchblock ul {
   left: 26px;
 }
 
+#full{
+  width: 100%;
+}
+
 
 /* END Main-Container */
 
@@ -481,10 +485,19 @@ input {
 
   .image-info {
     max-width: 60%; 
-    bottom: 28px;
+    bottom: 57px;
     left: 16px;
+  
   }
 
+  #x-full{
+    left: 90%;
+    top: 69px;
+  }
+
+  #full-info {
+    margin: 15px 35px;
+  }
 
 
 }
