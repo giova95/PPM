@@ -306,56 +306,35 @@ req.onload = function () {
 
                         if (e.matches) {
 
+                            $("#infoIcon" +i).css({
+                                'display' : 'none'
+                            })
+
+                            $("#image-info" + i).css({
+                                'opacity': '0'
+                            })
+
                             function imgOut() {
                                 $('#img-container' + i).css({
                                     '-webkit-transform': 'scale(1)',
-                                    /*Webkit: Scale up image to 1.2x original size*/
-                                    '-moz-transform': 'scale(1)',
-                                    /*Mozilla scale version*/
-                                    '-o-transform': 'scale(1)',
-                                    /*Opera scale version*/
                                     'box-shadow': '0px 0px 0px gray',
-                                    /*CSS3 shadow: 30px blurred shadow all around image*/
-                                    '-webkit-box-shadow': '0px 0px 0px gray',
-                                    /*Safari shadow version*/
-                                    '-moz-box-shadow': '0px 0px 0px gray'
-                                    /*Mozilla shadow version*/
+
                                 })
                                 $('#image-info' + i).css({
                                     'animation': 'fadeIn 500ms ease-out backwards',
                                     '-webkit-transform': 'scale(1)',
-                                    /*Webkit: Scale up image to 1.2x original size*/
-                                    '-moz-transform': 'scale(1)',
-                                    /*Mozilla scale version*/
-                                    '-o-transform': 'scale(1)'
-                                    /*Opera scale version*/
                                 });
                             }
 
                             function imgOver() {
                                 $('#img-container' + i).css({
                                     '-webkit-transform': 'scale(1.1)',
-                                    /*Webkit: Scale up image to 1.2x original size*/
-                                    '-moz-transform': 'scale(1.1)',
-                                    /*Mozilla scale version*/
-                                    '-o-transform': 'scale(1.1)',
-                                    /*Opera scale version*/
-                                    'box-shadow': '0px 0px 40px gray',
-                                    /*CSS3 shadow: 30px blurred shadow all around image*/
-                                    '-webkit-box-shadow': '0px 0px 40px gray',
-                                    /*Safari shadow version*/
-                                    '-moz-box-shadow': '0px 0px 40px gray'
-                                    /*Mozilla shadow version*/
+                                    'box-shadow': '0px 0px 40px gray'
                                 })
 
                                 $('#image-info' + i).css({
                                     'animation': 'fadeIn 500ms ease-out forwards',
-                                    '-webkit-transform': 'scale(1.1)',
-                                    /*Webkit: Scale up image to 1.2x original size*/
-                                    '-moz-transform': 'scale(1.1)',
-                                    /*Mozilla scale version*/
-                                    '-o-transform': 'scale(1.1)'
-                                    /*Opera scale version*/
+                                    '-webkit-transform': 'scale(1.1)'
                                 });
 
 
@@ -371,32 +350,21 @@ req.onload = function () {
 
 
                         } else {
+                            
+                            $("#infoIcon" +i).css({
+                                'display' : 'block'
+                            })
+
 
                             function _imgOver() {
                                 $('#img-container' + i).css({
                                     '-webkit-transform': 'scale(1)',
-                                    /*Webkit: Scale up image to 1.2x original size*/
-                                    '-moz-transform': 'scale(1)',
-                                    /*Mozilla scale version*/
-                                    '-o-transform': 'scale(1)',
-                                    /*Opera scale version*/
-                                    'box-shadow': '0px 0px 0px gray',
-                                    /*CSS3 shadow: 30px blurred shadow all around image*/
-                                    '-webkit-box-shadow': '0px 0px 0px gray',
-                                    /*Safari shadow version*/
-                                    '-moz-box-shadow': '0px 0px 0px gray'
-                                    /*Mozilla shadow version*/
+                                    'box-shadow': '0px 0px 0px gray'    
                                 })
 
                                 $('#image-info' + i).css({
-                                    
+                                    'animation': 'fadeIn 500ms ease-out backwards',
                                     '-webkit-transform': 'scale(1)',
-                                    /*Webkit: Scale up image to 1.2x original size*/
-                                    '-moz-transform': 'scale(1)',
-                                    /*Mozilla scale version*/
-                                    '-o-transform': 'scale(1)',
-                                    /*Opera scale version*/
-                                    'display' : 'none'
                                 });
 
 
@@ -404,8 +372,8 @@ req.onload = function () {
 
                             function clickInfo() {
                                 $('#image-info' + i).css({
-                                    'display' : 'block',
-                                    'animation': 'fadeIn 500ms ease-out backwards'
+                                    'animation': 'fadeIn 500ms ease-out backwards',
+                                    'opacity': '0'
                                 });
 
                                 $('#infoIcon' + i).css({
@@ -417,7 +385,8 @@ req.onload = function () {
                             function iconClick() {
 
                                 $('#image-info' + i).css({
-                                    'animation': 'fadeIn 500ms ease-out forwards'
+                                    'animation': 'fadeIn 500ms ease-out forwards',
+                                    'opacity': '1'
                                 });
 
                                 $('#infoIcon' + i).css({

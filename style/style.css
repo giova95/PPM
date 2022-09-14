@@ -204,10 +204,6 @@ input [tipo=checkbox] :checked~#searchblock ul {
 }
 
 
-.image-info:hover {
-  animation:
-    fadeIn 500ms ease-out forwards;
-}
 
 #div-add {
   width: 100px;
@@ -251,7 +247,6 @@ input [tipo=checkbox] :checked~#searchblock ul {
   z-index: 1;
   height: 30px;
   width: 30px;
-  display: none;
   bottom: 44px;
   left: 15px;
 }
@@ -410,9 +405,7 @@ input {
     left: 0;
   }
 
-  .image-info:hover {
-    animation: none;
-  }
+
 
   .menu li {
     display: none;
@@ -444,9 +437,6 @@ input {
 
   }
 
-  .infoIcon {
-    display: block;
-  }
 
   .vocal-search {
     position: relative;
@@ -490,8 +480,9 @@ input {
 
 
   .image-info {
-    max-width: 60%;
-    
+    max-width: 60%; 
+    bottom: 28px;
+    left: 16px;
   }
 
 
