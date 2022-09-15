@@ -293,11 +293,6 @@ req.onload = function () {
                         }
                     }
 
-
-
-
-
-
                     iconInf = document.querySelector("#infoIcon" + i);
 
                     iconInf.addEventListener("click", iconClick);
