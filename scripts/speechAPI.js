@@ -55,7 +55,7 @@ req.onload = function () {
 
                     var frame = document.createElement("img");
                     frame.className = "frame";
-                    frame.src = "img/frame.png";
+                    frame.src = "img/frame1.png";
                     divImg.appendChild(frame);
 
                     var img = document.createElement("img");

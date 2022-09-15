@@ -263,11 +263,11 @@ input [tipo=checkbox] :checked~#searchblock ul {
 }
 
 .image-main {
-  height: 300px;
-  width: 400px;
+  height: 316px;
+  width: 413px;
   position: relative;
-  top: 26px;
-  left: 26px;
+  top: 16px;
+  left: 20px;
 }
 
 #full{
