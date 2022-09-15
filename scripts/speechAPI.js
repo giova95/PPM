@@ -50,11 +50,12 @@ req.onload = function () {
 
                     var divImg = document.createElement("div");
                     divImg.className = "img-container";
+                    divImg.id = "img-container" + i;
                     div.appendChild(divImg);
 
                     var frame = document.createElement("img");
                     frame.className = "frame";
-                    frame.src = "img/frame.png";
+                    frame.src = "img/frame1.png";
                     divImg.appendChild(frame);
 
                     var img = document.createElement("img");
@@ -160,7 +161,6 @@ req.onload = function () {
                 function micBtnClick() {
                     if (!rec) {
                         recognition.start();
-
                     }
                     else {
                         recognition.stop();
@@ -190,7 +190,7 @@ req.onload = function () {
 
                     $('#search-box').fadeIn('fast');
 
-                    $("#navbar").css({'border':'none',  'background': 'transparent'});
+                    $("#navbar").css({ 'border': 'none', 'background': 'transparent' });
                 }
 
                 search.addEventListener("mouseover", searchselect);
@@ -213,12 +213,14 @@ req.onload = function () {
 
                     $('#search-box').fadeOut('fast');
 
-                    $("#navbar").css({'border-bottom':'1px solid lightgray', 'background': 'white'});
+                    $("#navbar").css({ 'border-bottom': '1px solid lightgray', 'background': 'white' });
+
+                    
 
                     /*setTimeout(unfadebox, 200);
-                    function unfadebox() {
-                        
+                    function unfadebox() {  
                     }*/
+
 
                     for (let i = 1; i <= N; i++) {
                         $('#item' + i).css('display', 'block');
@@ -236,7 +238,6 @@ req.onload = function () {
 
                 recognition.addEventListener("start", startSpeechRecognition);
                 function startSpeechRecognition() {
-
                     $('.mic1').attr('src', 'img/mic-red.png');
                     $('#mic1-mobile').attr('src', 'img/mic-red-mobile.png');
                     rec = true;
@@ -278,6 +279,7 @@ req.onload = function () {
                     if (item) {
                         item.addEventListener("click", itemClick);
                         function itemClick() {
+                            $("#mic1-mobile").slideUp("fast");
                             title = document.getElementById("full-title");
                             author = document.getElementById("author");
                             desc = document.getElementById("full-description");
@@ -292,73 +294,147 @@ req.onload = function () {
                             }
                         }
                     }
+                }
 
-                    iconInf = document.querySelector("#infoIcon" + i);
+                const mediaQuery = window.matchMedia('(min-width: 1000px)');
 
-                    iconInf.addEventListener("click", iconClick);
-                    function iconClick() {
-                        var mq = window.matchMedia("(max-width: 1000px)");
 
-                        if (mq.matches) {
-                            $('#image-info' + i).css({
-                                'animation': 'fadeIn 500ms ease-out forwards'
-                            });
+                function media(e) {
+                    for (let i = 1; i <= N; i++) {
+                        img = document.querySelector('#img-container' + i);
+                        infoImg = document.querySelector('#image-info' + i);
+                        iconInf = document.querySelector("#infoIcon" + i);
+                        item = document.querySelector("#image-main" + i);
 
-                            $('#infoIcon' + i).css({
-                                'display': 'none'
-                            });
+                        if (e.matches) {
+
+                            $("#infoIcon" +i).css({
+                                'visibility' : 'hidden'
+                            })
+
+                            $("#image-info" + i).css({
+                                'opacity': '0'
+                            })
+
+                            function imgOut() {
+                                $('#img-container' + i).css({
+                                    '-webkit-transform': 'scale(1)',
+                                    'box-shadow': '0px 0px 0px gray',
+
+                                })
+                                $('#image-info' + i).css({
+                                    'animation': 'fadeIn 500ms ease-out backwards',
+                                    '-webkit-transform': 'scale(1)',
+                                });
+                            }
+
+                            function imgOver() {
+                                $('#img-container' + i).css({
+                                    '-webkit-transform': 'scale(1.1)',
+                                    'box-shadow': '0px 0px 40px gray'
+                                })
+
+                                $('#image-info' + i).css({
+                                    'animation': 'fadeIn 500ms ease-out forwards',
+                                    '-webkit-transform': 'scale(1.1)'
+                                });
+
+
+                            }
+
+                            img.addEventListener("mouseover", imgOver);
+
+                            img.addEventListener("mouseout", imgOut);
+
+                            infoImg.addEventListener("mouseover", imgOver);
+
+                            infoImg.addEventListener("mouseout", imgOut);
+
+
+                        } else {
+                            
+                            $("#infoIcon" +i).css({
+                                'visibility' : 'visible'
+                            })
+
+
+                            function _imgOver() {
+                                $('#img-container' + i).css({
+                                    '-webkit-transform': 'scale(1)',
+                                    'box-shadow': '0px 0px 0px gray'    
+                                })
+
+                                $('#image-info' + i).css({
+                                    'animation': 'fadeIn 0ms ease-out backwards',
+                                    '-webkit-transform': 'scale(1)',
+                                });
+
+
+                            }
+
+                            function clickInfo() {
+                                $('#image-info' + i).fadeTo('fast', 0);
+
+                                $('#infoIcon' + i).css({
+                                    'visibility': 'visible'
+                                });
+
+                            }
+
+                            function iconClick() {
+                                
+                                $('#image-info' + i).fadeTo('fast', 1);
+
+
+
+                                $('#infoIcon' + i).css({
+                                    'visibility': 'hidden'
+                                });
+
+                            }
+
+                            img.addEventListener("mouseover", _imgOver);
+
+                            infoImg.addEventListener("mouseover", _imgOver);
+
+                            infoImg.addEventListener("click", clickInfo);
+
+                            iconInf.addEventListener("click", iconClick);
+
+
+
                         }
                     }
-
-                    infoImg = document.querySelector("#image-info" + i);
-
-                    infoImg.addEventListener("click", function () {
-                        var mq = window.matchMedia("(max-width: 1000px)");
-                        if (mq.matches) {
-                            $('#image-info' + i).css({
-                                'animation': 'fadeIn 500ms ease-out backwards'
-                            });
-
-                            $('#infoIcon' + i).css({
-                                'display': 'block'
-                            });
-                        }
-                    })
 
                 }
-                
-                window.addEventListener("resize", function mediaquery() {
-                    var mq = window.matchMedia("(min-width: 1000px)");                        
-                    if (mq.matches) {
-                        
-                        $('.image-info').css({
-                            'animation': 'fadeIn 500ms ease-out backwards'
-                        });
 
-                        $('.infoIcon').css({
-                            'display': 'none'
-                        });
 
-                    }
-                });
-            
+
+                mediaQuery.addListener(media);
+
+                media(mediaQuery);
+
 
 
 
                 if (escfull) {
+
                     escfull.addEventListener("mouseover", overXred);
                     function overXred() {
                         $("#x-full").attr('src', 'img/x-red.png');
                     }
+
                     escfull.addEventListener("mouseout", outXnormal);
                     function outXnormal() {
                         $("#x-full").attr('src', 'img/icons8-x-96.png');
                     }
+
                     escfull.addEventListener("click", escfullClick);
                     function escfullClick() {
                         $('#image-full').slideUp();
                         $('#item-container').fadeTo("slow", 1);
                         $('.navbar').fadeTo("slow", 1);
+                        $('#mic1-mobile').slideDown("fast");
                     }
                 }
 
