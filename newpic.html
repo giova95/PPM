@@ -24,7 +24,7 @@
 
     <div class="form-container">
         <h3 class="text-center">Nuovo Quadro</h3>
-        <form action="http://localhost:3307/new-picture" method="POST">
+        <form action="http://localhost:3307/new-picture" method="POST" enctype="multipart/form-data">
             <div class="form-group">
                 <input type="text" class="form-control" name="title" required="">
                 <label class = "control-label">Titolo </label>
@@ -42,7 +42,7 @@
                 <label class = "control-label">Anno </label>
             </div>
             <div class="form-group">
-                <input type="text" class="form-control" name="src" required="">
+                <input type="file" class="form-control" name="src" required="">
                 <label class = "control-label">Foto </label>
             </div>
             <div class="form-button">
