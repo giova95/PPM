@@ -144,9 +144,6 @@ req.onload = function () {
                         edit.src = "img/edit.png";
                         divedit.appendChild(edit);
                     }
-
-
-
                 }
 
                 window.onscroll = function () { navSticky() };
@@ -218,9 +215,12 @@ req.onload = function () {
 
                     $("#navbar").css({ 'border-bottom': '1px solid lightgray', 'background': 'white' });
 
+                    
+
                     /*setTimeout(unfadebox, 200);
                     function unfadebox() {  
                     }*/
+
 
                     for (let i = 1; i <= N; i++) {
                         $('#item' + i).css('display', 'block');
@@ -279,6 +279,7 @@ req.onload = function () {
                     if (item) {
                         item.addEventListener("click", itemClick);
                         function itemClick() {
+                            $("#mic1-mobile").slideUp("fast");
                             title = document.getElementById("full-title");
                             author = document.getElementById("author");
                             desc = document.getElementById("full-description");
@@ -303,6 +304,7 @@ req.onload = function () {
                         img = document.querySelector('#img-container' + i);
                         infoImg = document.querySelector('#image-info' + i);
                         iconInf = document.querySelector("#infoIcon" + i);
+                        item = document.querySelector("#image-main" + i);
 
                         if (e.matches) {
 
@@ -371,10 +373,7 @@ req.onload = function () {
                             }
 
                             function clickInfo() {
-                                $('#image-info' + i).css({
-                                    'animation': 'fadeIn 500ms ease-out backwards',
-                                    'opacity': '0'
-                                });
+                                $('#image-info' + i).fadeTo('fast', 0);
 
                                 $('#infoIcon' + i).css({
                                     'visibility': 'visible'
@@ -383,11 +382,10 @@ req.onload = function () {
                             }
 
                             function iconClick() {
+                                
+                                $('#image-info' + i).fadeTo('fast', 1);
 
-                                $('#image-info' + i).css({
-                                    'animation': 'fadeIn 500ms ease-out forwards',
-                                    'opacity': '1'
-                                });
+
 
                                 $('#infoIcon' + i).css({
                                     'visibility': 'hidden'
@@ -402,6 +400,7 @@ req.onload = function () {
                             infoImg.addEventListener("click", clickInfo);
 
                             iconInf.addEventListener("click", iconClick);
+
 
 
                         }
@@ -419,19 +418,23 @@ req.onload = function () {
 
 
                 if (escfull) {
+
                     escfull.addEventListener("mouseover", overXred);
                     function overXred() {
                         $("#x-full").attr('src', 'img/x-red.png');
                     }
+
                     escfull.addEventListener("mouseout", outXnormal);
                     function outXnormal() {
                         $("#x-full").attr('src', 'img/icons8-x-96.png');
                     }
+
                     escfull.addEventListener("click", escfullClick);
                     function escfullClick() {
                         $('#image-full').slideUp();
                         $('#item-container').fadeTo("slow", 1);
                         $('.navbar').fadeTo("slow", 1);
+                        $('#mic1-mobile').slideDown("fast");
                     }
                 }
 
