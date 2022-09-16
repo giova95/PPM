@@ -40,7 +40,7 @@ req.onload = function () {
                 const recognition = new SpeechRecognition();
                 recognition.interimResults = true;
                 recognition.continuos = true;
-                recognition.lang = "it-IT"
+                recognition.lang = "it-IT";
 
                 for (let i = 1; i <= N; i++) {
                     var div = document.createElement("div");
