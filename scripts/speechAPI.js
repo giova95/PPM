@@ -14,7 +14,7 @@ req.onload = function () {
         'DOMContentLoaded',
         function () {
 
-            console.log(" DOM caricato");
+            console.log(" DOM loaded");
 
             $(document).ready(function () {
                 for (let i = 1; i <= N; i++) {
@@ -35,7 +35,7 @@ req.onload = function () {
             var rec = false;
 
             if (SpeechRecognition) {
-                console.log("Il tuo Browser supporta il riconoscimento vocale");
+                console.log("Your Browser supports vocal recognition");
 
                 const recognition = new SpeechRecognition();
                 recognition.interimResults = true;
@@ -242,7 +242,7 @@ req.onload = function () {
                     $('#mic1-mobile').attr('src', 'img/mic-red-mobile.png');
                     rec = true;
                     //formInput.focus();
-                    console.log("Riconoscimento vocale attivato");
+                    console.log("Vocal search on");
                     for (let i = 1; i <= N; i++) {
                         $('#item' + i).css('display', 'block');
                     }
@@ -254,13 +254,13 @@ req.onload = function () {
                     $('#mic1-mobile').attr('src', 'img/mic-mobile.png');
                     rec = false;
                     //formInput.focus();
-                    console.log("Riconoscimento vocale disattivato");
+                    console.log("Vocal search off");
                     let remove = 0;
                     var tagsrc = document.searchForm.q.value.toLowerCase();
                     for (let i = 1; i <= N; i++) {
                         var tagsearch = picture[i - 1].tags.search(tagsrc);
                         if (tagsearch == "-1") {
-                            console.log("togli immagine" + picture[i - 1].id);
+                            console.log("remove image" + picture[i - 1].id);
                             $('#item' + i).css('display', 'none');
                             remove++;
                         }
@@ -285,7 +285,7 @@ req.onload = function () {
                             desc = document.getElementById("full-description");
                             if (title && author && desc) {
                                 title.innerHTML = pictures[i - 1].title;
-                                author.innerHTML = 'Di ' + pictures[i - 1].author + ' completato nel ' + pictures[i - 1].date;
+                                author.innerHTML = 'By ' + pictures[i - 1].author + ' completed in ' + pictures[i - 1].date;
                                 desc.innerHTML = pictures[i - 1].description;
                                 $('#full').attr('src', pictures[i - 1].src);
                                 $('#image-full').slideDown("slow");
@@ -450,7 +450,7 @@ req.onload = function () {
                 }
             }
             else {
-                console.log("Il tuo Browser non supporta il riconoscimento vocale")
+                console.log("Your Browser doesn't support vocal recognition")
             }
         }
     )
