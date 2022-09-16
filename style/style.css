@@ -55,13 +55,13 @@ ul li {
 }
 
 #search-box {
-  display:none;
+  display: none;
   height: 50px;
   width: 375px;
   margin: 0 40%;
 }
 
-#search-form{
+#search-form {
   height: 50px;
   width: 375px;
   position: relative;
@@ -195,12 +195,12 @@ input [tipo=checkbox] :checked~#searchblock ul {
   position: relative;
   max-width: 380px;
   max-height: 200px;
-  bottom: 13px;
-  left: 26px;
+  bottom: 30px;
+  left: 32px;
   padding-left: 11px;
   background-color: white;
   opacity: 0;
-  border-radius: 0px 15px 0px 0px;
+  border-radius: 10px;
 }
 
 
@@ -254,10 +254,10 @@ input [tipo=checkbox] :checked~#searchblock ul {
 .img-container {
   max-width: max-content;
   max-height: max-content;
-  
+
 }
 
-.img-containeraddedit{
+.img-containeraddedit {
   max-width: max-content;
   max-height: max-content;
 }
@@ -270,7 +270,7 @@ input [tipo=checkbox] :checked~#searchblock ul {
   left: 20px;
 }
 
-#full{
+#full {
   width: 100%;
 }
 
@@ -339,7 +339,7 @@ footer {
   padding: 10px;
 }
 
-.form-control{
+.form-control {
   width: 100%;
   padding: 10px 0;
   font-size: 16px;
@@ -351,9 +351,21 @@ footer {
   background: transparent;
 }
 
-.control-label{
+.form-controlimg{
+  width: 100%;
+  padding: 13px 0;
+  font-size: 16px;
+  color: #000000;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #000000;
+  outline: none;
+  background: transparent;
+}
+
+.control-label {
   position: absolute;
-  top:0;
+  top: 0;
   left: 0;
   padding: 10px;
   font-size: 16px;
@@ -362,8 +374,21 @@ footer {
   transition: 0.5s;
 }
 
-.form-control:focus ~ .control-label,
-.form-control:valid ~ .control-label{
+.control-labelfile{
+  position: absolute;
+  top: -13px;
+  left: 0;
+  padding: 10px;
+  font-size: 16px;
+  color: #000000;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.form-control:focus~.control-label,
+.form-control:valid~.control-label,
+.form-controlimg:focus~.control-labelfile,
+.form-controlimg:valid~.control-labelfile{
   top: -20px;
   left: 0;
   color: #949494;
@@ -381,8 +406,8 @@ footer {
   transition: 0.5s;
 }
 
-.btn-primary:hover{
-  color:#949494;
+.btn-primary:hover {
+  color: #949494;
 }
 
 /* END newpic.html */
@@ -395,11 +420,11 @@ input {
 }
 
 @media screen and (max-width: 1000px) {
-  #navbar{
+  #navbar {
     border: none;
   }
 
-  .frame{
+  .frame {
     display: none;
   }
 
@@ -454,7 +479,7 @@ input {
 
   .container-navbar #search-box {
     visibility: visible;
-    display: block; 
+    display: block;
   }
 
   #x-icon {
@@ -484,13 +509,13 @@ input {
 
 
   .image-info {
-    max-width: 60%; 
+    max-width: 60%;
     bottom: 57px;
     left: 16px;
-  
+
   }
 
-  #x-full{
+  #x-full {
     left: 90%;
     top: 69px;
   }
