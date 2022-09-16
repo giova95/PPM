@@ -58,11 +58,15 @@ req.onload = function () {
                     frame.src = "img/frame.png";
                     divImg.appendChild(frame);
 
+                    var aimg = document.createElement("a");
+                    aimg.href = "#";
+                    divImg.appendChild(aimg);
+
                     var img = document.createElement("img");
                     img.className = "image-main";
                     img.id = "image-main" + i;
                     img.src = " ";
-                    divImg.appendChild(img);
+                    aimg.appendChild(img);
 
                     var info = document.createElement("div");
                     info.className = "image-info";
@@ -279,7 +283,7 @@ req.onload = function () {
                     if (item) {
                         item.addEventListener("click", itemClick);
                         function itemClick() {
-                            $("#mic1-mobile").slideUp("fast");
+
                             title = document.getElementById("full-title");
                             author = document.getElementById("author");
                             desc = document.getElementById("full-description");
@@ -350,6 +354,11 @@ req.onload = function () {
 
                             infoImg.addEventListener("mouseout", imgOut);
 
+                            item.removeEventListener("click", micSlideU);
+
+
+                            escfull.removeEventListener("click", micSlideD);
+
 
                         } else {
                             
@@ -393,6 +402,14 @@ req.onload = function () {
 
                             }
 
+                            function micSlideU() {
+                                $("#mic1-mobile").slideUp("fast");
+                            }
+
+                            function micSlideD(){
+                                $('#mic1-mobile').slideDown("fast");
+                            }
+
                             img.addEventListener("mouseover", _imgOver);
 
                             infoImg.addEventListener("mouseover", _imgOver);
@@ -400,6 +417,10 @@ req.onload = function () {
                             infoImg.addEventListener("click", clickInfo);
 
                             iconInf.addEventListener("click", iconClick);
+
+                            item.addEventListener("click", micSlideU);
+                            
+                            escfull.addEventListener("click", micSlideD);
 
 
 
@@ -434,7 +455,7 @@ req.onload = function () {
                         $('#image-full').slideUp();
                         $('#item-container').fadeTo("slow", 1);
                         $('.navbar').fadeTo("slow", 1);
-                        $('#mic1-mobile').slideDown("fast");
+                        
                     }
                 }
 
