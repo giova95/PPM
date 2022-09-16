@@ -58,7 +58,7 @@ app.post('/new-picture', upload.single('src'), (req, res) => {
         connection.query('INSERT INTO picture SET title = ?, author = ?, description = ?, date = ?, tags = ?, src = ?', [title, author, description, date, tags, src], (err, rows) => {
             connection.release();
             if (!err) {
-                res.redirect('http://localhost:8080/PPM-main/newpic.html');
+                res.redirect('http://localhost:8080/PPM-main/index.html');
             }
             else {
                 res.send('errore nel caricamento del Quadro');
@@ -97,7 +97,7 @@ app.post('/update-picture', upload.single('src') ,(req, res) => {
             connection.release();
 
             if (!err) {
-                res.redirect('http://localhost:8080/PPM-main/updatepic.html');
+                res.redirect('http://localhost:8080/PPM-main/index.html');
             }
             else {
                 res.send(`Errore nell' aggiornamento dell'opera`);

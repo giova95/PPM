@@ -169,10 +169,6 @@ input [tipo=checkbox] :checked~#searchblock ul {
   /*Opera duration version*/
 }
 
-
-
-
-
 .item {
   margin-bottom: 30px;
   cursor: pointer;
