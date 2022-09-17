@@ -36,13 +36,6 @@ window.onload = function () {
                     }
                 }
             }
-
-         /*   let t = document.getElementById("image-tags" + i);
-            if(t) {
-                t.innerHTML = "Tag: " + picture[i - 1].tags;
-            }
-            */
-
         });
     }
 

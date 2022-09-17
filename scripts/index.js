@@ -219,13 +219,6 @@ req.onload = function () {
 
                     $("#navbar").css({ 'border-bottom': '1px solid lightgray', 'background': 'white' });
 
-                    
-
-                    /*setTimeout(unfadebox, 200);
-                    function unfadebox() {  
-                    }*/
-
-
                     for (let i = 1; i <= N; i++) {
                         $('#item' + i).css('display', 'block');
                     }
@@ -257,7 +250,6 @@ req.onload = function () {
                     $('.mic1').attr('src', 'img/mic.png');
                     $('#mic1-mobile').attr('src', 'img/mic-mobile.png');
                     rec = false;
-                    //formInput.focus();
                     console.log("Vocal search off");
                     let remove = 0;
                     var tagsrc = document.searchForm.q.value.toLowerCase();
