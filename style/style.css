@@ -520,6 +520,19 @@ input {
     margin: 15px 35px;
   }
 
+  .form-group {
+    margin: 100px;
+  }
+
+  .form-control{
+    padding: 35px 0;
+    margin-bottom: 30px;
+  }
+
+  .control-label{
+    font-size: 35px;
+  }
+
 
 }
 
