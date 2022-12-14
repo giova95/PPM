@@ -1,0 +1,74 @@
+<html lang="en">
+
+<head>
+    <title>MyAPP - Vocal Search with Tags</title>
+    <link rel="stylesheet" href="style/style.css" type="text/css">
+    <link rel="shortcut icon" href="img/favicon.ico" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+    </style>
+    <script type="text/javascript" src="scripts/index.js"></script>
+    <script src="scripts/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav id="navbar">
+            <div class="container-navbar">
+                <ul class=menu>
+                    <li id="logo"><a href="index.html"><img title="Homepage"src ="img/app-log.png" width="90" height="40"></img></a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="form-container2">
+        <h3 class="text-center">Change Picture</h3>
+        <form action="http://localhost:3307/update-picture" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <input type="text" class="form-control" name="id" required="">
+                <label class = "control-label">Id </label>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" name="title" required="">
+                <label class = "control-label">Title </label>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" name="author" required="">
+                <label class = "control-label">Author </label>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" name="description" required="">
+                <label class = "control-label">Description </label>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" name="date" required="">
+                <label class = "control-label">Year </label>
+            </div>
+            <div class="form-group">
+                <input type="file" class="form-controlimg" name="src" required="">
+                <label class = "control-labelfile">Image </label>
+            </div>
+            <div class="form-button">
+                <button type="submit" class="btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+    <div class="box-confirm">
+        <h3 class="message-confirm">
+            Image updated successfully
+        </h3>
+        <div class="btn-confirm">
+                <button onclick="location.href='http://localhost:8080/PPM-main/updatepic.html'" class="btn btn-primary">Continue</button>
+       </div>
+    </div>
+    <footer>
+        <div class="footer-blurb">
+            <div class="logo-footer">
+                <a href="#">
+                    <img src="img/app-logfoot.png" height="200">
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

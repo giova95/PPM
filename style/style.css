@@ -412,6 +412,44 @@ footer {
 
 /* END newpic.html */
 
+/* START confirm.html */
+
+.form-container2{
+  max-width: 1080px;
+  margin: 117 auto;
+  border: 1px solid white;
+  border-radius: 10px;
+  background-color: #f5f5f5;
+  -webkit-filter: blur(2px);
+  -moz-filter: blur(2px);
+  -o-filter: blur(2px);
+  -ms-filter: blur(2px);
+  }
+
+.box-confirm{
+  max-width: 1080px;
+  width: 540;
+  height: 240;
+  margin: auto;
+  border: 1px solid #cecece;
+  border-radius: 10px;
+  background-color: #f5f5f5;
+  position: absolute;
+  bottom: 415px;
+  right: 680px;
+}
+
+.message-confirm{
+  text-align: center;
+  padding: 85px 0 0 0;
+}
+
+.btn-confirm{
+  margin: 30 auto 30;
+  display: table;  
+}
+
+/* END confirm.html */
 
 /*START media query*/
 
