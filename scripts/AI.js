@@ -7,10 +7,12 @@ window.onload = function () {
 
     for (let i = 1; i <= n; i++) {
         let img = document.getElementById('image-main' + i);
-        let l = picture.tags[i - 1];
+        let l = null;
+
+        
 
         // Load the model.
-        if (!l) {
+        if (!picture[i - 1].tags) {
             cocoSsd.load().then(model => {
                 // detect objects in the image.
                 model.detect(img).then(predictions => {
