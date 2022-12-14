@@ -13,7 +13,7 @@ window.onload = function () {
             // detect objects in the image.
             model.detect(img).then(predictions => {
                 let k = predictions.length;
-                for (s = 0; s < k; s++) {
+                for (let s = 0; s < k; s++) {
                     console.log(predictions[s].class);
                     if (picture[i - 1].tags)
                         picture[i - 1].tags = picture[i - 1].tags + " " + predictions[s].class;
