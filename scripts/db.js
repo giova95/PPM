@@ -107,4 +107,26 @@ app.post('/update-picture', upload.single('src') ,(req, res) => {
     })
 });
 
+app.post('/tags', (req, res) => {
+
+    pool.getConnection((err, connection) => {
+        if (err) throw err
+        console.log(`connesso con id ${connection.threadId}`);
+        const { id, tags } = req.body;
+        connection.query('UPDATE picture SET tags = ? WHERE id = ?', [ tags, id], (err, rows) => {
+            connection.release();
+            if (!err) {
+                console.log("sono arrivato qui");
+                res.send(`Inserimento dei tags avvenuto con successo`)
+            }
+            else {
+                res.send(`Errore nell' inserire i tags`);
+                console.log(err);
+            }
+        })
+    })
+});
+
+
+
 app.listen(port, () => console.log(`Listening on port ${port}`));
