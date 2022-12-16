@@ -116,7 +116,6 @@ app.post('/tags', (req, res) => {
         connection.query('UPDATE picture SET tags = ? WHERE id = ?', [ tags, id], (err, rows) => {
             connection.release();
             if (!err) {
-                console.log("sono arrivato qui");
                 res.send(`Inserimento dei tags avvenuto con successo`)
             }
             else {

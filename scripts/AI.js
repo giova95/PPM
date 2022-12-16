@@ -33,16 +33,33 @@ window.onload = function () {
                     picture[i - 1].tags = l;
                 });
 
-                fetch('http://localhost:3307/tags', {
+               /* fetch('http://localhost:3307/tags', {
                         method: "POST",
-                        header: {'content-type': 'application/json'},
+                        headers: {'content-type': 'application/json'},
                         body: JSON.stringify({
                             id: 15,
                             tags: "porcodio"
                         })
                     })
-                    .then(response=>response.json())
-                    .then(data=>console.log(data))
+                */
+
+                const url = 'http://localhost:3307/tags'
+                const data = {
+                    id: 90,
+                    tags: "MADONNAPUTTANA"
+                };
+                    const customHeaders = {
+                        "Content-Type": "application/json",
+                    }
+                    
+                    fetch(url, {
+                        method: "POST",
+                        headers: customHeaders,
+                        body: JSON.stringify(data)
+                    })
+                        .then((response) => response.text())
+                    });
+                
 
                 item = document.querySelector("#item" + i);
                 if (item) {
