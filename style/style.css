@@ -54,6 +54,14 @@ ul li {
   float: left;
 }
 
+.suggestion{
+  display: none;
+  position: absolute;
+  top: 55px;
+  left: 60px;
+  margin: 0 41% 0px;
+}
+
 #search-box {
   display: none;
   height: 50px;

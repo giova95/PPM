@@ -194,6 +194,8 @@ req.onload = function () {
 
                     $('#search-box').fadeIn('fast');
 
+                    $('.suggestion').fadeIn('fast');
+
                     $("#navbar").css({ 'border': 'none', 'background': 'transparent' });
                 }
 
@@ -216,6 +218,7 @@ req.onload = function () {
                     $('.vocal-search').fadeTo("fast", 1);
 
                     $('#search-box').fadeOut('fast');
+                    $('.suggestion').fadeOut('fast');
 
                     $("#navbar").css({ 'border-bottom': '1px solid lightgray', 'background': 'white' });
 
