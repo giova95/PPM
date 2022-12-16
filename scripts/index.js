@@ -5,7 +5,6 @@ req.responseType = 'json';
 req.send();
 
 
-
 req.onload = function () {
     const pictures = req.response;
     console.log(pictures);
@@ -90,6 +89,12 @@ req.onload = function () {
                     h6.id = "image-date" + i;
                     h6.innerHTML = "DATE";
                     info.appendChild(h6);
+
+                    var t= document.createElement("h6");
+                    t.className = "image-tag";
+                    t.id = "image-tag" + i;
+                    t.innerHTML = "TAG";
+                    info.appendChild(t);
 
                     var infoIcon = document.createElement("img");
                     infoIcon.className = "infoIcon";
@@ -278,18 +283,19 @@ req.onload = function () {
                     if (item) {
                         item.addEventListener("click", itemClick);
                         function itemClick() {
-
                             title = document.getElementById("full-title");
                             author = document.getElementById("author");
                             desc = document.getElementById("full-description");
-                            if (title && author && desc) {
+                            tags = document.getElementById("full-tag");
+                            if (title && author && desc && tags) {
                                 title.innerHTML = pictures[i - 1].title;
                                 author.innerHTML = 'By ' + pictures[i - 1].author + ' completed in ' + pictures[i - 1].date;
                                 desc.innerHTML = pictures[i - 1].description;
+                                tags.innerHTMl = 'Tag: ' + pictures[i - 1].tags;
                                 $('#full').attr('src', pictures[i - 1].src);
                                 $('#image-full').slideDown("slow");
                                 $('#item-container').fadeOut("slow");
-                                $('.navbar').fadeTo("slow", 0.2);
+                                $('.navbar').fadeTo("slow", 0.2);                 
                             }
                         }
                     }
@@ -307,8 +313,8 @@ req.onload = function () {
 
                         if (e.matches) {
 
-                            $("#infoIcon" +i).css({
-                                'visibility' : 'hidden'
+                            $("#infoIcon" + i).css({
+                                'visibility': 'hidden'
                             })
 
                             $("#image-info" + i).css({
@@ -356,24 +362,22 @@ req.onload = function () {
 
 
                         } else {
-                            
-                            $("#infoIcon" +i).css({
-                                'visibility' : 'visible'
+
+                            $("#infoIcon" + i).css({
+                                'visibility': 'visible'
                             })
 
 
                             function _imgOver() {
                                 $('#img-container' + i).css({
                                     '-webkit-transform': 'scale(1)',
-                                    'box-shadow': '0px 0px 0px gray'    
+                                    'box-shadow': '0px 0px 0px gray'
                                 })
 
                                 $('#image-info' + i).css({
                                     'animation': 'fadeIn 0ms ease-out backwards',
                                     '-webkit-transform': 'scale(1)',
                                 });
-
-
                             }
 
                             function clickInfo() {
@@ -386,7 +390,7 @@ req.onload = function () {
                             }
 
                             function iconClick() {
-                                
+
                                 $('#image-info' + i).fadeTo('fast', 1);
 
 
@@ -401,7 +405,7 @@ req.onload = function () {
                                 $("#mic1-mobile").slideUp("fast");
                             }
 
-                            function micSlideD(){
+                            function micSlideD() {
                                 $('#mic1-mobile').slideDown("fast");
                             }
 
@@ -414,7 +418,7 @@ req.onload = function () {
                             iconInf.addEventListener("click", iconClick);
 
                             item.addEventListener("click", micSlideU);
-                            
+
                             escfull.addEventListener("click", micSlideD);
 
 
@@ -424,14 +428,9 @@ req.onload = function () {
 
                 }
 
-
-
                 mediaQuery.addListener(media);
 
                 media(mediaQuery);
-
-
-
 
                 if (escfull) {
 
@@ -450,7 +449,6 @@ req.onload = function () {
                         $('#image-full').slideUp();
                         $('#item-container').fadeTo("slow", 1);
                         $('.navbar').fadeTo("slow", 1);
-                        
                     }
                 }
 
@@ -458,10 +456,14 @@ req.onload = function () {
                     title = document.getElementById("image-title" + i);
                     author = document.getElementById("image-author" + i);
                     date = document.getElementById("image-date" + i);
-                    if (title && author && date) {
+                    tag = document.getElementById("image-tag" + i)
+                    
+                    
+                    if (title && author && date && tag) {
                         title.innerHTML = pictures[i - 1].title;
                         author.innerHTML = pictures[i - 1].author;
                         date.innerHTML = pictures[i - 1].date;
+                        tag.innerHTML = "Tag: " + pictures[i - 1].tags;
                     }
                 }
             }

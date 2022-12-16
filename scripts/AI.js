@@ -9,7 +9,7 @@ window.onload = function () {
         let img = document.getElementById('image-main' + i);
         let l = null;
 
-        
+
 
         // Load the model.
         if (!picture[i - 1].tags) {
@@ -19,49 +19,33 @@ window.onload = function () {
                     let k = predictions.length;
                     for (let s = 0; s < k; s++) {
                         console.log(predictions[s].class);
-                        /*if (picture[i - 1].tags)
-                            picture[i - 1].tags = picture[i - 1].tags + " " + predictions[s].class;
-                        else
-                            picture[i - 1].tags = predictions[s].class;
-                        */
-
+                        
                         if (l)
                             l = l + " " + predictions[s].class;
                         else
                             l = predictions[s].class;
                     }
                     picture[i - 1].tags = l;
-                });
 
-               /* fetch('http://localhost:3307/tags', {
-                        method: "POST",
-                        headers: {'content-type': 'application/json'},
-                        body: JSON.stringify({
-                            id: 15,
-                            tags: "porcodio"
-                        })
-                    })
-                */
-
-                const url = 'http://localhost:3307/tags'
-                const data = {
-                    id: 90,
-                    tags: "MADONNAPUTTANA"
-                };
+                    const url = 'http://localhost:3307/tags'
+                    const data = {
+                        id: picture[i - 1].id,
+                        tags: picture[i - 1].tags
+                    };
                     const customHeaders = {
                         "Content-Type": "application/json",
                     }
-                    
+
                     fetch(url, {
                         method: "POST",
                         headers: customHeaders,
                         body: JSON.stringify(data)
                     })
                         .then((response) => response.text())
-                    });
-                
+                });
 
-                item = document.querySelector("#item" + i);
+
+            /*    item = document.querySelector("#item" + i);
                 if (item) {
                     item.addEventListener("click", itemClick);
                     function itemClick() {
@@ -73,7 +57,7 @@ window.onload = function () {
                                 tags.innerHTML = "Tag: ";
                         }
                     }
-                }
+                }*/
             });
         }
     }
