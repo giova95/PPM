@@ -213,7 +213,7 @@ input [tipo=checkbox] :checked~#searchblock ul {
   position: relative;
   max-width: 380px;
   max-height: 200px;
-  bottom: 30px;
+  bottom: 43px;
   left: 32px;
   padding-left: 11px;
   background-color: white;
