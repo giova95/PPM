@@ -48,32 +48,43 @@ req.onload = function () {
                     frame.src = "img/frame.png";
                     divImg.appendChild(frame);
 
-                    var aimg = document.createElement("a");
-                    aimg.href = "#";
-                    divImg.appendChild(aimg);
-
                     var img = document.createElement("img");
                     img.className = "image-main";
                     img.id = "image-main" + i;
                     img.src = " ";
-                    aimg.appendChild(img);
+                    divImg.appendChild(img);
+
+                    var a = document.createElement("a");
+                    a.href = "deletepic.html";
+                    a.title = "Add picture";
+                    divImg.appendChild(a);
 
                     var pendel = document.createElement("div");
                     pendel.className = "pendel";
                     pendel.id = "pendel" + i;
-                    divImg.appendChild(pendel);
-                    
+                    a.appendChild(pendel);
+
                     var del = document.createElement("img");
                     del.className = "delete";
                     del.id = "delete" + i;
                     del.src = "img/Trash.png";
                     pendel.appendChild(del);
 
-                    var pen = document.createElement("img");
-                    pen.className = "pencil";
-                    pen.id = "pencil" + i;
-                    pen.src = "img/Pencil.png";
-                    pendel.appendChild(pen);
+                    var a2 = document.createElement("a");
+                    a2.href = "updatepic.html";
+                    a2.title = "Add picture";
+                    divImg.appendChild(a2);
+
+                    var pendel2 = document.createElement("div");
+                    pendel2.className = "pendel";
+                    pendel2.id = "pendel" + i;
+                    a2.appendChild(pendel2);
+
+                    var pen2 = document.createElement("img");
+                    pen2.className = "pencil";
+                    pen2.id = "pencil" + i;
+                    pen2.src = "img/Pencil.png";
+                    pendel2.appendChild(pen2);
 
                 }
 
