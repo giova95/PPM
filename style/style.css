@@ -36,6 +36,16 @@ p::before {
   background: white;
 }
 
+#navbar2{
+  border-bottom: 1px solid lightgray;
+  z-index: 3;
+  background: white;
+  -webkit-filter: blur(3px);
+  -moz-filter: blur(3px);
+  -o-filter: blur(3px);
+  -ms-filter: blur(3px);
+}
+
 .container-navbar {
   margin: 0 40;
   max-height: 56px;
@@ -156,8 +166,16 @@ input [tipo=checkbox] :checked~#searchblock ul {
 
 /* START Main-Container*/
 
-.main-container {
+.main-container{
   margin-top: 70px;
+}
+
+.main-container2{
+  margin-top: 70px;
+  -webkit-filter: blur(3px);
+  -moz-filter: blur(3px);
+  -o-filter: blur(3px);
+  -ms-filter: blur(3px);
 }
 
 .search-result{
@@ -474,9 +492,26 @@ footer {
   right: 680px;
 }
 
+.box-confirm2{
+  max-width: 1080px;
+  height: 550px;
+  margin: auto;
+  border: 1px solid #cecece;
+  border-radius: 10px;
+  background-color: #f5f5f5;
+  position: absolute;
+  bottom: 235px;
+  right: 500px;
+}
+
 .message-confirm{
   text-align: center;
   padding: 85px 0 0 0;
+}
+
+.message-confirm2{
+  text-align: center;
+  padding: 210px 60px 0px;
 }
 
 .inline-button{
