@@ -85,10 +85,6 @@ req.onload = function () {
                     pen2.id = "pencil" + i;
                     pen2.src = "img/Pencil.png";
                     pendel2.appendChild(pen2);
-
-                    a2.addEventListener("click", pencilClick);
-                    //pencilClick() {}
-                    
                 }
 
 
