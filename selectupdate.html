@@ -1,0 +1,65 @@
+<html lang="en">
+
+<head>
+    <title>MyAPP - Vocal Search with Tags</title>
+    <link rel="stylesheet" href="style/style-select.css" type="text/css">
+    <link rel="shortcut icon" href="img/favicon.ico" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+    </style>
+    <script type="text/javascript" src="scripts/index-select.js"></script>
+    <script src="scripts/jquery-3.6.0.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale = 1.0">
+</head>
+
+<body>
+    <header>
+        <nav id="navbar">
+            <div class="container-navbar">
+                <ul class=menu>
+                    <li id="logo"><a href="index.html"><img src="img/app-log.png" width="90" height="40" title="Homepage"></img></a></li>
+                </ul>
+            </div>
+
+        </nav>
+    </header>
+
+    <div class="main-container">
+        <div class="search-result">
+            <h5 class="search-style">Search results are: </h5>
+        </div>
+        <div id="image-full">
+            <img src="img/icons8-x-96.png" id="x-full" height="60px">
+            <img id="full">
+            <div id="full-info">
+                <h1 id="full-title"></h1>
+                <h2 id="author"></h2>
+                <br>
+                <br>
+                <h4 id="full-description"></h4>
+                <br>
+                <h5 id="full-tag"></h5>
+            </div>
+        </div>
+        <div id="item-container">
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-blurb">
+            <div class="logo-footer">
+                <a href="#">
+                    <img src="img/app-logfoot.png" height="200">
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+<!-- Load TensorFlow.js. This is required to use coco-ssd model. -->
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"> </script>
+<!-- Load the coco-ssd model. -->
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"> </script>
+<script type="text/javascript" src="scripts/AI.js"></script>
+
+</html>

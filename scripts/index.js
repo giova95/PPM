@@ -147,7 +147,7 @@ req.onload = function () {
                         divadd.appendChild(add);
 
                         var a = document.createElement("a");
-                        a.href = "updatepic.html";
+                        a.href = "selectupdate.html";
                         a.title = "Edit picture";
                         divImg.appendChild(a);
 
@@ -479,6 +479,7 @@ req.onload = function () {
                         author.innerHTML = pictures[i - 1].author;
                         date.innerHTML = pictures[i - 1].date;
                         tag.innerHTML = "Tag: " + pictures[i - 1].tags;
+                        console.log(pictures[i -1].id);
                     }
                 }
             }
