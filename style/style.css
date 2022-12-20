@@ -463,6 +463,10 @@ footer {
   color: #949494;
 }
 
+#pictureid {
+  display: none;
+}
+
 /* END newpic.html */
 
 /* START confirm.html */
