@@ -309,7 +309,7 @@ req.onload = function () {
                                 title.innerHTML = pictures[i - 1].title;
                                 author.innerHTML = 'By ' + pictures[i - 1].author + ' completed in ' + pictures[i - 1].date;
                                 desc.innerHTML = pictures[i - 1].description;
-                                tags.innerHTMl = 'Tag: ' + pictures[i - 1].tags;
+                                tags.innerHTMl = "Tag: " + pictures[i - 1].tags;
                                 $('#full').attr('src', pictures[i - 1].src);
                                 $('#image-full').slideDown("slow");
                                 $('#item-container').fadeOut("slow");

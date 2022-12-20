@@ -43,21 +43,6 @@ window.onload = function () {
                     })
                         .then((response) => response.text())
                 });
-
-
-            /*    item = document.querySelector("#item" + i);
-                if (item) {
-                    item.addEventListener("click", itemClick);
-                    function itemClick() {
-                        tags = document.getElementById("tags");
-                        if (tags) {
-                            if (picture[i - 1].tags)
-                                tags.innerHTML = "Tag: " + picture[i - 1].tags;
-                            else
-                                tags.innerHTML = "Tag: ";
-                        }
-                    }
-                }*/
             });
         }
     }
