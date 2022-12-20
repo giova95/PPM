@@ -71,7 +71,7 @@ req.onload = function () {
                     info.className = "image-info";
                     info.id = "image-info" + i;
                     div.appendChild(info);
-
+                    
                     var h3 = document.createElement("h3");
                     h3.className = "image-title";
                     h3.id = "image-title" + i;
@@ -96,10 +96,17 @@ req.onload = function () {
                     t.innerHTML = "TAG";
                     info.appendChild(t);
 
+                    var close = document.createElement("img");
+                    close.className = "close-info";
+                    close.id = "close-info" + i;
+                    close.src = "img/x-gray.png";
+                    info.appendChild(close);
+
                     var infoIcon = document.createElement("img");
                     infoIcon.className = "infoIcon";
                     infoIcon.id = "infoIcon" + i;
                     infoIcon.src = "img/info.png";
+                    infoIcon.title = "Info";
                     divImg.appendChild(infoIcon);
 
 
@@ -268,7 +275,6 @@ req.onload = function () {
                             $('#item' + i).css('display', 'none');
                             remove++;
                         }
-
                     }
                 }
 
@@ -325,8 +331,8 @@ req.onload = function () {
                                 $('#img-container' + i).css({
                                     '-webkit-transform': 'scale(1)',
                                     'box-shadow': '0px 0px 0px gray',
-
                                 })
+
                                 $('#image-info' + i).css({
                                     'animation': 'fadeIn 500ms ease-out backwards',
                                     '-webkit-transform': 'scale(1)',
@@ -356,7 +362,6 @@ req.onload = function () {
                             infoImg.addEventListener("mouseout", imgOut);
 
                             item.removeEventListener("click", micSlideU);
-
 
                             escfull.removeEventListener("click", micSlideD);
 
@@ -392,8 +397,6 @@ req.onload = function () {
                             function iconClick() {
 
                                 $('#image-info' + i).fadeTo('fast', 1);
-
-
 
                                 $('#infoIcon' + i).css({
                                     'visibility': 'hidden'

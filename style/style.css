@@ -292,6 +292,14 @@ input [tipo=checkbox] :checked~#searchblock ul {
   width: 100%;
 }
 
+.close-info{
+  display: none;
+  width: 15;
+  position: relative;
+  left: 93%;
+  bottom: 55px;
+}
+
 
 /* END Main-Container */
 
@@ -575,9 +583,9 @@ input {
 
 
   .image-info {
-    max-width: 60%;
-    bottom: 57px;
-    left: 16px;
+    max-width: 68%;
+    bottom: 91px;
+    left: 15%;
 
   }
 
@@ -601,6 +609,10 @@ input {
 
   .control-label{
     font-size: 35px;
+  }
+
+  .close-info{
+    display: block;
   }
 
 
