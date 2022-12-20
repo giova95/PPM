@@ -28,6 +28,7 @@ req.onload = function () {
             const search = document.querySelector(".vocal-search");
             const esc = document.querySelector("#x-icon");
             const escfull = document.querySelector("#x-full");
+            const maincontainer = document.querySelector(".main-container");
             const itemcontainer = document.querySelector("#item-container");
             const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
@@ -198,7 +199,7 @@ req.onload = function () {
                     }
                 }
 
-                search.addEventListener("click", searchClick);  //TODO fare i'animazione
+                search.addEventListener("click", searchClick);
                 function searchClick() {
                     $('.menu').fadeTo("fast", 0);
 
@@ -233,7 +234,11 @@ req.onload = function () {
                     $('.suggestion').fadeOut('fast');
 
                     $("#navbar").css({ 'border-bottom': '1px solid lightgray', 'background': 'white' });
-
+                    
+                    $('.search-result').css({
+                        'opacity': '0'
+                    });
+                    
                     for (let i = 1; i <= N; i++) {
                         $('#item' + i).css('display', 'block');
                     }
@@ -252,6 +257,9 @@ req.onload = function () {
                 function startSpeechRecognition() {
                     $('.mic1').attr('src', 'img/mic-red.png');
                     $('#mic1-mobile').attr('src', 'img/mic-red-mobile.png');
+                    $('.search-result').css({
+                        'opacity': '0'
+                    });
                     rec = true;
                     //formInput.focus();
                     console.log("Vocal search on");
@@ -264,6 +272,10 @@ req.onload = function () {
                 function endSpeechRecognition() {
                     $('.mic1').attr('src', 'img/mic.png');
                     $('#mic1-mobile').attr('src', 'img/mic-mobile.png');
+                    $('.suggestion').fadeOut("slow");
+                    $('.search-result').css({
+                        'opacity': '1'
+                    })
                     rec = false;
                     console.log("Vocal search off");
                     let remove = 0;
@@ -275,7 +287,7 @@ req.onload = function () {
                             $('#item' + i).css('display', 'none');
                             remove++;
                         }
-                    }
+                    }       
                 }
 
                 recognition.addEventListener("result", resultSpeechRecognition);
