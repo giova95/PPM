@@ -49,7 +49,7 @@ req.onload = function () {
                     divImg.appendChild(frame);
 
                     var img = document.createElement("img");
-                    img.className = "image-main";
+                    img.className = "image-mainup";
                     img.id = "image-main" + i;
                     img.src = " ";
                     divImg.appendChild(img);
@@ -76,7 +76,7 @@ req.onload = function () {
                     divImg.appendChild(a2);
 
                     var pendel2 = document.createElement("div");
-                    pendel2.className = "pendel";
+                    pendel2.className = "pendel2";
                     pendel2.id = "pendel" + i;
                     a2.appendChild(pendel2);
 

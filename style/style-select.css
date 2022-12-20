@@ -296,7 +296,29 @@
     top: 16px;
     left: 20px;
   }
-  
+
+  .image-mainup{
+      height: 300px;
+      width: 400px;
+      position: relative;
+      top: 26px;
+      left: 26px;
+      opacity: 0.2;
+  }
+
+  .pendel{
+    width: 100px;
+    position: relative;
+    bottom: 167px;
+    right: -80px;
+  }
+  .pendel2{
+    width: 100px;
+    position: relative;
+    bottom: 258px;
+    right: -279px;
+  }
+
   #full {
     width: 100%;
   }
