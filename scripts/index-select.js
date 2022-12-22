@@ -89,54 +89,15 @@ req.onload = function () {
                     pen2.id = "pencil" + i;
                     pen2.src = "img/Pencil.png";
                     pendel2.appendChild(pen2);
-<<<<<<< HEAD
 
                     a2.addEventListener("click", function(){
                         nImg = i - 1;
                         return nImg;
                     });
-=======
-                }
-
-                if (escfull) {
-
-                    escfull.addEventListener("mouseover", overXred);
-                    function overXred() {
-                        $("#x-full").attr('src', 'img/x-red.png');
-                    }
-
-                    escfull.addEventListener("mouseout", outXnormal);
-                    function outXnormal() {
-                        $("#x-full").attr('src', 'img/icons8-x-96.png');
-                    }
-
-                    escfull.addEventListener("click", escfullClick);
-                    function escfullClick() {
-                        $('#image-full').slideUp();
-                        $('#item-container').fadeTo("slow", 1);
-                        $('.navbar').fadeTo("slow", 1);
-                    }
-                }
-
-                for (let i = 1; i <= N; i++) {
-                    title = document.getElementById("image-title" + i);
-                    author = document.getElementById("image-author" + i);
-                    date = document.getElementById("image-date" + i);
-                    tag = document.getElementById("image-tag" + i)
->>>>>>> fix delete
                     
                     
                 }
 
-<<<<<<< HEAD
-                
-            }
-
-            console.log(nImg);
-            console.log(pictures[nImg]);
-                
-                
-=======
                 function getUrlVars() {
                     var vars = {};
                     var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
@@ -150,7 +111,12 @@ req.onload = function () {
 
                 const formdelete = document.querySelector("#formDelete");
                 formDelete.action = "http://localhost:3307/"+idDelete;
->>>>>>> fix delete
+            }
+
+            console.log(nImg);
+            console.log(pictures[nImg]);
+                
+                
         }
     )
 };
