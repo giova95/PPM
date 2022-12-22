@@ -110,7 +110,7 @@ req.onload = function () {
                 console.log(idDelete);
 
                 const formdelete = document.querySelector("#formDelete");
-                formDelete.action = "http://localhost:3307/"+idDelete;
+                formDelete.action = "http://localhost:3307/deletepic/"+idDelete;
             }
 
             console.log(nImg);

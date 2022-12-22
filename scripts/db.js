@@ -68,13 +68,13 @@ app.post('/new-picture', upload.single('src'), (req, res) => {
     })
 });
 
-app.delete('/:id', (req, res) => {
+app.post('/deletepic/:id', (req, res) => {
     pool.getConnection((err, connection) => {
         if (err) throw err
         connection.query('DELETE FROM picture WHERE id = ?', [req.params.id], (err, rows) => {
             connection.release();
             if (!err) {
-                res.send(`l'opera con id ${[req.params.id]} e' stata rimossa`);
+                res.redirect('http://localhost:8080/PPM-main/index.html');
             }
             else {
                 res.send('errore nel caricamento del Quadro');
