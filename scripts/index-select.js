@@ -58,8 +58,9 @@ req.onload = function () {
                     divImg.appendChild(img);
 
                     var a = document.createElement("a");
-                    a.href = "deletepic.html";
-                    a.title = "Add picture";
+                    a.href = "deletepic.html?id="+pictures[i-1].id;
+                    a.title = "Delete Picture";
+                    a.className = "delete-pic";
                     divImg.appendChild(a);
 
                     var pendel = document.createElement("div");
@@ -75,7 +76,7 @@ req.onload = function () {
 
                     var a2 = document.createElement("a");
                     a2.href = "updatepic.html";
-                    a2.title = "Add picture";
+                    a2.title = "Update picture";
                     divImg.appendChild(a2);
 
                     var pendel2 = document.createElement("div");
@@ -88,15 +89,46 @@ req.onload = function () {
                     pen2.id = "pencil" + i;
                     pen2.src = "img/Pencil.png";
                     pendel2.appendChild(pen2);
+<<<<<<< HEAD
 
                     a2.addEventListener("click", function(){
                         nImg = i - 1;
                         return nImg;
                     });
+=======
+                }
+
+                if (escfull) {
+
+                    escfull.addEventListener("mouseover", overXred);
+                    function overXred() {
+                        $("#x-full").attr('src', 'img/x-red.png');
+                    }
+
+                    escfull.addEventListener("mouseout", outXnormal);
+                    function outXnormal() {
+                        $("#x-full").attr('src', 'img/icons8-x-96.png');
+                    }
+
+                    escfull.addEventListener("click", escfullClick);
+                    function escfullClick() {
+                        $('#image-full').slideUp();
+                        $('#item-container').fadeTo("slow", 1);
+                        $('.navbar').fadeTo("slow", 1);
+                    }
+                }
+
+                for (let i = 1; i <= N; i++) {
+                    title = document.getElementById("image-title" + i);
+                    author = document.getElementById("image-author" + i);
+                    date = document.getElementById("image-date" + i);
+                    tag = document.getElementById("image-tag" + i)
+>>>>>>> fix delete
                     
                     
                 }
 
+<<<<<<< HEAD
                 
             }
 
@@ -104,6 +136,21 @@ req.onload = function () {
             console.log(pictures[nImg]);
                 
                 
+=======
+                function getUrlVars() {
+                    var vars = {};
+                    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+                        vars[key] = value;
+                    });
+                    return vars;
+                }
+
+                var idDelete = getUrlVars()["id"];
+                console.log(idDelete);
+
+                const formdelete = document.querySelector("#formDelete");
+                formDelete.action = "http://localhost:3307/"+idDelete;
+>>>>>>> fix delete
         }
     )
 };

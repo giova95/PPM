@@ -330,6 +330,38 @@
     left: 93%;
     bottom: 55px;
   }
+
+  .inline-button{
+    display: flex;
+    justify-content: center;
+  }
+
+  .btn-confirm{
+    margin: 30 30;
+    display: table;  
+  }
+
+.form-container2{
+  max-width: 1080px;
+  margin: 117 auto;
+  border: 1px solid white;
+  border-radius: 10px;
+  background-color: #f5f5f5;
+  -webkit-filter: blur(2px);
+  -moz-filter: blur(2px);
+  -o-filter: blur(2px);
+  -ms-filter: blur(2px);
+}
+
+#navbar2{
+      border-bottom: 1px solid lightgray;
+      z-index: 3;
+      background: white;
+      -webkit-filter: blur(3px);
+      -moz-filter: blur(3px);
+      -o-filter: blur(3px);
+      -ms-filter: blur(3px);
+}
   
   
   /* END Main-Container */
@@ -470,6 +502,15 @@
   /* END newpic.html */
   
   /* START confirm.html */
+
+  .main-container2{
+    margin-top: 70px;
+    -webkit-filter: blur(3px);
+    -moz-filter: blur(3px);
+    -o-filter: blur(3px);
+    -ms-filter: blur(3px);
+  }
+  
   
   .form-container2{
     max-width: 1080px;
@@ -483,22 +524,22 @@
     -ms-filter: blur(2px);
     }
   
-  .box-confirm{
+  .box-confirm2{
     max-width: 1080px;
-    width: 540;
-    height: 240;
+    width: 1080px;
+    height: 550px;
     margin: auto;
     border: 1px solid #cecece;
     border-radius: 10px;
     background-color: #f5f5f5;
     position: absolute;
-    bottom: 415px;
-    right: 680px;
-  }
-  
-  .message-confirm{
+    bottom: 235px;
+    right: 390px;
+}
+
+  .message-confirm2 {
     text-align: center;
-    padding: 85px 0 0 0;
+    padding: 250px 60px 0px;
   }
   
   .inline-button{

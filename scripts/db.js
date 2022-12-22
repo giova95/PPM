@@ -77,6 +77,7 @@ app.delete('/:id', (req, res) => {
                 res.send(`l'opera con id ${[req.params.id]} e' stata rimossa`);
             }
             else {
+                res.send('errore nel caricamento del Quadro');
                 console.log(err);
             }
         })
