@@ -75,7 +75,7 @@ req.onload = function () {
                     pendel.appendChild(del);
 
                     var a2 = document.createElement("a");
-                    a2.href = "updatepic.html";
+                    a2.href = "updatepic.html?id="+i;
                     a2.title = "Update picture";
                     divImg.appendChild(a2);
 
@@ -89,21 +89,6 @@ req.onload = function () {
                     pen2.id = "pencil" + i;
                     pen2.src = "img/Pencil.png";
                     pendel2.appendChild(pen2);
-
-                    a2.addEventListener("click", function(){
-                        nImg = i - 1;
-                        return nImg;
-                    });
-                    
-                    
-                }
-
-                function getUrlVars() {
-                    var vars = {};
-                    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
-                        vars[key] = value;
-                    });
-                    return vars;
                 }
 
                 var idDelete = getUrlVars()["id"];
@@ -112,11 +97,21 @@ req.onload = function () {
                 const formdelete = document.querySelector("#formDelete");
                 formDelete.action = "http://localhost:3307/deletepic/"+idDelete;
             }
+                var idEdit = getUrlVars()["id"];
+                console.log(idEdit);
+                var title = document.getElementById("title");
+                if(title) {
+                    title.value = pictures[idEdit - 1].title;
+                }
 
-            console.log(nImg);
-            console.log(pictures[nImg]);
-                
-                
-        }
+
+                function getUrlVars() {
+                    var vars = {};
+                    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+                        vars[key] = value;
+                    });
+                    return vars;
+                }
+            }
     )
 };
