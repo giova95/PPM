@@ -104,14 +104,13 @@ req.onload = function () {
                 var author = document.getElementById("author");
                 var description = document.getElementById("description");
                 var date = document.getElementById("date");
-                var src = document.getElementById("src");
-                if(id && title && author && description && date && src) {
+                
+                if(id && title && author && description && date) {
                     id.value = pictures[idEdit- 1].id;
                     title.value = pictures[idEdit - 1].title;
                     author.value = pictures[idEdit - 1].author;
                     description.value = pictures[idEdit - 1].description;
                     date.value = pictures[idEdit -1].date;
-                    src.value = pictures[idEdit - 1].src;
                 }
 
 

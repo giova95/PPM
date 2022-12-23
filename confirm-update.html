@@ -24,8 +24,8 @@
     <div class="form-container2">
         <h3 class="text-center">Change Picture</h3>
         <form action="http://localhost:3307/update-picture" method="POST" enctype="multipart/form-data">
-            <div class="form-group">
-                <input type="text" class="form-control" name="id" required="">
+            <div class="form-group" id="pictureid">
+                <input  type="text" class="form-control" name="id" required="">
                 <label class = "control-label">Id </label>
             </div>
             <div class="form-group">
@@ -44,10 +44,6 @@
                 <input type="text" class="form-control" name="date" required="">
                 <label class = "control-label">Year </label>
             </div>
-            <div class="form-group">
-                <input type="file" class="form-controlimg" name="src" required="">
-                <label class = "control-labelfile">Image </label>
-            </div>
             <div class="form-button">
                 <button type="submit" class="btn-primary">Submit</button>
             </div>
@@ -59,7 +55,7 @@
         </h3>
         <div class="inline-button">
             <div class="btn-confirm">
-                <button onclick="location.href='http://localhost:8080/PPM-main/updatepic.html'" class="btn btn-primary">New Update</button>
+                <button onclick="location.href='http://localhost:8080/PPM-main/selectupdate.html'" class="btn btn-primary">New Update</button>
             </div>
             <div class="btn-confirm">
                 <button onclick="location.href='http://localhost:8080/PPM-main/index.html'" class="btn btn-primary">Homepage</button>

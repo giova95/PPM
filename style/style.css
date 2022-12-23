@@ -467,9 +467,6 @@ footer {
   display: none;
 }
 
-#picturesrc {
-  display: none;
-}
 
 /* END newpic.html */
 
@@ -495,9 +492,8 @@ footer {
   border: 1px solid #cecece;
   border-radius: 10px;
   background-color: #f5f5f5;
-  position: absolute;
-  bottom: 415px;
-  right: 680px;
+  position: relative;
+  top: -59%;
 }
 
 .box-confirm2{
