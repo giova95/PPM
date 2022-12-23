@@ -99,9 +99,19 @@ req.onload = function () {
             }
                 var idEdit = getUrlVars()["id"];
                 console.log(idEdit);
+                var id = document.getElementById("id");
                 var title = document.getElementById("title");
-                if(title) {
+                var author = document.getElementById("author");
+                var description = document.getElementById("description");
+                var date = document.getElementById("date");
+                var src = document.getElementById("src");
+                if(id && title && author && description && date && src) {
+                    id.value = pictures[idEdit- 1].id;
                     title.value = pictures[idEdit - 1].title;
+                    author.value = pictures[idEdit - 1].author;
+                    description.value = pictures[idEdit - 1].description;
+                    date.value = pictures[idEdit -1].date;
+                    src.value = pictures[idEdit - 1].src;
                 }
 
 

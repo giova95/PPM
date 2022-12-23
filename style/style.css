@@ -467,6 +467,10 @@ footer {
   display: none;
 }
 
+#picturesrc {
+  display: none;
+}
+
 /* END newpic.html */
 
 /* START confirm.html */
