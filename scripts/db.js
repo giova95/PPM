@@ -85,15 +85,12 @@ app.post('/deletepic/:id', (req, res) => {
 })
 
 app.post('/update-picture', upload.single('src') ,(req, res) => {
-    const file = req.file;
-    if (!file) {
-        return res.status(400).send({ message: 'Please upload a file.' });
-    }
+
     pool.getConnection((err, connection) => {
         if (err) throw err
         console.log(`connesso con id ${connection.threadId}`);
-        const { id, title, author, description, date, tags } = req.body;
-        const src = "scripts/" + req.file.path;
+        const { id, title, author, description, date, tags, src } = req.body;
+        //const src = req.file.path;
         connection.query('UPDATE picture SET title = ?, author = ?, description = ?, date = ?, tags = ?, src = ? WHERE id = ?', [title, author, description, date, tags, src, id], (err, rows) => {
             connection.release();
 
