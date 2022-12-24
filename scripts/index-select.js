@@ -95,7 +95,7 @@ req.onload = function () {
                 console.log(idDelete);
 
                 const formdelete = document.querySelector("#formDelete");
-                formDelete.action = "http://localhost:3307/deletepic/"+idDelete;
+                formdelete.action = "http://localhost:3307/deletepic/"+idDelete;
             }
                 var idEdit = getUrlVars()["id"];
                 console.log(idEdit);

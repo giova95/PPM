@@ -201,7 +201,8 @@
   }
   
   .item {
-    margin-bottom: 97px;
+    margin-bottom: 50px;
+    max-height: 350px;
     cursor: pointer;
   
   }
