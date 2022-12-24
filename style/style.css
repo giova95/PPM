@@ -181,12 +181,12 @@ input [tipo=checkbox] :checked~#searchblock ul {
 .search-result{
   margin: 1% 200px;
   max-width: 1080px;
-  opacity: 0;
+  display: none;
 }
 
 .search-style{
   color: #8e8e8e;
-  font-size: 15;
+  font-size: 17px;
   font-weight: lighter;
   font-family: inherit;
 }

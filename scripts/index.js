@@ -72,7 +72,7 @@ req.onload = function () {
                     info.className = "image-info";
                     info.id = "image-info" + i;
                     div.appendChild(info);
-                    
+
                     var h3 = document.createElement("h3");
                     h3.className = "image-title";
                     h3.id = "image-title" + i;
@@ -91,7 +91,7 @@ req.onload = function () {
                     h6.innerHTML = "DATE";
                     info.appendChild(h6);
 
-                    var t= document.createElement("h6");
+                    var t = document.createElement("h6");
                     t.className = "image-tag";
                     t.id = "image-tag" + i;
                     t.innerHTML = "TAG";
@@ -234,11 +234,11 @@ req.onload = function () {
                     $('.suggestion').fadeOut('fast');
 
                     $("#navbar").css({ 'border-bottom': '1px solid lightgray', 'background': 'white' });
-                    
+
                     $('.search-result').css({
                         'opacity': '0'
                     });
-                    
+
                     for (let i = 1; i <= N; i++) {
                         $('#item' + i).css('display', 'block');
                     }
@@ -257,9 +257,7 @@ req.onload = function () {
                 function startSpeechRecognition() {
                     $('.mic1').attr('src', 'img/mic-red.png');
                     $('#mic1-mobile').attr('src', 'img/mic-red-mobile.png');
-                    $('.search-result').css({
-                        'opacity': '0'
-                    });
+                    $('.search-result').fadeOut("fast");
                     rec = true;
                     //formInput.focus();
                     console.log("Vocal search on");
@@ -273,9 +271,6 @@ req.onload = function () {
                     $('.mic1').attr('src', 'img/mic.png');
                     $('#mic1-mobile').attr('src', 'img/mic-mobile.png');
                     $('.suggestion').fadeOut("slow");
-                    $('.search-result').css({
-                        'opacity': '1'
-                    })
                     rec = false;
                     console.log("Vocal search off");
                     let remove = 0;
@@ -286,8 +281,19 @@ req.onload = function () {
                             console.log("remove image" + picture[i - 1].id);
                             $('#item' + i).css('display', 'none');
                             remove++;
+                            console.log(remove);
                         }
-                    }       
+                    }
+                    numberResults = document.querySelector(".search-style");
+                    if (numberResults) {
+                        if (remove != N) {
+                            numberResults.innerHTML = 'There are ' + (N - remove) + ' pictures with the tag "' + tagsrc + '":';
+                        }
+                        else {
+                            numberResults.innerHTML = `There aren't pictures with the tag "` + tagsrc + '"<br>\n <br>\nTry another tag or add a picture which may have this tag';
+                        }
+                    }
+                    $('.search-result').fadeIn("fast");
                 }
 
                 recognition.addEventListener("result", resultSpeechRecognition);
@@ -313,7 +319,7 @@ req.onload = function () {
                                 $('#full').attr('src', pictures[i - 1].src);
                                 $('#image-full').slideDown("slow");
                                 $('#item-container').fadeOut("slow");
-                                $('.navbar').fadeTo("slow", 0.2);                 
+                                $('.navbar').fadeTo("slow", 0.2);
                             }
                         }
                     }
@@ -472,14 +478,14 @@ req.onload = function () {
                     author = document.getElementById("image-author" + i);
                     date = document.getElementById("image-date" + i);
                     tag = document.getElementById("image-tag" + i)
-                    
-                    
+
+
                     if (title && author && date && tag) {
                         title.innerHTML = pictures[i - 1].title;
                         author.innerHTML = pictures[i - 1].author;
                         date.innerHTML = pictures[i - 1].date;
                         tag.innerHTML = "Tag: " + pictures[i - 1].tags;
-                        console.log(pictures[i -1].id);
+                        console.log(pictures[i - 1].id);
                     }
                 }
             }
