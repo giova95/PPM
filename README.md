@@ -13,6 +13,7 @@ La ricerca delle immagini con i comandi vocali viene si basa quindi su queste la
 
 1. Scaricare ed installare MAMP
 2. Scaricare il file .zip del codice ed estrarlo nella directory /Applications/MAMP/htdocs
-3. Se node non è installato, installarlo con brew con comando su terminale brew install node oppure visitare https://radixweb.com/blog/installing-npm-and-nodejs-on-windows-and-mac
+3. Se nodeJS non è installato, installarlo con brew con comando su terminale brew install node oppure visitare https://radixweb.com/blog/installing-npm-and-nodejs-on-windows-and-mac
 4. Entrare in phpMyAdmin, creare il database "myApp" e importare il database myApp.sql presente nella cartella database del codice
 5. Aprire MAMP, far partire i server con "start" e cercare nel browser localhost:8080/MAMP/PPM-master/intro.html
+6. Buona navigazione!
