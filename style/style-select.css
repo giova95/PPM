@@ -157,7 +157,6 @@
   /* START Main-Container*/
   
   .main-container {
-    margin-top: 70px;
   }
   
   .search-result{
@@ -411,6 +410,21 @@
   /* END index.html*/
   
   /* START newpic.html */
+
+  .back-home{
+    margin: 22 22;
+  }
+  
+  .back-home a{
+    text-decoration: none;
+    color: gray;
+  }
+  
+  .back-home img{
+    position: relative;
+    top: 7px;
+  }
+
   .form-container {
     max-width: 1080px;
     margin: 117 auto;

@@ -34,7 +34,6 @@ req.onload = function () {
 
             if(itemcontainer){
 
-
                 for (let i = 1; i <= N; i++) {
                     var div = document.createElement("div");
                     div.className = "item";
@@ -99,6 +98,7 @@ req.onload = function () {
             }
                 var idEdit = getUrlVars()["id"];
                 console.log(idEdit);
+                
                 var id = document.getElementById("id");
                 var title = document.getElementById("title");
                 var author = document.getElementById("author");
