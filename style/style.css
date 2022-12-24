@@ -507,8 +507,9 @@ footer {
   border: 1px solid #cecece;
   border-radius: 10px;
   background-color: #f5f5f5;
-  position: relative;
-  top: -59%;
+  position: absolute;
+  top: 320px;
+  right: 675px;
 }
 
 .box-confirm2{
@@ -523,6 +524,19 @@ footer {
   right: 500px;
 }
 
+.box-confirmup{
+  max-width: 1080px;
+  width: 540;
+  height: 240;
+  margin: auto;
+  border: 1px solid #cecece;
+  border-radius: 10px;
+  background-color: #f5f5f5;
+  position: absolute;
+  top: 280px;
+  right: 675px;
+}
+
 .message-confirm{
   text-align: center;
   padding: 85px 0 0 0;
@@ -531,6 +545,11 @@ footer {
 .message-confirm2{
   text-align: center;
   padding: 250px 60px 0px;
+}
+
+.message-confirmup{
+  text-align: center;
+  padding: 85px 0 0 0;
 }
 
 .inline-button{
