@@ -9,6 +9,20 @@ req.onload = function () {
     const pictures = req.response;
     console.log(pictures);
 
+    var idEdit = getUrlVars()["id"];
+    console.log(idEdit);
+    var title = document.querySelector("#title-form");
+    var author = document.querySelector("#author-form");
+    var description = document.querySelector("#description-form");
+    var date = document.querySelector("#date-form");
+
+    if (title && author && description && date) {
+        title.value = pictures[idEdit - 1].title;
+        author.value = pictures[idEdit - 1].author;
+        description.value = pictures[idEdit - 1].description;
+        date.value = pictures[idEdit - 1].date;
+    }
+
     document.addEventListener(
         'DOMContentLoaded',
         function () {
@@ -32,7 +46,7 @@ req.onload = function () {
             const itemcontainer = document.querySelector("#item-container");
             var nImg;
 
-            if(itemcontainer){
+            if (itemcontainer) {
 
                 for (let i = 1; i <= N; i++) {
                     var div = document.createElement("div");
@@ -57,7 +71,7 @@ req.onload = function () {
                     divImg.appendChild(img);
 
                     var a = document.createElement("a");
-                    a.href = "deletepic.html?id="+pictures[i-1].id;
+                    a.href = "deletepic.html?id=" + pictures[i - 1].id;
                     a.title = "Delete Picture";
                     a.className = "delete-pic";
                     divImg.appendChild(a);
@@ -74,7 +88,7 @@ req.onload = function () {
                     pendel.appendChild(del);
 
                     var a2 = document.createElement("a");
-                    a2.href = "updatepic.html?id="+i;
+                    a2.href = "updatepic.html?id=" + i;
                     a2.title = "Update picture";
                     divImg.appendChild(a2);
 
@@ -94,33 +108,16 @@ req.onload = function () {
                 console.log(idDelete);
 
                 const formdelete = document.querySelector("#formDelete");
-                formdelete.action = "http://localhost:3307/deletepic/"+idDelete;
+                formdelete.action = "http://localhost:3307/deletepic/" + idDelete;
             }
-                var idEdit = getUrlVars()["id"];
-                console.log(idEdit);
-                
-                var id = document.getElementById("id");
-                var title = document.getElementById("title");
-                var author = document.getElementById("author");
-                var description = document.getElementById("description");
-                var date = document.getElementById("date");
-                
-                if(id && title && author && description && date) {
-                    id.value = pictures[idEdit- 1].id;
-                    title.value = pictures[idEdit - 1].title;
-                    author.value = pictures[idEdit - 1].author;
-                    description.value = pictures[idEdit - 1].description;
-                    date.value = pictures[idEdit -1].date;
-                }
-
-
-                function getUrlVars() {
-                    var vars = {};
-                    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
-                        vars[key] = value;
-                    });
-                    return vars;
-                }
-            }
+        }
     )
 };
+
+function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+        vars[key] = value;
+    });
+    return vars;
+}
