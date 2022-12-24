@@ -5,15 +5,20 @@ La ricerca delle immagini con i comandi vocali viene si basa quindi su queste la
 
 ### Demo for Linux Users
 
-1. Scaricare ed installare XAMPP
+1. Se non installato scaricare ed installare XAMPP
 2. Scaricare il file .zip del codice ed estrarlo nella directory /opt/lampp/htdocs 
-3.  
+3. Se nodeJS non è installato, installarlo con il comando sudo npm install
+4. Entrare in phpMyAdmin, creare il database "myApp" e importare il database myApp.sql presente nella cartella database del codice
+5. Aprire il terminale, accedere alla directory /opt/lampp/htdocs/PPM-master/scripts e scrivere il comando npm start
+6. Aprire XAMPP, far partire i server con "start" e cercare nel browser localhost:8080/PPM-master/intro.html
+7. Buona navigazione!
 
 ### Demo for MAC OS Users
 
-1. Scaricare ed installare MAMP
+1. Se non installato scaricare ed installare  MAMP
 2. Scaricare il file .zip del codice ed estrarlo nella directory /Applications/MAMP/htdocs
-3. Se nodeJS non è installato, installarlo con brew con comando su terminale brew install node oppure visitare https://radixweb.com/blog/installing-npm-and-nodejs-on-windows-and-mac
+3. Se nodeJS non è installato, installarlo con brew tramite comando su terminale brew install node oppure visitare https://radixweb.com/blog/installing-npm-and-nodejs-on-windows-and-mac
 4. Entrare in phpMyAdmin, creare il database "myApp" e importare il database myApp.sql presente nella cartella database del codice
-5. Aprire MAMP, far partire i server con "start" e cercare nel browser localhost:8080/MAMP/PPM-master/intro.html
-6. Buona navigazione!
+5. Aprire il terminale, accedere alla directory /Applications/MAMP/htdocs/PPM-master/scripts e scrivere il comando npm start
+6. Aprire MAMP, far partire i server con "start" e cercare nel browser localhost:8080/MAMP/PPM-master/intro.html
+7. Buona navigazione!
