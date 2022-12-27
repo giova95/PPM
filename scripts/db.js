@@ -32,7 +32,6 @@ app.get('', (req, res) => {
             } else {
                 console.log(err);
             }
-            console.log(rows);
         })
     })
 })
@@ -82,7 +81,7 @@ app.post('/deletepic/:id', (req, res) => {
             }
         })
     })
-})
+});
 
 app.post('/update-picture', (req, res) => {
 
@@ -90,9 +89,10 @@ app.post('/update-picture', (req, res) => {
         if (err) throw err
         console.log(`connesso con id ${connection.threadId}`);
         const { id, title, author, description, date} = req.body;
+        console.log(req.body);
         connection.query('UPDATE picture SET title = ?, author = ?, description = ?, date = ? WHERE id = ?', [title, author, description, date, id], (err, rows) => {
+            console.log(rows);
             connection.release();
-
             if (!err) {
                 res.redirect('http://localhost:8080/PPM-main/confirm-update.html');
             }

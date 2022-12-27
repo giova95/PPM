@@ -11,12 +11,14 @@ req.onload = function () {
 
     var idEdit = getUrlVars()["id"];
     console.log(idEdit);
+    var id = document.querySelector("#id-form");
     var title = document.querySelector("#title-form");
     var author = document.querySelector("#author-form");
     var description = document.querySelector("#description-form");
     var date = document.querySelector("#date-form");
 
     if (title && author && description && date) {
+        id.value = pictures[idEdit - 1].id;
         title.value = pictures[idEdit - 1].title;
         author.value = pictures[idEdit - 1].author;
         description.value = pictures[idEdit - 1].description;

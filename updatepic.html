@@ -9,7 +9,6 @@
     </style>
     
     <script type="text/javascript" src="scripts/index-select.js"></script>
-    <script type="text/javascript" src="scripts/AI.js"></script>
     <script src="scripts/jquery-3.6.0.min.js"></script>
 </head>
 
@@ -30,11 +29,14 @@
 
     <div class="form-container">
         <h3 class="text-center">Change Picture</h3>
-        <form action="http://localhost:3307/update-picture" method="POST" enctype="multipart/form-data">
+        <form action="http://localhost:3307/update-picture" method="POST" enctype="application/x-www-form-urlencoded">
+            <div class="form-group" id="pictureid">
+                <input type="text" id="id-form" class="form-control" name="id" required="">
+                <label class="control-label">ID </label>
+            </div>
             <div class="form-group">
                 <input id="title-form" type="text" class="form-control" name="title" required="">
                 <label class = "control-label">Title </label>
-                <h5 id="diocane"></h5>
             </div>
             <div class="form-group">
                 <input id="author-form" type="text" class="form-control" name="author" required="">
