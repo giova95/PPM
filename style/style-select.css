@@ -705,7 +705,26 @@
 
     .item{
       width: -webkit-fill-available;
+      max-height: none;
     }
+    .image-mainup{
+      height: 100%;
+      width: 100%;
+      left: 0;
+    }
+
+    .pendel{
+      bottom: 400px;
+      left: 160px;
+    }
+
+    .pendel2 {
+      bottom: 490px;
+      left: 340px;
+
+    }
+
+
   
   
   }

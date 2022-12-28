@@ -651,7 +651,6 @@ input {
 
   #item-container {
     position: relative;
-    display: grid;
     top: 45px;
   }
 
@@ -696,6 +695,12 @@ input {
   .item-addedit{
     margin: auto;
   }
+
+  .item{
+    width: -webkit-fill-available;
+    
+  }
+
 
 
 }
