@@ -36,10 +36,7 @@ p::before {
   background: white;
 }
 
-#navbar2{
-  border-bottom: 1px solid lightgray;
-  z-index: 3;
-  background: white;
+.navbar2{
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
   -o-filter: blur(3px);
