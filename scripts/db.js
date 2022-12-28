@@ -57,7 +57,7 @@ app.post('/new-picture', upload.single('src'), (req, res) => {
         connection.query('INSERT INTO picture SET title = ?, author = ?, description = ?, date = ?, tags = ?, src = ?', [title, author, description, date, tags, src], (err, rows) => {
             connection.release();
             if (!err) {
-                res.redirect('http://localhost:8080/PPM-main/confirm-new.html');
+                res.redirect('http://localhost:8080/PPM-master/confirm-new.html');
             }
             else {
                 res.send('errore nel caricamento del Quadro');
@@ -73,7 +73,7 @@ app.post('/deletepic/:id', (req, res) => {
         connection.query('DELETE FROM picture WHERE id = ?', [req.params.id], (err, rows) => {
             connection.release();
             if (!err) {
-                res.redirect('http://localhost:8080/PPM-main/index.html');
+                res.redirect('http://localhost:8080/PPM-master/index.html');
             }
             else {
                 res.send('errore nel caricamento del Quadro');
@@ -94,7 +94,7 @@ app.post('/update-picture', (req, res) => {
             console.log(rows);
             connection.release();
             if (!err) {
-                res.redirect('http://localhost:8080/PPM-main/confirm-update.html');
+                res.redirect('http://localhost:8080/PPM-master/confirm-update.html');
             }
             else {
                 res.send(`Errore nell' aggiornamento dell'opera`);
