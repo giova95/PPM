@@ -651,6 +651,7 @@ input {
 
   #item-container {
     position: relative;
+    display: grid;
     top: 45px;
   }
 
@@ -690,6 +691,10 @@ input {
 
   .close-info{
     display: block;
+  }
+
+  .item-addedit{
+    margin: auto;
   }
 
 
